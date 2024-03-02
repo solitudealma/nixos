@@ -1,104 +1,55 @@
 {
-	description = "NixOS configuration";
-  	inputs = {
-		nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
-        home-manager = {
-            url = "github:nix-community/home-manager/release-23.11";
-            inputs.nixpkgs.follows = "nixpkgs";
-        };
-        hyprland = {
-            url = "github:hyprwm/Hyprland";
-            inputs.nixpkgs.follows = "nixpkgs";
-        };
-  	    vscode-server.url = "github:nix-community/nixos-vscode-server";
+  inputs = {
+    nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
+    nixpkgs-unstable.url = "github:nixos/nixpkgs/nixos-unstable";
+    nixpkgs-stable.url = "github:nixos/nixpkgs/nixos-23.11";
+    nixos-hardware.url = "github:NixOS/nixos-hardware/master";
+    home-manager = {
+      url = "github:nix-community/home-manager/master";
+      inputs.nixpkgs.follows = "nixpkgs";
     };
+    hyprland = {
+      url = "github:hyprwm/Hyprland";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+    hyprland-contrib = {
+      url = "github:hyprwm/contrib";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+    # secrets management
+    agenix = {
+      # lock with git commit at 0.15.0
+      url = "github:ryantm/agenix/564595d0ad4be7277e07fa63b5a991b3c645655d";
+      # replaced with a type-safe reimplementation to get a better error message and less bugs.
+      # url = "github:ryan4yin/ragenix";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+    nuenv.url = "github:DeterminateSystems/nuenv";
+    alejandra = {
+      url = "github:kamadorueda/alejandra/3.0.0";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+    nixos-generators = {
+      url = "github:nix-community/nixos-generators";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+    nix-gaming = {
+      url = "github:fufexan/nix-gaming";
+    };
+    neovim = {
+      url = "github:neovim/neovim/stable?dir=contrib";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+  };
 
-    outputs = { nixpkgs, home-manager, ...}@inputs: {
-	    nixosConfigurations = {
-		    "nixos" = nixpkgs.lib.nixosSystem {
-			    system = "x86_64-linux";
-			    modules = [
-				    { _module.args = inputs; }
-				    ./hardware-configuration.nix
-				    home-manager.nixosModules.home-manager
-                    {
-                        home-manager.useGlobalPkgs = true;
-                        home-manager.useUserPackages = true;
-                        home-manager.users.SolitudeAlma = import ./home.nix;
-                    }
-                    ({ config, pkgs, nixpkgs, lib, ... }: {
-					    i18n = {
-						    defaultLocale = "en_US.UTF-8";
-						    supportedLocales = ["en_US.UTF-8/UTF-8"];
-                            inputMethod = {
-                                enabled = "fcitx5";
-                                fcitx5.addons = with pkgs; [
-                                    fcitx5-rime
-                                    fcitx5-chinese-addons
-                                    fcitx5-table-other
-                                    fcitx5-table-extra
-                                ];
-                            };
-					    };
-					    time.timeZone = "Asia/Shanghai";
-					    fonts.packages = with pkgs; [
-                            #maplemono-SC-NF
-                            jetbrains-mono
-                        ];
-                        nixpkgs.config.allowUnfree = true;
-                        nix = {
-						    channel.enable = false;
-						    registry.nixpkgs.flake = nixpkgs;
-						    package = pkgs.nixUnstable;
-						    settings = {
-							    nix-path = lib.mkForce "nixpkgs=flake:nixpkgs";
-							    experimental-features = [
-								    "nix-command"
-								    "flakes"
-								    "auto-allocate-uids"
-								    "configurable-impure-env"
-								    "cgroups"
-							    ];
-                                use-cgroups = true;
-                                auto-optimise-store = true;
-                                auto-allocate-uids = true;
-                                substituters = [
-                                    "https://mirrors.ustc.edu.cn/nix-channels/store"
-                                    "https://mirrors.tuna.tsinghua.edu.cn/nix-channels/store"
-                                    "https://mirror.sjtu.edu.cn/nix-channels/store"
-                                ];
-                            };
-                            gc = {
-                                automatic = true;
-                                dates = "weekly";
-                                options = "--delete-older-than2d";
-                            };
-                        };
-                        networking = {
-                            wireless = {
-                                enable = false;
-                                networks = {
-                                    "GCCC".psk = "22050822";
-                                };
-                            };
-                            networkmanager = {
-                                enable = true;
-                            };
-                        };
-                        services.xserver = {
-                            enable = true;
-                            displayManager.gdm.enable = true;
-                            desktopManager.gnome.enable = true;
-                        };
-                        boot.loader.systemd-boot.enable = true;
-                        boot.loader.efi.canTouchEfiVariables = true;
-                        system.stateVersion = "23.11";
-                        users.users.SolitudeAlma.group = "SolitudeAlma";
-                        users.groups.SolitudeAlma = {};
-                        users.users.SolitudeAlma.isNormalUser = true;
-                    })
-                ];
-            };
-        };
-	};
+  outputs = {self, ...} @ inputs: {
+    nixosConfigurations =
+      import ./hosts
+      {
+        inherit inputs self;
+      };
+    packages."x86_64-linux".docs = import ./doc {
+      inherit inputs self;
+    };
+  };
 }
