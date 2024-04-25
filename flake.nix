@@ -1,9 +1,11 @@
 {
+  description = "ZaneyOS";
+
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
-    nixpkgs-unstable.url = "github:nixos/nixpkgs/nixos-unstable";
-    nixpkgs-stable.url = "github:nixos/nixpkgs/nixos-23.11";
-    nixos-hardware.url = "github:NixOS/nixos-hardware/master";
+    nix-colors.url = "github:misterio77/nix-colors";
+    nur.url = "github:nix-community/NUR";
+    nvimdots.url = "github:ayamir/nvimdots";
     home-manager = {
       url = "github:nix-community/home-manager/master";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -12,44 +14,59 @@
       url = "github:hyprwm/Hyprland";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    hyprland-contrib = {
-      url = "github:hyprwm/contrib";
-      inputs.nixpkgs.follows = "nixpkgs";
+    hycov = {
+      url = "github:DreamMaoMao/hycov";
+      inputs.hyprland.follows = "hyprland";
     };
-    # secrets management
-    agenix = {
-      # lock with git commit at 0.15.0
-      url = "github:ryantm/agenix/564595d0ad4be7277e07fa63b5a991b3c645655d";
-      # replaced with a type-safe reimplementation to get a better error message and less bugs.
-      # url = "github:ryan4yin/ragenix";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-    nuenv.url = "github:DeterminateSystems/nuenv";
-    alejandra = {
-      url = "github:kamadorueda/alejandra/3.0.0";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-    nixos-generators = {
-      url = "github:nix-community/nixos-generators";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-    nix-gaming = {
-      url = "github:fufexan/nix-gaming";
-    };
-    neovim = {
-      url = "github:neovim/neovim/stable?dir=contrib";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
+    yazi.url = "github:sxyazi/yazi";
+    impermanence.url = "github:nix-community/impermanence";
   };
 
-  outputs = {self, ...} @ inputs: {
-    nixosConfigurations =
-      import ./hosts
-      {
-        inherit inputs self;
+  outputs = inputs @ {
+    nixpkgs,
+    home-manager,
+    impermanence,
+    hycov,
+    ...
+  }: let
+    system = "x86_64-linux";
+    host = "laptop";
+    inherit (import ./hosts/${host}/options.nix) username hostname;
+
+    pkgs = import nixpkgs {
+      inherit system;
+      config = {
+        allowUnfree = true;
       };
-    packages."x86_64-linux".docs = import ./doc {
-      inherit inputs self;
+    };
+  in {
+    nixosConfigurations = {
+      "${hostname}" = nixpkgs.lib.nixosSystem {
+        specialArgs = {
+          inherit system;
+          inherit inputs;
+          inherit username;
+          inherit hostname;
+          inherit host;
+        };
+        modules = [
+          ./system.nix
+          impermanence.nixosModules.impermanence
+          home-manager.nixosModules.home-manager
+          {
+            home-manager.extraSpecialArgs = {
+              inherit username;
+              inherit inputs;
+              inherit host;
+              inherit (inputs.nix-colors.lib-contrib {inherit pkgs;}) gtkThemeFromScheme;
+            };
+            home-manager.useGlobalPkgs = true;
+            home-manager.useUserPackages = true;
+            home-manager.backupFileExtension = "backup";
+            home-manager.users.${username} = import ./users/default/home.nix;
+          }
+        ];
+      };
     };
   };
 }
