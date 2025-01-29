@@ -1,0 +1,71 @@
+include {
+    config.d/*.dae
+}
+
+global {
+    # tproxy监听端口
+    tproxy_port: 12345
+
+    # 设置为true开启可保护tproxy端口不受未经请求的流量的影响
+    tproxy_port_protect: true
+
+    # so_mark标记网络数据包，如果不为零，则从 dae 发送的流量将被设置为 SO_MARK
+    so_mark_from_dae: 0
+
+    # 日志级别: error, warn, info, debug, trace.
+    log_level: info
+
+    # 是否禁止等待网络，在拉取订阅之前
+    disable_waiting_network: false
+
+    ##### 网络接口和内核选项
+    # 如果你需要为其他局域网设备提供代理，需要绑定LAN接口，多个网卡","分割
+    lan_interface: wlp0s20f3, waydroid0
+
+    # 如果你要代理本机流量，需要绑定WAN接口，多个接口","分割，也可以使用自动检测"auto"
+    wan_interface: auto
+
+    # 自动配置Linux内核参数。ip_forward和send_redirects
+    auto_config_kernel_parameter: true
+
+    ##### 节点连通性检查
+    # 如果你主机有双栈的话，检查链接需要有IPV4和IPV6
+    # 第一个是URL，其他可以指定IP
+    # 考虑到流量消耗，建议选择anycast IP（CDN）、响应数据少的站点。
+    #tcp_check_url: 'http://cp.cloudflare.com'
+    tcp_check_url: 'http://cp.cloudflare.com,1.1.1.1,2606:4700:4700::1111'
+
+    # 检查的HTTP请求方法
+    tcp_check_http_method: HEAD
+
+    # 用于检查节点的UDP连接. 如果dns_upstream配置包含 tcp, 同样可以用来检查TCP节点
+    # 第一个是URL，其他是IP
+    # 如果你主机有双栈的话，IPV4和IPV6都需要指定
+    #udp_check_dns: 'dns.google.com:53'
+    udp_check_dns: 'dns.google.com:53,8.8.8.8,2001:4860:4860::8888'
+
+    # 检查间隔
+    check_interval: 30s
+
+    # 当节点延迟差多少会切换节点
+    check_tolerance: 50ms
+
+
+    ##### 连接选项.
+    # 拨号模式：ip,domain,domain+,domain++
+    dial_mode: domain
+
+    # 是否允许不安全的TLS证书
+    allow_insecure: false
+
+    # 等待第一次嗅探数据发送的超时时间
+    # 如果dial_mode是ip，那么设置为0
+    sniffing_timeout: 100ms
+
+    # tls实现，设置为tls则使用crypto/tls，设置为utls则使用uTLS，可以模仿浏览器的指纹
+    tls_implementation: utls
+
+    # utls要模仿的客户端，仅当utls时生效
+    # 参考 https：//github.com/daeuniverse/dae/blob/331fa23c16/component/outbound/transport/tls/utls.go#L17
+    utls_imitate: chrome_auto
+}

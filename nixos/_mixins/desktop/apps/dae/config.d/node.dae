@@ -1,0 +1,31 @@
+# node.dae
+node {
+    cc142: 'vless://e9733a01-2442-47c9-8d44-0b9d21aba758@142.171.201.220:32351?type=tcp&security=reality&pbk=vWsjvRJaq1QanE4FakKL6xVH6-JJQ1J-k2yDqQtsFwM&fp=firefox&sni=yahoo.com&sid=f32795b1&spx=%2F#ofheo7je'
+}
+
+subscription {
+    ikuuu: 'https://bpvd9.no-mad-world.club/link/cOPIWq3BWoQi7qrO?sub=3&extend=1'
+}
+
+group {
+    main_group {
+        filter: subtag(ikuuu) && !name(keyword: 'ExpireAt:')
+        policy: min_moving_avg
+    }
+
+    us {
+        filter: subtag(ikuuu) && name(keyword: '美国' )
+        policy: min_moving_avg
+    }
+
+    cc142 {
+        filter: name(cc142)
+        policy: fixed(0)
+    }
+
+    steam {
+        filter: subtag(ikuuu) && !name(keyword: 'ExpireAt:')
+        policy: min_moving_avg
+        tcp_check_url: 'http://test.steampowered.com'
+    }
+}

@@ -1,0 +1,11 @@
+[color]
+gradient = 1
+
+gradient_color_1 = '#8FBCBB'  # Nord Frost
+gradient_color_2 = '#88C0D0'  # Nord Frost Light
+gradient_color_3 = '#81A1C1'  # Nord Blue
+gradient_color_4 = '#5E81AC'  # Nord Dark Blue
+gradient_color_5 = '#B48EAD'  # Nord Magenta
+gradient_color_6 = '#D08770'  # Nord Orange
+gradient_color_7 = '#EBCB8B'  # Nord Yellow
+gradient_color_8 = '#BF616A'  # Nord Red

@@ -1,0 +1,35 @@
+# dns.dae
+dns {
+    ipversion_prefer: 4
+    upstream {
+        googledns: 'tcp+udp://dns.google:53'
+        alidns: 'udp://dns.alidns.com:53'
+    }
+
+    routing {
+        request {
+            # 内置出站:asis,reject
+            # 可用的方法qname, qtype
+            # 广告拒绝
+            qname(geosite:category-ads-all) -> reject
+            # 这里的意思是google中是cn的域名使用alidns
+            qname(geosite:google@cn) -> alidns
+            # 匹配后缀，匹配关键字
+            qname(suffix: abc.com, keyword: google) -> googledns
+            # 全匹配和正则匹配
+            qname(full: ok.com, regex: '^yes') -> googledns
+            # DNS 请求类型
+            # ipv4和ipv6请求使用alidns
+            qtype(a, aaaa) -> alidns
+            # cname请求googledns
+            qtype(cname) -> googledns
+            # 默认DNS服务器
+	          fallback: alidns
+        }
+        response {
+            upstream(googledns) -> accept
+            !qname(geosite:cn) && ip(geoip:private) -> googledns
+            fallback: accept
+        }
+    }
+}

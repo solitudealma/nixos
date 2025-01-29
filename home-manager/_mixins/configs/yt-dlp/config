@@ -1,0 +1,16 @@
+--ignore-errors
+# --no-playlist
+
+# Save in ~/Videos
+-o ~/Videos/youtube/%(title)s.%(ext)s
+
+# Prefer 1080p or lower resolutions
+-f bv[ext=mp4][height<=?1080]+ba[ext=m4a]/best[ext=mp4]/bv*+ba/b
+
+--embed-metadata
+--force-ipv4
+--concurrent-fragments 8
+--part
+--continue
+--throttled-rate 200K
+--retries 10
