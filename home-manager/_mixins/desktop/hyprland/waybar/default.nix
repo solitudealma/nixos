@@ -5,6 +5,7 @@
   pkgs,
   ...
 }: let
+  inherit (config._custom.globals) fonts;
   wlogoutMargins =
     if hostname == "vader"
     then "--margin-top 960 --margin-bottom 960"
@@ -117,7 +118,7 @@ in {
         @define-color color9    #495156;
 
         * {
-          font-family: Maple Mono NF CN;
+          font-family: ${fonts.mono};
           font-size: 14px;
           font-weight: 500;
           min-height: 0;

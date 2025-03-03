@@ -1,27 +1,33 @@
-{
-  lib,
-  pkgs,
-  username,
-  ...
-}: {
-  environment.systemPackages = [
-    pkgs.greetd.tuigreet
-  ];
-  security.pam.services.greetd.enableGnomeKeyring = true;
-  services = {
-    greetd = {
+{pkgs, ...}: {
+  environment.variables = {
+    QT_QPA_PLATFORM = "wayland";
+  };
+  programs = {
+    niri = {
       enable = true;
-      settings = rec {
-        initial_session = {
-          command = builtins.concatStringsSep " " [
-            "tuigreet"
-            ''--time --time-format="%F %T"''
-            "--remember"
-            "--cmd niri-session"
-          ];
-          user = username;
-        };
-        default_session = initial_session;
+      package = pkgs.niri-unstable;
+    };
+    xwayland = {
+      enable = true;
+      package = pkgs.xwayland-satellite;
+    };
+  };
+  security = {
+    pam.services = {
+      greetd.enableGnomeKeyring = true;
+      hyprlock = {};
+    };
+    polkit = {
+      enable = true;
+    };
+  };
+
+  services = {
+    xserver = {
+      enable = true;
+      displayManager.gdm = {
+        enable = true;
+        wayland = true;
       };
     };
     # thunar

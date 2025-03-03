@@ -1,6 +1,6 @@
 // vim:ft=rasi
 * {
-  font:                   "JetBrainsMono Nerd Font 10";
+  font:                   "Maple Mono NF CN 10";
   foreground:             #A7C080;
   background:             #292825;
   highlight:              #F1EDEE;

@@ -1,5 +1,6 @@
 {
   config,
+  desktop,
   lib,
   pkgs,
   ...
@@ -24,23 +25,7 @@ in
       };
 
       "org/gnome/desktop/wm/preferences" = {
-        button-layout = "${buttonLayout}";
-        theme = "Everforest-Dark";
-      };
-
-      "org/mate/desktop/interface" = {
-        gtk-decoration-layout = "${buttonLayout}";
-        gtk-theme = "Everforest-Dark";
-        icon-theme = "Papirus-Light";
-      };
-
-      "org/mate/desktop/peripherals/mouse" = {
-        cursor-size = mkInt32 20;
-        cursor-theme = "Bibata-Modern-Ice";
-      };
-
-      "org/mate/marco/general" = {
-        button-layout = "${buttonLayout}";
+        button-layout = lib.mkIf (desktop != "hyprland") "${buttonLayout}";
         theme = "Everforest-Dark";
       };
 
@@ -56,8 +41,8 @@ in
       };
       enable = true;
       font = {
-        name = "${fonts.mono}";
-        package = pkgs.maple-mono-NF-CN;
+        name = fonts.mono;
+        package = fonts.package;
       };
       gtk2 = {
         configLocation = "${config.xdg.configHome}/.gtkrc-2.0";
@@ -77,6 +62,8 @@ in
         };
       };
       iconTheme = {
+        # name = "Tela-circle-dark";
+        # package = pkgs.tela-circle-icon-theme;
         name = "Papirus-Light";
         package = pkgs.papirus-icon-theme.override {
           color = "green";
@@ -92,6 +79,8 @@ in
       pointerCursor = {
         name = "Bibata-Modern-Ice";
         package = pkgs.bibata-cursors;
+        x11.enable = true;
+        x11.defaultCursor = "Bibata-Modern-Ice";
         size = 20;
         gtk.enable = true;
       };

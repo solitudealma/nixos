@@ -35,7 +35,8 @@ in
   # - https://www.reddit.com/r/Fedora/comments/mzun99/new_zram_tuning_benchmarks/
   # - https://linuxreviews.org/Zram
   zramSwap = {
-    algorithm = "lz4";
+	  swapDevices = 1;
+    algorithm = "zstd"; #"lz4";
     enable = usezramSwap;
   };
 }

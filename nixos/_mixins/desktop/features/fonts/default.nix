@@ -14,13 +14,9 @@ in {
     fontDir.enable = true;
     packages = with pkgs;
       [
-        (nerdfonts.override {
-          fonts = [
-            "FiraCode"
-            "JetBrainsMono"
-            "NerdFontsSymbolsOnly"
-          ];
-        })
+        nerd-fonts.jetbrains-mono
+        nerd-fonts.fira-code
+        nerd-fonts.symbols-only
         fira
         font-awesome
         liberation_ttf
@@ -31,12 +27,12 @@ in {
         source-serif
         symbola
         work-sans
-        maple-mono-NF-CN
+        fonts.package
         material-icons
         source-han-sans
         # nur.repos.mgord9518.windows-fonts
         wqy_microhei
-        wqy_zenhei
+        wqy_zenhei # for steam
       ]
       ++ lib.optionals isInstall [
         bebas-neue-2014-font

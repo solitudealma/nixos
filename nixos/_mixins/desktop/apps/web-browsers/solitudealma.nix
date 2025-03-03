@@ -1,4 +1,12 @@
-{...}: {
+{
+  desktop,
+  lib,
+  pkgs,
+  ...
+}: {
+  environment.variables = {
+    MOZ_USE_XINPUT2 = "1";
+  };
   programs = {
     chromium = {
       extensions = [
@@ -14,6 +22,17 @@
       };
     };
     firefox = {
+      nativeMessagingHosts = {
+        packages = with pkgs;
+          [
+            bukubrow
+            ff2mpv
+
+            firefoxpwa
+            uget-integrator
+          ]
+          ++ lib.optionals (desktop == "kde") [kdePackages.plasma-browser-integration];
+      };
       policies = {
         #   "3rdparty".Extensions = {
         #     "uBlock0@raymondhill.net" = {
@@ -112,36 +131,48 @@
         #   };
         # Check about:support for extension/add-on ID strings.
         ExtensionSettings =
-          (with builtins; let
-            extension = shortId: uuid: {
-              name = uuid;
-              value = {
-                install_url = "https://addons.mozilla.org/en-US/firefox/downloads/latest/${shortId}/latest.xpi";
-                installation_mode = "normal_installed";
-              };
+          {
+            "*" = {
+              installation_mode = "blocked";
             };
-          in
-            listToAttrs [
-              (extension "adaptive-tab-bar-colour" "ATBC@EasonWong")
-              (extension "bewlybewly" "addon@bewlybewly.com")
-              (extension "consent-o-matic" "gdpr@cavi.au.dk")
-              (extension "downthemall" "{DDC359D1-844A-42a7-9AA1-88A850A938A8}")
-              (extension "hcfy" "{0982b844-4f35-48b7-9811-6832d916f21c}")
-              (extension "immersive-translate" "{5efceaa7-f3a2-4e59-a54b-85319448e305}")
-              (extension "material-icons-for-gitHub" "{eac6e624-97fa-4f28-9d24-c06c9b8aa713}")
-              (extension "ruffle_rs" "{b5501fd1-7084-45c5-9aa6-567c2fcf5dc6}")
-              (extension "sidebery" "{3c078156-979c-498b-8990-85f7987dd929}")
-              (extension "styl-us" "{7a7a4a92-a2a0-41d1-9fd7-1e92480d612d}")
-              (extension "ublock-origin" "uBlock0@raymondhill.net")
-              (extension "userchrome-toggle-extended@n2ezr.ru" "userchrome-toggle-extended")
-              (extension "{plasma-browser-integration@kde.org}" "{plasma-browser-integration@kde.org}")
-              (extension "{646d57f4-d65c-4f0d-8e80-5800b92cfdaa}" "{646d57f4-d65c-4f0d-8e80-5800b92cfdaa}")
-              (extension "{7da5011d-0496-4632-8408-e0da16b8c59f}" "{7da5011d-0496-4632-8408-e0da16b8c59f}")
-            ])
+          }
+          // (
+            with builtins; let
+              extension = uuid: area: {
+                name = uuid;
+                value = {
+                  install_url = "https://addons.mozilla.org/en-US/firefox/downloads/latest/${uuid}/latest.xpi";
+                  installation_mode = "normal_installed";
+                  default_area = area;
+                };
+              };
+            in
+              listToAttrs (
+                [
+                  (extension "ATBC@EasonWong" "menupanel")
+                  (extension "addon@bewlybewly.com" "menupanel")
+                  (extension "gdpr@cavi.au.dk" "menupanel")
+                  (extension "{DDC359D1-844A-42a7-9AA1-88A850A938A8}" "menupanel")
+                  (extension "{0982b844-4f35-48b7-9811-6832d916f21c}" "menupanel")
+                  (extension "{5efceaa7-f3a2-4e59-a54b-85319448e305}" "menupanel")
+                  (extension "{eac6e624-97fa-4f28-9d24-c06c9b8aa713}" "menupanel")
+                  (extension "{b5501fd1-7084-45c5-9aa6-567c2fcf5dc6}" "menupanel")
+                  (extension "{3c078156-979c-498b-8990-85f7987dd929}" "navbar")
+                  (extension "{7a7a4a92-a2a0-41d1-9fd7-1e92480d612d}" "menupanel")
+                  (extension "Tab-Session-Manager@sienori" "navbar")
+                  (extension "uBlock0@raymondhill.net" "navbar")
+                  (extension "userchrome-toggle-extended" "navbar")
+                  (extension "{646d57f4-d65c-4f0d-8e80-5800b92cfdaa}" "menupanel")
+                  (extension "{7da5011d-0496-4632-8408-e0da16b8c59f}" "menupanel")
+                ]
+                ++ lib.optional (desktop == "kde") (extension "{plasma-browser-integration@kde.org}" "menupanel")
+              )
+          )
           // {
             "firefoxbeta@tampermonkey.net" = {
               install_url = "https://www.tampermonkey.net/xpi/firefox-current-beta.xpi";
               installation_mode = "force_installed";
+              default_area = "navbar";
             };
           };
         #   "Homepage" = {
@@ -152,6 +183,19 @@
         #     "Default" = "Google";
         #     "DefaultPrivate" = "Google";
         #   };
+      };
+      preferences = {
+        "browser.newtabpage.activity-stream.feeds.topsites" = false;
+        "browser.newtabpage.activity-stream.showSponsoredTopSites" = false;
+        "browser.urlbar.autoFill.adaptiveHistory.enabled" = true;
+        # Force enable VA-API
+        "media.ffmpeg.vaapi.enabled" = true;
+        # Enable "Not Secure" texts
+        "security.insecure_connection_text.enabled" = true;
+        "security.insecure_connection_text.pbmode.enabled" = true;
+        # Disable PPA
+        # https://michael.kjorling.se/blog/2024/disabling-privacy-preserving-ad-measurement-in-firefox-128/
+        "dom.private-attribution.submission.enabled" = false;
       };
     };
   };

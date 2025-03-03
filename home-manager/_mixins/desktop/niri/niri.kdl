@@ -1,0 +1,272 @@
+// This config is in the KDL format: https://kdl.dev
+// "/-" comments out the following node.
+// Check the wiki for a full description of the configuration:
+// https://github.com/YaLTeR/niri/wiki/Configuration:-Overview
+
+// Input device configuration.
+// Find the full list of options on the wiki:
+// https://github.com/YaLTeR/niri/wiki/Configuration:-Input
+
+spawn-at-startup "waybar"
+spawn-at-startup "bash" "@startXwayland@"
+spawn-at-startup "@authAgent@"
+spawn-at-startup "fcitx5" "-d" "-r"
+spawn-at-startup "wl-paste" "--type" "image" "--watch" "cliphist" "store"
+spawn-at-startup "wl-paste" "--type" "text" "--watch" "cliphist" "store"
+spawn-at-startup "wl-clip-persist" "--clipboard" "both"
+spawn-at-startup "swww-daemon" "--format" "xrgb"
+spawn-at-startup "swww-randomize" "-d" "~/Pictures/Wallpapers"
+
+switch-events {
+    lid-close { spawn "@niri@" "msg" "output" "eDP-1" "off"; }
+    lid-open { spawn "@niri@" "msg" "output" "eDP-1" "on"; }
+    tablet-mode-on { spawn "bash" "-c" "gsettings set org.gnome.desktop.a11y.applications screen-keyboard-enabled true"; }
+    tablet-mode-off { spawn "bash" "-c" "gsettings set org.gnome.desktop.a11y.applications screen-keyboard-enabled false"; }
+}
+
+environment {
+    DISPLAY ":0"
+}
+
+input {
+    keyboard {
+        xkb {
+            layout "us"
+            model ""
+            rules ""
+            variant ""
+        }
+        repeat-delay 600
+        repeat-rate 25
+        track-layout "global"
+    }
+    touchpad {
+        tap
+        dwt
+        dwtp
+        natural-scroll
+        accel-speed 0.000000
+        scroll-method "two-finger"
+        click-method "clickfinger"
+    }
+    mouse { accel-speed 1.000000; }
+    trackpoint { accel-speed 0.000000; }
+    trackball { accel-speed 0.000000; }
+    tablet { map-to-output "eDP-1"; }
+    touch { map-to-output "eDP-1"; }
+    warp-mouse-to-focus
+    focus-follows-mouse
+}
+output "eDP-1" {
+    background-color "#003300"
+    scale 1.000000
+    transform "normal"
+    position x=0 y=0
+    mode "1920x1080@144.000000"
+    variable-refresh-rate on-demand=false
+}
+screenshot-path "~/Pictures/Screenshots from %Y-%m-%d %H-%M-%S.png"
+prefer-no-csd
+layout {
+    // Set gaps around windows in logical pixels.
+    gaps 16
+
+    // When to center a column when changing focus, options are:
+    // - "never", default behavior, focusing an off-screen column will keep at the left
+    //   or right edge of the screen.
+    // - "always", the focused column will always be centered.
+    // - "on-overflow", focusing a column will center it if it doesn't fit
+    //   together with the previously focused column.
+    center-focused-column "never"
+    focus-ring {
+        // Uncomment this line to disable the focus ring.
+        // off
+
+        // How many logical pixels the ring extends out from the windows.
+        width 4
+
+        // Colors can be set in a variety of ways:
+        // - CSS named colors: "red"
+        // - RGB hex: "#rgb", "#rgba", "#rrggbb", "#rrggbbaa"
+        // - CSS-like notation: "rgb(255, 127, 0)", rgba(), hsl() and a few others.
+
+        // Color of the ring on the active monitor.
+        active-color "#7fc8ff"
+
+        // Color of the ring on inactive monitors.
+        inactive-color "#505050"
+
+        // You can also use gradients. They take precedence over solid colors.
+        // Gradients are rendered the same as CSS linear-gradient(angle, from, to).
+        // The angle is the same as in linear-gradient, and is optional,
+        // defaulting to 180 (top-to-bottom gradient).
+        // You can use any CSS linear-gradient tool on the web to set these up.
+        // Changing the color space is also supported, check the wiki for more info.
+        //
+        // active-gradient from="#80c8ff" to="#bbddff" angle=45
+
+        // You can also color the gradient relative to the entire view
+        // of the workspace, rather than relative to just the window itself.
+        // To do that, set relative-to="workspace-view".
+        //
+        // inactive-gradient from="#505050" to="#808080" angle=45 relative-to="workspace-view"
+    }
+    border {
+        off
+        width 2
+        active-gradient angle=45 from="#f38ba8" relative-to="workspace-view" to="#f9e2af"
+        inactive-gradient angle=45 from="#585b70" relative-to="workspace-view" to="#7f849c"
+    }
+    insert-hint { color "rgb(127 200 255 / 50%)"; }
+    default-column-width { proportion 0.500000; }
+    preset-column-widths {
+        proportion 0.333333
+        proportion 0.500000
+        proportion 0.666667
+        proportion 1.000000
+    }
+}
+
+hotkey-overlay { skip-at-startup; }
+binds {
+    Mod+0 { spawn "switch-workspace" "chat" "QQ"; }
+    Mod+1 { focus-workspace "terminal"; }
+    Mod+2 { focus-workspace "2"; }
+    Mod+3 { focus-workspace "3"; }
+    Mod+4 { spawn "switch-workspace" "video" "com.obsproject.Studio"; }
+    Mod+9 { spawn "switch-workspace" "game" "steam"; }
+    Mod+C { spawn "switch-workspace" "browser" "firefox"; }
+    Mod+Comma { consume-window-into-column; }
+    Mod+Ctrl+Down { move-window-down; }
+    Mod+Ctrl+I { move-window-to-workspace-up; }
+    Mod+Ctrl+Left { move-column-left; }
+    Mod+Ctrl+Right { move-column-right; }
+    Mod+Ctrl+U { move-window-to-workspace-down; }
+    Mod+Ctrl+Up { move-window-up; }
+    Mod+D { spawn "sh" "-c" "rofi -show drun -show-icons"; }
+    Mod+Down { focus-window-down; }
+    Mod+E { spawn "thunar"; }
+    Mod+End { focus-column-last; }
+    Mod+F { maximize-column; }
+    Mod+Home { focus-column-first; }
+    Mod+I { focus-workspace-up; }
+    Mod+L { spawn "sh" "-c" "pgrep hyprlock || hyprlock"; }
+    Mod+Left { focus-column-left; }
+    Mod+M { spawn "switch-workspace" "music" "Spotify"; }
+    Mod+Minus { set-column-width "-10%"; }
+    Mod+Period { expel-window-from-column; }
+    Mod+Plus { set-column-width "+10%"; }
+    Mod+Print { screenshot-screen; }
+    Mod+Q { close-window; }
+    Mod+R { switch-preset-column-width; }
+    Mod+Return { spawn "st"; }
+    Mod+Right { focus-column-right; }
+    Mod+Shift+1 { move-window-to-workspace 1; }
+    Mod+Shift+2 { move-window-to-workspace 2; }
+    Mod+Shift+3 { move-window-to-workspace 3; }
+    Mod+Shift+4 { move-window-to-workspace 4; }
+    Mod+Shift+5 { move-window-to-workspace 5; }
+    Mod+Shift+6 { move-window-to-workspace 6; }
+    Mod+Shift+7 { move-window-to-workspace 7; }
+    Mod+Shift+8 { move-window-to-workspace 8; }
+    Mod+Shift+9 { move-window-to-workspace 9; }
+    Mod+Shift+C { center-column; }
+    Mod+Shift+Ctrl+Down { move-window-to-monitor-down; }
+    Mod+Shift+Ctrl+Left { move-window-to-monitor-left; }
+    Mod+Shift+Ctrl+Right { move-window-to-monitor-right; }
+    Mod+Shift+Ctrl+T { toggle-debug-tint; }
+    Mod+Shift+Ctrl+Up { move-window-to-monitor-up; }
+    Mod+Shift+Down { focus-monitor-down; }
+    Mod+Shift+End { move-column-to-last; }
+    Mod+Shift+F { fullscreen-window; }
+    Mod+Shift+Home { move-column-to-first; }
+    Mod+Shift+I { move-workspace-up; }
+    Mod+Shift+Left { focus-monitor-left; }
+    Mod+Shift+Minus { set-window-height "-10%"; }
+    Mod+Shift+P { power-off-monitors; }
+    Mod+Shift+Plus { set-window-height "+10%"; }
+    Mod+Shift+Q { quit; }
+    Mod+Shift+Right { focus-monitor-right; }
+    Mod+Shift+U { move-workspace-down; }
+    Mod+Shift+Up { focus-monitor-up; }
+    Mod+Space { toggle-window-floating; }
+    Mod+Tab { switch-focus-between-floating-and-tiling; }
+    Mod+U { focus-workspace-down; }
+    Mod+Up { focus-window-up; }
+    Mod+WheelScrollDown cooldown-ms=150 { focus-workspace-down; }
+    Print { screenshot; }
+    Shift+Super+S { screenshot-window; }
+    XF86AudioLowerVolume allow-when-locked=true { spawn "sh" "-c" "wpctl set-volume @DEFAULT_SINK@ 5%- && notify-send -c \"system\" \"  $(wpctl get-volume @DEFAULT_SINK@ | awk '{print $1 * 100}')%\""; }
+    XF86AudioMute allow-when-locked=true { spawn "sh" "-c" "wpctl set-mute @DEFAULT_SINK@ toggle && notify-send -c \"system\" \" Toggle Mute"; }
+    XF86AudioNext { spawn "playerctl" "next"; }
+    XF86AudioPlay { spawn "playerctl" "play-pause"; }
+    XF86AudioPrev { spawn "playerctl" "previous"; }
+    XF86AudioRaiseVolume allow-when-locked=true { spawn "sh" "-c" "wpctl set-volume @DEFAULT_SINK@ 5%+ && notify-send -c \"system\" \"  $(wpctl get-volume @DEFAULT_SINK@ | awk '{print $1 * 100}')%\""; }
+    XF86AudioStop { spawn "playerctl" "pause"; }
+    XF86MonBrightnessDown { spawn "sh" "-c" "brightnessctl set 10%-"; }
+    XF86MonBrightnessUp { spawn "sh" "-c" "brightnessctl set 10%+"; }
+}
+workspace "terminal" { open-on-output "eDP-1"; }
+workspace "2"
+workspace "3"
+workspace "video"
+workspace "browser"
+workspace "music"
+workspace "chat"
+workspace "game"
+
+window-rule {
+    draw-border-with-background false
+    geometry-corner-radius 8.000000 8.000000 8.000000 8.000000
+    clip-to-geometry true
+}
+window-rule {
+    match app-id="^org.telegram.desktop$" title="^Media viewer$"
+    default-column-width { proportion 0.500000; }
+    open-fullscreen false
+}
+window-rule {
+    match is-focused=false
+    opacity 0.950000
+}
+window-rule {
+    match app-id="St"
+    open-maximized true
+    open-focused true
+}
+window-rule {
+    match app-id="QQ"
+    open-on-workspace "chat"
+    open-maximized true
+    opacity 1.000000
+}
+window-rule {
+    match app-id="firefox"
+    open-on-workspace "browser"
+    opacity 0.970000
+}
+window-rule {
+    match app-id="firefox$" title="^Picture-in-Picture$"
+    open-floating true
+    default-floating-position relative-to="bottom-left" x=22 y=42
+}
+window-rule {
+    match app-id="^firefox$" title="Private Browsing"
+    border { active-color "purple"; }
+}
+animations {
+    slowdown 0.900000
+    workspace-switch { spring damping-ratio=1.000000 epsilon=0.000100 stiffness=2000; }
+    horizontal-view-movement { spring damping-ratio=1.000000 epsilon=0.000100 stiffness=1000; }
+    window-movement { spring damping-ratio=1.000000 epsilon=0.000100 stiffness=1000; }
+    window-close {
+        duration-ms 150
+        curve "ease-out-quad"
+        custom-shader "vec4 close_color(vec3 coords_geo, vec3 size_geo) {\n  // For this shader, set animation curve to linear for best results.\n\n  // Simulate an accelerated fall: square the (linear) progress.\n  float progress = niri_clamped_progress * niri_clamped_progress;\n\n  // Get our rotation pivot point coordinates at the bottom center of the window.\n  vec2 coords = (coords_geo.xy - vec2(0.5, 1.0)) * size_geo.xy;\n\n  // Move the window down to simulate a fall.\n  coords.y -= progress * 200.0;\n\n  // Randomize rotation direction and maximum angle.\n  float random = (niri_random_seed - 0.5) / 2.0;\n  random = sign(random) - random;\n  float max_angle = 0.05 * random;\n\n  // Rotate the window around our pivot point.\n  float angle = progress * max_angle;\n  mat2 rotate = mat2(cos(angle), -sin(angle), sin(angle), cos(angle));\n  coords = rotate * coords;\n\n  // Transform the coordinates back.\n  coords_geo = vec3(coords / size_geo.xy + vec2(0.5, 1.0), 1.0);\n\n  // Sample the window texture.\n  vec3 coords_tex = niri_geo_to_tex * coords_geo;\n  vec4 color = texture2D(niri_tex, coords_tex.st);\n\n  // Multiply by alpha to fade out.\n  return color * (1.0 - niri_clamped_progress);\n}\n"
+    }
+    window-resize {
+        spring damping-ratio=1.000000 epsilon=0.000100 stiffness=800
+        custom-shader "vec4 resize_color(vec3 coords_curr_geo, vec3 size_curr_geo) {\n  vec3 coords_next_geo = niri_curr_geo_to_next_geo * coords_curr_geo;\n\n  vec3 coords_stretch = niri_geo_to_tex_next * coords_curr_geo;\n  vec3 coords_crop = niri_geo_to_tex_next * coords_next_geo;\n\n  // We can crop if the current window size is smaller than the next window\n  // size. One way to tell is by comparing to 1.0 the X and Y scaling\n  // coefficients in the current-to-next transformation matrix.\n  bool can_crop_by_x = niri_curr_geo_to_next_geo[0][0] <= 1.0;\n  bool can_crop_by_y = niri_curr_geo_to_next_geo[1][1] <= 1.0;\n\n  vec3 coords = coords_stretch;\n  if (can_crop_by_x)\n      coords.x = coords_crop.x;\n  if (can_crop_by_y)\n      coords.y = coords_crop.y;\n\n  vec4 color = texture2D(niri_tex_next, coords.st);\n\n  // However, when we crop, we also want to crop out anything outside the\n  // current geometry. This is because the area of the shader is unspecified\n  // and usually bigger than the current geometry, so if we don't fill pixels\n  // outside with transparency, the texture will leak out.\n  //\n  // When stretching, this is not an issue because the area outside will\n  // correspond to client-side decoration shadows, which are already supposed\n  // to be outside.\n  if (can_crop_by_x && (coords_curr_geo.x < 0.0 || 1.0 < coords_curr_geo.x))\n      color = vec4(0.0);\n  if (can_crop_by_y && (coords_curr_geo.y < 0.0 || 1.0 < coords_curr_geo.y))\n      color = vec4(0.0);\n\n  return color;\n}\n"
+    }
+}
+debug { disable-cursor-plane; }

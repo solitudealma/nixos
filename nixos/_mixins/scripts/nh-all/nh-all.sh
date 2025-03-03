@@ -15,11 +15,9 @@ if [ "${1}" != "build" ] && [ "${1}" != "switch" ]; then
     usage
 fi
 
-for BUILDER in nh-home nh-host; do
-    # if BUILDER is in the PATH, run it
-    if command -v "${BUILDER}" &> /dev/null; then
-        "${BUILDER}" "${1}"
-    else
-        echo "WARNING! ${BUILDER} not found."
-    fi
-done
+# if BUILDER is in the PATH, run it
+if command -v nh-host &> /dev/null; then
+    nh-host "${1}"
+else
+    echo "WARNING! ${BUILDER} not found."
+fi

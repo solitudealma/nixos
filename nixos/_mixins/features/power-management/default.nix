@@ -12,7 +12,8 @@
   usePowerProfiles =
     config.programs.hyprland.enable
     || config.services.xserver.desktopManager.gnome.enable
-    || config.services.xserver.desktopManager.pantheon.enable;
+    || config.services.xserver.desktopManager.pantheon.enable
+    || config.services.xserver.windowManager.dwm.enable;
 in
   lib.mkIf isInstall {
     # Power Management strategy:

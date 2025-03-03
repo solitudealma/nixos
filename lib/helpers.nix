@@ -4,40 +4,6 @@
   stateVersion,
   ...
 }: {
-  # Helper function for generating home-manager configs
-  mkHome = {
-    hostname,
-    username ? "solitudealma",
-    desktop ? null,
-    platform ? "x86_64-linux",
-  }: let
-    isISO = builtins.substring 0 4 hostname == "iso-";
-    isInstall = !isISO;
-    isLaptop = hostname != "others";
-    isLima = hostname == "blackace" || hostname == "defender" || hostname == "fighter";
-    isWorkstation = builtins.isString desktop;
-  in
-    inputs.home-manager.lib.homeManagerConfiguration {
-      pkgs = inputs.nixpkgs.legacyPackages.${platform};
-      extraSpecialArgs = {
-        inherit
-          inputs
-          outputs
-          desktop
-          hostname
-          platform
-          username
-          stateVersion
-          isInstall
-          isISO
-          isLaptop
-          isLima
-          isWorkstation
-          ;
-      };
-      modules = [../home-manager];
-    };
-
   # Helper function for generating NixOS configs
   mkNixos = {
     hostname,
@@ -48,6 +14,7 @@
     isISO = builtins.substring 0 4 hostname == "iso-";
     isInstall = !isISO;
     isLaptop = hostname != "others";
+    isLima = hostname == "blackace" || hostname == "defender" || hostname == "fighter";
     isWorkstation = builtins.isString desktop;
   in
     inputs.nixpkgs.lib.nixosSystem {
@@ -73,7 +40,34 @@
           then inputs.nixpkgs + "/nixos/modules/installer/cd-dvd/installation-cd-minimal.nix"
           else inputs.nixpkgs + "/nixos/modules/installer/cd-dvd/installation-cd-graphical-calamares.nix";
       in
-        [../nixos] ++ inputs.nixpkgs.lib.optionals isISO [cd-dvd];
+        [
+          ../nixos
+          inputs.home-manager.nixosModules.home-manager
+          {
+            home-manager = {
+              extraSpecialArgs = {
+                inherit
+                  inputs
+                  desktop
+                  hostname
+                  platform
+                  username
+                  stateVersion
+                  isInstall
+                  isISO
+                  isLaptop
+                  isLima
+                  isWorkstation
+                  ;
+              };
+              useGlobalPkgs = true;
+              useUserPackages = true;
+              backupFileExtension = "backup";
+              users.${username} = import ../home-manager;
+            };
+          }
+        ]
+        ++ inputs.nixpkgs.lib.optionals isISO [cd-dvd];
     };
 
   mkDarwin = {

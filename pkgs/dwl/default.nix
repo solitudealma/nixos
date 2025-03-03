@@ -1,6 +1,7 @@
 {
   lib,
   fetchFromGitea,
+  fetchFromGitHub,
   installShellFiles,
   libX11,
   libinput,
@@ -33,6 +34,10 @@
   # Deprecated options
   # Remove them before next version of either Nixpkgs or dwl itself
   conf ? null,
+  meson,
+  ninja,
+  cmake,
+  wlroots_0_17,
 }:
 # If we set withCustomConfigH, let's not forget configH
 assert withCustomConfigH -> (configH != null);
@@ -40,12 +45,20 @@ assert withCustomConfigH -> (configH != null);
     pname = "dwl";
     version = "0.7";
 
-    src = /home/solitudealma/dwl;
+    src = fetchFromGitHub {
+      owner = "DreamMaoMao";
+      repo = "plumewm";
+      rev = "aef9a14cf996e2e3bf2565eb1f2726bebe674bc1";
+      hash = "sha256-7ladqHpgEkgKsazRM3LPcE9p+XRhZeK7SqLHModfLvk=";
+    };
 
     nativeBuildInputs = [
       installShellFiles
       pkg-config
       wayland-scanner
+      meson
+      ninja
+      cmake
     ];
 
     buildInputs =
@@ -56,18 +69,13 @@ assert withCustomConfigH -> (configH != null);
         pixman
         wayland
         wayland-protocols
-        wlroots
+        wlroots_0_17
       ]
       ++ lib.optionals enableXWayland [
         libX11
         xcbutilwm
         xwayland
       ];
-
-    outputs = [
-      "out"
-      "man"
-    ];
 
     postPatch = let
       configFile =
@@ -76,31 +84,6 @@ assert withCustomConfigH -> (configH != null);
         else writeText "config.h" configH;
     in
       lib.optionalString withCustomConfigH "cp ${configFile} config.h";
-
-    makeFlags =
-      [
-        "PKG_CONFIG=${stdenv.cc.targetPrefix}pkg-config"
-        "WAYLAND_SCANNER=wayland-scanner"
-        "PREFIX=$(out)"
-        "MANDIR=$(man)/share/man"
-      ]
-      ++ lib.optionals enableXWayland [
-        ''XWAYLAND="-DXWAYLAND"''
-        ''XLIBS="xcb xcb-icccm"''
-      ];
-
-    strictDeps = true;
-
-    # required for whitespaces in makeFlags
-    __structuredAttrs = true;
-
-    passthru = {
-      tests.version = testers.testVersion {
-        package = finalAttrs.finalPackage;
-        # `dwl -v` emits its version string to stderr and returns 1
-        command = "dwl -v 2>&1; return 0";
-      };
-    };
 
     meta = {
       homepage = "https://codeberg.org/dwl/dwl";

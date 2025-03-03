@@ -5,7 +5,9 @@
   isInstall,
   username,
   ...
-}: {
+}: let
+  inherit (config._custom.globals) fonts;
+in {
   environment = {
     gnome.excludePackages = with pkgs; [
       baobab
@@ -65,12 +67,12 @@
             # color-scheme = "prefer-dark";
             cursor-size = mkInt32 20;
             cursor-theme = "Bibata-Modern-Ice";
-            document-font-name = "Maple Mono NF CN 12";
+            document-font-name = "${fonts.mono} 12";
             enable-hot-corners = false;
-            font-name = "Maple Mono NF CN 12";
+            font-name = "${fonts.mono} 12";
             gtk-theme = "Everforest-Dark";
             icon-theme = "Papirus-Light";
-            monospace-font-name = "Maple Mono NF CN 13";
+            monospace-font-name = "${fonts.mono} 13";
             show-battery-percentage = true;
             text-scaling-factor = mkDouble 1.0;
           };
@@ -141,7 +143,7 @@
           "org/gnome/desktop/wm/preferences" = {
             audible-bell = false;
             button-layout = "close,minimize,maximize";
-            titlebar-font = "Maple Mono NF CN 12";
+            titlebar-font = "${fonts.mono} 12";
           };
 
           "org/gnome/GWeather" = {
@@ -178,7 +180,7 @@
           };
 
           "org/gnome/TextEditor" = {
-            custom-font = "Maple Mono NF CN 13";
+            custom-font = "${fonts.mono} 13";
             highlight-current-line = true;
             indent-style = "space";
             show-line-numbers = true;

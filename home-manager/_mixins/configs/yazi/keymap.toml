@@ -1,6 +1,7 @@
 [manager]
 
 keymap = [
+
   # Spotting
   { on = "<Tab>", run = "spot", desc = "Spot hovered file" },
 
@@ -132,19 +133,6 @@ keymap = [
     "<C-z>",
   ], run = "suspend", desc = "Suspend the process" },
 
-  { on = [
-    "<Esc>",
-  ], run = "escape", desc = "Exit visual mode, clear selected, or cancel search" },
-  { on = [
-    "q",
-  ], run = "quit", desc = "Exit the process" },
-  { on = [
-    "<C-q>",
-  ], run = "close", desc = "Close the current tab, or quit if it is last tab" },
-  { on = [
-    "<C-z>",
-  ], run = "suspend", desc = "Suspend the process" },
-
   # Navigation
   { on = [
     "k",
@@ -171,10 +159,10 @@ keymap = [
 
   { on = [
     "b",
-  ], run = "arrow -9999", desc = "Move cursor begin lines" },
+  ], run = "arrow top", desc = "Move cursor begin lines" },
   { on = [
     "e",
-  ], run = "arrow 9999", desc = "Move cursor end lines" },
+  ], run = "arrow bot", desc = "Move cursor end lines" },
 
   { on = [
     "h",
@@ -324,6 +312,7 @@ keymap = [
     "N",
   ], run = "find_arrow --previous", desc = "Go to previous found file" },
 
+
   # Copy
   { on = [
     "c",
@@ -342,7 +331,9 @@ keymap = [
     "n",
   ], run = "copy name_without_ext", desc = "cp filename without ext" },
 
+
   # Sort
+  # Sorting
   { on = [
     "m",
     "M",
@@ -407,7 +398,6 @@ keymap = [
     "m",
     "r",
   ], run = "sort random --reverse=no", desc = "Sort randomly" },
-
   # Tabs
   { on = [
     "t",
@@ -448,6 +438,9 @@ keymap = [
     "<A-l>",
   ], run = "tab_switch 1 --relative", desc = "Switch to the next tab" },
 
+  # { on = [ "<A-->" ], run = "tab_swap -1", desc = "Swap the current tab with the previous tab" },
+  # { on = [ "<A-=>" ], run = "tab_swap 1",  desc = "Swap the current tab with the next tab" },
+
   # Tasks
   { on = [
     "w",
@@ -457,11 +450,7 @@ keymap = [
   { on = [
     "g",
     "w",
-  ], run = "cd ~/文档/WeChat_Data/home", desc = "Go to weixin" },
-  { on = [
-    "g",
-    "n",
-  ], run = "cd ~/_install", desc = "Go to _install" },
+  ], run = "cd ~/Documents/WeChat_Data/home", desc = "Go to weixin" },
   { on = [
     "g",
     "h",
@@ -477,35 +466,31 @@ keymap = [
   { on = [
     "g",
     "d",
-  ], run = "cd ~/down", desc = "Go to downloads" },
+  ], run = "cd ~/Downloads", desc = "Go to downloads" },
   { on = [
     "g",
-    "t",
-  ], run = "cd ~/tool/", desc = "Go to tool" },
+    "v",
+  ], run = "cd ~/Videos", desc = "Go to videos" },
   { on = [
     "g",
-    "o",
-  ], run = "cd ~/video", desc = "Go to video" },
+    "m",
+  ], run = "cd ~/Music", desc = "Go to musics" },
   { on = [
     "g",
     "y",
-  ], run = "cd ~/.config/yazi/", desc = "Go to video" },
+  ], run = "cd ~/.config/yazi/", desc = "Go to yazi config" },
   { on = [
     "g",
-    "i",
-  ], run = "cd ~/Images", desc = "Go to image" },
+    "p",
+  ], run = "cd ~/Pictures", desc = "Go to pictures" },
   { on = [
     "g",
     "r",
   ], run = "cd /", desc = "Go to /" },
   { on = [
     "g",
-    "j",
-  ], run = "cd /home/wrq/deskenv/dev", desc = "Go to dev" },
-  { on = [
-    "g",
-    "k",
-  ], run = "cd /home/wrq/deskenv/master", desc = "Go to master" },
+    "z",
+  ], run = "cd ~/Zero/nix-config", desc = "Go to nixos config" },
   { on = [
     "g",
     "<Space>",
@@ -722,7 +707,6 @@ keymap = [
 
 [help]
 
-
 keymap = [
   { on = [
     "<Esc>",
@@ -783,7 +767,23 @@ keymap = [
 
 ]
 
+
 [[manager.prepend_keymap]]
 on = ["c", "l"]
 run = ["plugin clipboard"]
 desc = "clip to clipboard"
+
+
+# [[manager.prepend_keymap]]
+# on  = [ "c","l" ]
+# run = ['''
+# 	shell --confirm 'for path in "$@"; do echo -en "file://${path}\n"; done | wl-copy -t text/uri-list; wl-paste | xclip -i -selection clipboard -rmlastnl -t text/uri-list'
+# ''' ]
+# desc = "clip to wayland clipboard"
+
+# [[manager.prepend_keymap]]
+# on  = [ "c","o" ]
+# run = ['''
+# 	shell --confirm 'for path in "$@"; do  echo -en "file://${path}\n"; done |  xclip -i -selection clipboard -rmlastnl -t text/uri-list'
+# ''' ]
+# desc = "clip to x11 clipboard"

@@ -33,14 +33,14 @@ in
       };
     };
 
-    sops = {
-      # sops-nix options: https://dl.thalheim.io/
-      secrets = {
-        syncthing_apikey = {};
-        syncthing_user = {};
-        syncthing_pass = {};
-      };
-    };
+    # sops = {
+    #   # sops-nix options: https://dl.thalheim.io/
+    #   secrets = {
+    #     syncthing_apikey = {};
+    #     syncthing_user = {};
+    #     syncthing_pass = {};
+    #   };
+    # };
 
     # Workaround for Failed to restart syncthingtray.service: Unit tray.target not found.
     # - https://github.com/nix-community/home-manager/issues/2064

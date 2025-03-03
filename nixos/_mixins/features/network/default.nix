@@ -1,6 +1,7 @@
 {
   config,
   hostname,
+  isLaptop,
   isWorkstation,
   lib,
   pkgs,
@@ -19,9 +20,9 @@
 
   # Per-host firewall configuration; mostly for Syncthing which is configured via Home Manager
   allowedTCPPorts = {
+    nixosvmtest = [22];
     laptop = [
       22000
-      53317
     ];
   };
   allowedUDPPorts = {
@@ -78,16 +79,17 @@ in {
     (
       lib.isBool config.networking.networkmanager.wifi.powersave
       && config.networking.networkmanager.wifi.powersave
+      && isLaptop
     )
     {
       wantedBy = ["multi-user.target"];
       path = [pkgs.iw];
       script = ''
-        iw dev wlan0 set power_save off
+        iw dev wlp0s20f3 set power_save off
       '';
     };
   # Workaround https://github.com/NixOS/nixpkgs/issues/180175
-  systemd.services.NetworkManager-wait-online.enable = false;
+  systemd.services.NetworkManager-wait-online.enable = lib.mkIf config.networking.networkmanager.enable false;
 
   users.users.${username}.extraGroups = lib.optionals config.networking.networkmanager.enable [
     "networkmanager"

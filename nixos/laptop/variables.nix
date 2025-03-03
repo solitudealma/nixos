@@ -1,6 +1,12 @@
-{lib, ...}: {
+{
+  lib,
+  pkgs,
+  ...
+}: {
   options._custom.globals = {
     fonts = {
+      package =
+        lib.mkPackageOption pkgs "maple-mono-NF-CN" {};
       mono = lib.mkOption {
         type = lib.types.str;
         default = "Maple Mono NF CN";

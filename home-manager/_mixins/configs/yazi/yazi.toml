@@ -10,7 +10,7 @@ show_symlink = true
 scrolloff = 0
 
 [preview]
-tab_size = 4
+tab_size = 2
 max_width = 600
 max_height = 900
 cache_dir = ""
@@ -21,13 +21,12 @@ ueberzug_offset = [0, 0, 0, 0]
 [opener]
 folder = [
   { run = 'nvim "$1"', block = true, desc = "neovim", for = "linux" },
-  { run = '''zsh -c "lazygit -p "$1""''', block = true, desc = "lazygit", for = "linux" },
+  { run = '''fish -c "lazygit -p "$1""''', block = true, desc = "lazygit", for = "linux" },
   { run = 'code  "$@"', orphan = true, desc = "vscode", for = "linux" },
-  { run = 'st -d "$@"', orphan = true, desc = "st", for = "linux" },
-  { run = 'basename "$@" | xargs -I {} tar --use-compress-program=pigz -cf ~/Downloads/{}.tar.gz {}', orphan = true, desc = "archive", for = "linux" },
-  { run = 'GDK_BACKEND=x11 thunar "$@"', orphan = true, desc = "thunar", for = "linux" },
-]
+  { run = 'basename "$@" | xargs -I {} tar --use-compress-program=pigz -cf ~/down/{}.tar.gz {}', orphan = true, desc = "archive", for = "linux" },
+  { run = 'GDK_BACKEND=x11 nemo "$@"', orphan = true, desc = "nemo", for = "linux" },
 
+]
 archive = [
   # { run = 'basename "$@" | xargs tar xf ', orphan = true, desc = "tar xf" , for = "linux" },
   # { run = 'basename "$@" | xargs tar xzf ', orphan = true, desc = "tar xzf" , for = "linux" },
@@ -40,33 +39,30 @@ text = [
   { run = 'nvim "$1"', block = true, desc = "neovim", for = "linux" },
   { run = 'code  "$@"', orphan = true, desc = "vscode", for = "linux" },
   { run = 'gedit "$@" ', block = true, orphan = true, desc = "gedit", for = "linux" },
+  # { run = 'nemo "$@"',orphan = true, desc = "nemo"  , for = "linux" },
   { run = 'zathura "$@"', orphan = true, desc = "zathura", for = "linux" },
 ]
-
 image = [
-  { run = 'imv "$@"', orphan = true, desc = "eog", for = "linux" },
+  { run = 'eog  "$@"', orphan = true, desc = "eog", for = "linux" },
   { run = 'feh "$@"', orphan = true, desc = "feh", for = "linux" },
 ]
-
 video = [
-  { run = 'mpv "$@"', orphan = true, desc = "mpv", for = "linux" },
-  { run = 'GDK_BACKEND=x11 thunar "$@"', orphan = true, desc = "thunar", for = "linux" },
+  { run = 'mpv "$@" ', orphan = true, desc = "mpv", for = "linux" },
+  { run = 'GDK_BACKEND=x11 nemo "$@"', orphan = true, desc = "nemo", for = "linux" },
+
 ]
-
-audio = [{ run = 'mpv "$@"', orphan = true, desc = "mpv", for = "linux" }]
-
-pdf = [{ run = 'zathura "$@"', orphan = true, desc = "zathura", for = "linux" }]
+audio = [{ run = 'mpv "$@" ', orphan = true, desc = "mpv", for = "linux" }]
 
 document = [
   { run = 'xdg-open "$@"', orphan = true, desc = "xdg-open", for = "linux" },
-  { run = 'zathura "$@"', orphan = true, desc = "zathura", for = "linux" },
-  { run = 'evince "$@"', orphan = true, desc = "evince", for = "linux" },
-  { run = 'GTK_IM_MODULE=fcitx5 foliate "$@"', orphan = true, desc = "foliate", for = "linux" },
+  { run = 'zathura "$@" ', orphan = true, desc = "zathura", for = "linux" },
+  { run = 'evince "$@" ', orphan = true, desc = "evince", for = "linux" },
+  { run = 'GTK_IM_MODULE=fcitx5 foliate "$@" ', orphan = true, desc = "foliate", for = "linux" },
 ]
 
 fallback = [
   { run = 'xdg-open "$@"', orphan = true, desc = "xdg-open", for = "linux" },
-  { run = 'GDK_BACKEND=x11 thunar "$@"', orphan = true, desc = "thunar", for = "linux" },
+  { run = 'GDK_BACKEND=x11 nemo "$@"', orphan = true, desc = "nemo", for = "linux" },
 ]
 
 [open]
@@ -119,7 +115,7 @@ rules = [
     "archive",
   ] },
   { mime = "application/pdf", use = [
-    "pdf",
+    "document",
   ] },
   { mime = "application/epub+zip", use = [
     "document",
@@ -132,7 +128,6 @@ rules = [
     "fallback",
   ] },
 ]
-
 
 [tasks]
 micro_workers = 5
@@ -191,3 +186,14 @@ run = "current-size"
 id = "current-size"
 name = "*/"
 run = "current-size"
+
+
+# fetchers = [
+# 	# Mimetype
+# 	{ id = "mime-ext", name = "*", run = "mime-ext", prio = "high" },
+# 	{ id = "git", name = "*", run = "git", prio = "normal" },
+# 	{ id = "git", name = "*/", run = "git", prio = "normal" },
+# 	{ id = "current-size", name = "*/", run = "current-size", prio = "normal" },
+# 	{ id = "current-size", name = "*", run = "current-size",prio = "normal" },
+# ]
+#

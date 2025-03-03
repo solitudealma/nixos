@@ -1,4 +1,5 @@
 {config, ...}: let
+  inherit (config._custom.globals) fonts;
   pngFiles = builtins.filter (file: builtins.match ".*\\.png" file != null) (
     builtins.attrNames (builtins.readDir ./icons)
   );
@@ -51,7 +52,7 @@ in {
       ];
       style = ''
         window {
-        	font-family: "Maple Mono NF CN";
+        	font-family: "${fonts.mono}";
         	font-size: 16pt;
         	color: #fff;
         	background-color: rgba(24, 27, 32, 0.2);

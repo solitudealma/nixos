@@ -24,9 +24,6 @@
       "rd.udev.log_level=3"
       "udev.log_priority=3"
     ];
-    plymouth = {
-      enable = true;
-    };
   };
 
   environment.etc = {
@@ -41,7 +38,10 @@
       ydotool
     ];
 
-  programs.dconf.enable = true;
+  programs = {
+    dconf.enable = true;
+    wshowkeys.enable = !(lib.elem desktop ["dwm" "awesome"]);
+  };
   services = {
     dbus.enable = true;
     usbmuxd.enable = true;

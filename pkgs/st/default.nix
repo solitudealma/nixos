@@ -11,6 +11,7 @@
   harfbuzz,
   gd,
   imlib2,
+  pcre2,
   ncurses,
   writeText,
   conf ? null,
@@ -27,8 +28,8 @@ stdenv.mkDerivation (finalAttrs: {
   src = fetchFromGitHub {
     owner = "DreamMaoMao";
     repo = "st-fl";
-    rev = "b586bb7d886b6f2efa8df202d6fb9dfaef2f0b9a";
-    hash = "sha256-AAcQColv+UnjPSo3HP71UtO+I6crHSWH8S/5eFc69n8=";
+    rev = "59261746cf8d8c6d27a98bcc6b258c26980a9df7";
+    hash = "sha256-sOqmf9YocBicBkQxE0CQT1zWCVNp7XpwlFQ2rjk9YnI=";
   };
 
   allowSubstitutes = false;
@@ -68,6 +69,7 @@ stdenv.mkDerivation (finalAttrs: {
       harfbuzz
       gd
       imlib2
+      pcre2
     ]
     ++ extraLibs;
 

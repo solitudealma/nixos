@@ -3,13 +3,13 @@ _: {
     ./blender
     ./celluloid
     ./dae
-    ./evolution
+    # ./evolution
     ./fcitx5
     ./games
-    ./graphics-production
+    # ./graphics-production
     ./localsend
     ./steam
-    ./thunderbird
+    # ./thunderbird
     ./utilities
     ./video-production
     ./web-browsers

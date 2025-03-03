@@ -1,9 +1,12 @@
 {
   config,
-  pkgs,
+  inputs,
   lib,
+  pkgs,
   ...
-}: {
+}: let
+  nvimPath = "${config.home.homeDirectory}/nvim";
+in {
   home = {
     packages = with pkgs; (
       [
@@ -19,7 +22,7 @@
       # -*- Data & Configuration Languages -*-#
       [
         #-- nix
-        nixd
+        inputs.nixd.packages.${pkgs.system}.nixd
         statix # Lints and suggestions for the nix programming language
         deadnix # Find and remove unused code in .nix source files
         alejandra # Nix Code Formatter
@@ -44,7 +47,7 @@
         marksman # language server for markdown
         glow # markdown previewer
         pandoc # document converter
-        unstable.hugo # static site generator
+        hugo # static site generator
 
         #-- sql
         sqlfluff
@@ -101,11 +104,11 @@
 
         #-- rust
         # we'd better use the rust-overlays for rust development
-        unstable.rustc
-        unstable.rust-analyzer
-        unstable.cargo # rust package manager
-        unstable.rustfmt
-        unstable.clippy # rust linter
+        rustc
+        rust-analyzer
+        cargo # rust package manager
+        rustfmt
+        clippy # rust linter
 
         #-- golang
         go
@@ -137,7 +140,7 @@
       ]
       #-*- Web Development -*-#
       ++ [
-        unstable.nodejs_22
+        nodePackages.nodejs
         nodePackages.typescript
         nodePackages.typescript-language-server
         # HTML/CSS/JSON/ESLint language servers extracted from vscode
@@ -153,7 +156,7 @@
         (
           if pkgs.stdenv.isDarwin
           then pkgs.emptyDirectory
-          else unstable.akkuPackages.scheme-langserver
+          else akkuPackages.scheme-langserver
         )
       ]
       ++ [
@@ -173,12 +176,6 @@
       v = "nvim";
       vdiff = "nvim -d";
     };
-  };
-
-  nixpkgs.config = {
-    programs.npm.npmrc = ''
-      prefix = ''${HOME}/.npm-global
-    '';
   };
 
   programs.neovim = {
@@ -204,12 +201,12 @@
       ":"
       "${lib.makeSearchPathOutput "dev" "lib/pkgconfig" [stdenv.cc.cc zlib]}"
     ];
-    package = pkgs.unstable.neovim-unwrapped;
+    package = pkgs.neovim-unwrapped;
     viAlias = true;
     vimAlias = true;
     withNodeJs = true;
     withPython3 = true;
   };
 
-  xdg.configFile."nvim".source = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/nvim";
+  xdg.configFile."nvim".source = config.lib.file.mkOutOfStoreSymlink nvimPath;
 }

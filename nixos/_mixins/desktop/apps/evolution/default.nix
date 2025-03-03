@@ -82,11 +82,11 @@ in {
         };
       }
     ];
-    evolution.enable = isInstall;
+    evolution.enable = false; # isInstall;
   };
 
   # Enable services to round out the desktop
   services = {
-    gnome.evolution-data-server.enable = lib.mkForce isInstall;
+    gnome.evolution-data-server.enable = lib.mkForce false; # isInstall;
   };
 }

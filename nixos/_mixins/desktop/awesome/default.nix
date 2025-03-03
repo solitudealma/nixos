@@ -7,7 +7,8 @@
     displayManager.defaultSession = "none+awesome";
     xserver = {
       displayManager = {
-        lightdm.enable = true;
+        defaultSession = "none+awesome";
+        startx.enable = true;
       };
       enable = true;
       windowManager.awesome = {
@@ -18,6 +19,7 @@
           luaposix
           luarocks # is the package manager for Lua modules
           luadbi-mysql # Database abstraction layer
+          dkjson
         ];
       };
     };

@@ -11,12 +11,9 @@ in {
   environment.systemPackages = with pkgs;
     lib.optionals isInstall [
       google-chrome
-      microsoft-edge
     ]
     ++ lib.optionals (builtins.elem username installFor && isInstall) [
-      # brave
       chromium
-      wavebox
     ];
 
   # TODO: Configure Microsoft Edge policy
@@ -103,7 +100,6 @@ in {
     # - https://mozilla.github.io/policy-templates/
     firefox = {
       enable = true;
-      package = pkgs.zen-browser-bin;
       languagePacks = [
         "en-US"
       ];

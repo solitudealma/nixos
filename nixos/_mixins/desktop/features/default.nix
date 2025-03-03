@@ -6,7 +6,6 @@ _: {
     ./flatpak
     ./fonts
     ./pipewire
-    ./plymouth
     ./print
     ./scan
     ./v4l2loopback

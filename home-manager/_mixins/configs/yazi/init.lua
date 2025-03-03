@@ -7,17 +7,18 @@ require("keyjump"):setup({
     { on = { "c" }, run = "cd ~/.config",                    desc = "Go to config" },
     { on = { "u" }, run = "cd /media/UUI/",                  desc = "Go to Mobile disk" },
     { on = { "d" }, run = "cd ~/Downloads",                  desc = "Go to downloads" },
-    { on = { "v" }, run = "cd ~/Videos",                     desc = "Go to video" },
-    { on = { "y" }, run = "cd ~/.config/yazi/",              desc = "Go to video" },
-    { on = { "p" }, run = "cd ~/Pictures",                   desc = "Go to image" },
+    { on = { "v" }, run = "cd ~/Videos",                     desc = "Go to videos" },
+    { on = { "m" }, run = "cd ~/Music",                      desc = "Go to musics" },
+    { on = { "y" }, run = "cd ~/.config/yazi/",              desc = "Go to yazi config" },
+    { on = { "p" }, run = "cd ~/Pictures",                   desc = "Go to pictures" },
     { on = { "r" }, run = "cd /",                            desc = "Go to /" },
-    { on = { "z" }, run = "cd ~/Zero/nix-config",            desc = "Go to NixOS config" },
-  },
+    { on = { "z" }, run = "cd ~/Zero/nix-config",            desc = "Go to nixos config" },
+  }
 })
 
 require("easyjump"):setup({
   icon_fg = "#fda1a1",
-  first_key_fg = "#df6249",
+  first_key_fg = "#df6249"
 })
 
 require("searchjump"):setup({
@@ -32,34 +33,37 @@ require("searchjump"):setup({
   show_search_in_statusbar = false,
   auto_exit_when_unmatch = false,
   enable_capital_lable = true,
-  search_patterns = { "hell[dk]d", "%d+.1080p", "第%d+集", "第%d+话", "%.E%d+", "S%d+E%d+" },
+  search_patterns = ({ "hell[dk]d", "%d+.1080p", "第%d+集", "第%d+话", "%.E%d+", "S%d+E%d+", })
 })
 
 require("status-owner"):setup({
-  color = "#d98a8a",
+  color = "#d98a8a"
 })
 
 require("status-mtime"):setup({
-  color = "#ba884a",
+  color = "#ba884a"
 })
 
 require("header-hidden"):setup({
-  color = "#88c2f4",
+  color = "#88c2f4"
 })
 
 require("header-host"):setup({
-  color = "#8bca4b",
+  color = "#8bca4b"
 })
+
 
 require("fg"):setup({
   default_action = "menu", -- nvim, jump
 })
 
+
 require("cd-last"):setup()
+
 
 require("git"):setup()
 require("current-size"):setup({
-  folder_size_ignore = { "~", "/", "/home" },
+  folder_size_ignore = { "~", "/", "/nix/store", "/home" },
 })
 
 require("full-border"):setup()
@@ -72,7 +76,6 @@ require("autosort"):setup()
 -- 	sync_yanked = true,
 -- })
 
-
 require("mime-ext"):setup {
   -- Expand the existing filename database (lowercase), for example:
   -- with_files = {
@@ -81,7 +84,7 @@ require("mime-ext"):setup {
   -- },
 
   -- Expand the existing extension database (lowercase), for example:
-  with_exts = require("mime-preview"):get_mime_data(),
+  -- with_exts = require("mime-preview"):get_mime_data(),
 
   -- If the mime-type is not in both filename and extension databases,
   -- then fallback to Yazi's preset `mime` plugin, which uses `file(1)`

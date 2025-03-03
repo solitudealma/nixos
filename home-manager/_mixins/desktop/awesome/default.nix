@@ -7,15 +7,17 @@
     ./picom
   ];
   home.packages = with pkgs; [
+    feh
     xclip
     material-icons
     flameshot
     playerctl
+    pulsemixer
     pamixer
+    xdg-utils
+    xclip
+    sct
     imagemagick
-    ncmpcpp
-    mpd
-    mpdris2
     neofetch
     brightnessctl
     inotify-tools
@@ -26,5 +28,5 @@
     redshift
     wezterm
   ];
-  xdg.configFile."awesome".source = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/awesomewm";
+  xdg.configFile."awesome".source = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/awesome";
 }

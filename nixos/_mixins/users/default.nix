@@ -22,6 +22,6 @@
     openssh.authorizedKeys.keys = [
     ];
     packages = [pkgs.home-manager];
-    shell = pkgs.unstable.zsh;
+    shell = pkgs.fish;
   };
 }

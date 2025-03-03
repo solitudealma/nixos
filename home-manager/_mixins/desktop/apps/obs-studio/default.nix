@@ -1,10 +1,8 @@
 {
   config,
   hostname,
-  inputs,
   lib,
   pkgs,
-  platform,
   ...
 }: let
   installOn = [
@@ -23,7 +21,6 @@ in
         };
       };
       packages = with pkgs; [
-        inputs.stream-sprout.packages.${platform}.default
         obs-cli
         obs-cmd
       ];

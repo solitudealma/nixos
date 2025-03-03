@@ -1,9 +1,12 @@
 {
+  config,
   hostname,
+  inputs,
   lib,
   pkgs,
   ...
 }: let
+  inherit (config._custom.globals) fonts;
   passwordPrompt =
     if hostname == "tanis"
     then "󰈷"
@@ -63,7 +66,7 @@ in {
             text = ''cmd[update:18000000] echo "<b> "$(date +'%A, %-d %B %Y')" </b>"'';
 
             font_size = 24;
-            font_family = "Maple Mono NF CN 10";
+            font_family = "${fonts.mono} 10";
 
             position = "0, -120";
             halign = "center";
@@ -100,7 +103,7 @@ in {
           ignore_dbus_inhibit = false;
           lock_cmd = "${lib.getExe pkgs.hyprlock}";
           before_sleep_cmd = "${lib.getExe pkgs.hyprlock}";
-          after_sleep_cmd = "hyprctl dispatch dpms on";
+          after_sleep_cmd = "${lib.getExe pkgs.niri-unstable} msg output eDP-1 off";
         };
         listener = [
           {
@@ -109,14 +112,15 @@ in {
           }
           {
             timeout = 605;
-            on-timeout = "hyprctl dispatch dpms off";
-            on-resume = "hyprctl dispatch dpms on";
+            on-timeout = "${lib.getExe pkgs.niri-unstable} msg output eDP-1 off";
+            on-resume = "${lib.getExe pkgs.niri-unstable} msg output eDP-1 on";
           }
         ];
       };
     };
   };
   systemd.user.services = {
+    hypridle.Unit.After = lib.mkForce "graphical-session.target";
     sway-audio-idle-inhibit = {
       Unit = {
         Description = "Prevents swayidle from sleeping while any application is outputting or receiving audio.";
@@ -126,9 +130,10 @@ in {
       };
       Service = {
         PassEnvironment = "PATH";
-        ExecStart = "${pkgs.sway-audio-idle-inhibit}/bin/sway-audio-idle-inhibit";
+        ExecStart = "${lib.getExe pkgs.sway-audio-idle-inhibit}";
         Type = "simple";
       };
+      Install.WantedBy = ["hypridle.service"];
     };
   };
 }

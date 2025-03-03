@@ -17,13 +17,9 @@ in
     home = {
       packages = with pkgs;
         [
-          (nerdfonts.override {
-            fonts = [
-              "FiraCode"
-              "JetBrainsMono"
-              "NerdFontsSymbolsOnly"
-            ];
-          })
+          nerd-fonts.jetbrains-mono
+          nerd-fonts.fira-code
+          nerd-fonts.symbols-only
           fira
           font-awesome
           liberation_ttf
@@ -32,7 +28,7 @@ in
           source-serif
           symbola
           work-sans
-          maple-mono-NF-CN
+          fonts.package
           material-icons
           # nur.repos.mgord9518.windows-fonts
           wqy_microhei

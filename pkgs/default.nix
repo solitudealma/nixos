@@ -2,15 +2,18 @@
 # You can build them using 'nix build .#example'
 pkgs: rec {
   dwl = pkgs.callPackage ./dwl {};
+  everforest-gtk-kvantum = pkgs.callPackage ./everforest-gtk-kvantum {};
   everforest-gtk-theme = pkgs.callPackage ./everforest-gtk-theme {};
   genymotion = pkgs.callPackage ./genymotion {};
   st = pkgs.callPackage ./st {};
+  cosmic-ext-alt = pkgs.callPackage ./cosmic-ext-alt {};
 
   # Local packages being prepped for upstreaming
   davinci-resolve = pkgs.callPackage ./davinci-resolve {};
   defold = pkgs.callPackage ./defold {};
   defold-bob = pkgs.callPackage ./defold-bob {};
   defold-gdc = pkgs.callPackage ./defold-gdc {};
+  dwm = pkgs.callPackage ./dwm {};
   heynote = pkgs.callPackage ./heynote {};
   imfile = pkgs.callPackage ./imfile {};
   jan = pkgs.callPackage ./jan {};
@@ -18,12 +21,13 @@ pkgs: rec {
   nerd-font-patcher = pkgs.callPackage ./nerd-font-patcher {};
   ollama = pkgs.callPackage ./ollama {};
   open-webui = pkgs.callPackage ./open-webui {};
+  picom = pkgs.callPackage ./picom {};
   station = pkgs.callPackage ./station {};
+  wshowkeys = pkgs.callPackage ./wshowkeys {};
 
   # Local packages to prevent unintended upgrades or carrying patches
   hyprpicker = pkgs.callPackage ./hyprpicker {};
   owncast = pkgs.callPackage ./owncast {};
-  # yazi = pkgs.callPackage ./yazi {};
 
   obs-aitum-multistream = pkgs.qt6Packages.callPackage ./obs-plugins/obs-aitum-multistream.nix {};
   obs-advanced-masks = pkgs.callPackage ./obs-plugins/obs-advanced-masks.nix {};
@@ -73,6 +77,7 @@ pkgs: rec {
 
   # Non-redistributable packages
   cider = pkgs.callPackage ./cider {};
+  EdgyArc = pkgs.callPackage ./EdgyArc {};
   maa-debugger = pkgs.python3Packages.callPackage ./maa-debugger {};
   maaframework = pkgs.callPackage ./maaframework {};
   oh-my-rime = pkgs.callPackage ./oh-my-rime {};
@@ -87,4 +92,10 @@ pkgs: rec {
     pname = "zen-browser-bin";
     libName = "zen";
   };
+
+  mpv-leader = pkgs.callPackage ./mpv-plugins/leader.nix {};
+  mpv-M-x = pkgs.callPackage ./mpv-plugins/M-x.nix {};
+  mpv-M-x-rofi = pkgs.callPackage ./mpv-plugins/M-x-rofi.nix {};
+  mpv-recent = pkgs.callPackage ./mpv-plugins/recent.nix {};
+  mpv-handler = pkgs.callPackage ./mpv-handler {};
 }

@@ -18,7 +18,7 @@ in {
     shellAliases = {
       caddy-log = "journalctl _SYSTEMD_UNIT=caddy.service";
     };
-    systemPackages = with pkgs; [custom-caddy];
+    # systemPackages = with pkgs; [custom-caddy];
   };
   services = {
     caddy = {
@@ -32,7 +32,7 @@ in {
           }
         }
       '';
-      package = pkgs.custom-caddy;
+      # package = pkgs.custom-caddy;
       # Reverse proxy syncthing; which is configured/enabled via Home Manager
       virtualHosts."${hostname}.${tailNet}" =
         lib.mkIf config.services.tailscale.enable

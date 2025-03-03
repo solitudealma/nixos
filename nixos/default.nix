@@ -16,11 +16,11 @@
   imports =
     [
       inputs.chaotic.nixosModules.default
-      inputs.determinate.nixosModules.default
       inputs.disko.nixosModules.disko
+      inputs.grub2-themes.nixosModules.default
       inputs.nix-flatpak.nixosModules.nix-flatpak
       inputs.nix-index-database.nixosModules.nix-index
-      inputs.sops-nix.nixosModules.sops
+      # inputs.sops-nix.nixosModules.sops
       (modulesPath + "/installer/scan/not-detected.nix")
       ./${hostname}
       ./_mixins/desktop
@@ -46,19 +46,14 @@
         devices = ["nodev"];
         efiSupport = true;
         enable = true;
-        theme = lib.mkIf isWorkstation (pkgs.stdenv.mkDerivation {
-          pname = "Grub-Themes-Arknights_Theresa";
-          version = "0.1";
-          src = pkgs.fetchFromGitHub {
-            owner = "Shelton786";
-            repo = "Grub-Themes-Arknights_Theresa";
-            rev = "467eb5222b7a2136548fe018637ff2d4162446a4";
-            hash = "sha256-z1a2y4mPpMJTazR6Gq8g5iRDAEk7eepAWDloT4/+FJI=";
-          };
-          installPhase = "cp -r Arknights_Theresa $out";
-        });
         # gfxmodeEfi = "1024x768"; # <- 引导界面分辨率
         useOSProber = true;
+      };
+      grub2-theme = {
+        enable = true;
+        theme = "stylish";
+        footer = true;
+        customResolution = "1920x1080"; # Optional: Set a custom resolution
       };
       timeout = 3;
     };
@@ -75,7 +70,7 @@
     defaultPackages = with pkgs;
       lib.mkForce [
         coreutils-full
-        unstable.neovim-unwrapped
+        neovim-unwrapped
       ];
     systemPackages = with pkgs;
       [
@@ -83,20 +78,18 @@
         nix-output-monitor
       ]
       ++ lib.optionals isInstall [
-        inputs.fh.packages.${platform}.default
         inputs.nixos-needsreboot.packages.${platform}.default
         nvd
         nvme-cli
         rsync
         smartmontools
-        sops
+        # sops
       ];
 
     variables = {
       EDITOR = "nvim";
       SYSTEMD_EDITOR = "nvim";
       VISUAL = "nvim";
-      MOZ_USE_XINPUT2 = "1";
     };
   };
 
@@ -105,6 +98,7 @@
   in {
     # Opinionated: disable channels
     channel.enable = false;
+    package = pkgs.nixVersions.latest;
     settings = {
       auto-optimise-store = true;
       builders-use-substitutes = true;
@@ -113,31 +107,35 @@
       flake-registry = "";
       keep-outputs = true;
       keep-derivations = true;
+      max-jobs = "auto";
       # Workaround for https://github.com/NixOS/nix/issues/9574
       nix-path = config.nix.nixPath;
-      substituters =
-        (map (n: "https://${n}.cachix.org") [
+      extra-trusted-substituters =
+        map (n: "https://${n}.cachix.org") [
           "chaotic-nyx"
+          "cosmic"
           "hyprland"
           "niri"
           "nix-community"
           "nur-pkgs"
-        ])
+          "yazi"
+        ]
         ++ [
-          "https://mirror.sjtu.edu.cn/nix-channels/store" # SJTU - 上海交通大学 Mirror
-          "https://mirrors.ustc.edu.cn/nix-channels/store" # USTC - 中国科学技术大学 Mirror
           "https://cache.nixos.org"
           "https://cache.garnix.io"
+          "https://mirror.sjtu.edu.cn/nix-channels/store" # SJTU - 上海交通大学 Mirror
+          "https://mirrors.ustc.edu.cn/nix-channels/store" # USTC - 中国科学技术大学 Mirror
         ];
-      extra-substituters = [];
       extra-trusted-public-keys = [
         "cache.garnix.io:CTFPyKSLcx5RMJKfLo5EEPUObbA78b0YQ2DTCJXqr9g="
         "cache.nixos.org-1:6NCHdD59X431o0gWypbMrAURkbJ16ZPMQFGspcDShjY="
         "chaotic-nyx.cachix.org-1:HfnXSw4pj95iI/n17rIDy40agHj12WfF+Gqk6SonIT8="
+        "cosmic.cachix.org-1:Dya9IyXD4xdBehWjrkPv6rtxpmMdRel02smYzA85dPE="
         "niri.cachix.org-1:Wv0OmO7PsuocRKzfDoJ3mulSl7Z6oezYhGhR+3W2964="
         "hyprland.cachix.org-1:a7pgxzMz7+chwVL3/pzj6jIBMioiJM7ypFP8PwtkuGc="
         "nix-community.cachix.org-1:mB9FSh9qf2dCimDSUo8Zy7bkq5CX+/rkCWyvRCYg3Fs="
         "nur-pkgs.cachix.org-1:PAvPHVwmEBklQPwyNZfy4VQqQjzVIaFOkYYnmnKco78="
+        "yazi.cachix.org-1:Dcdz63NZKfvUCbDGngQDAZq6kOroIrFoyO064uvLh8k="
       ];
       trusted-users = [
         "root"
@@ -159,9 +157,11 @@
     };
     overlays = [
       # Add overlays exported from other flakes:
-      inputs.nix-alien.overlays.default
       inputs.niri.overlays.niri
+      inputs.nix-vscode-extensions.overlays.default
       inputs.nur.overlays.default
+      inputs.nur-xddxdd.overlays.inSubTree-pinnedNixpkgs
+      inputs.yazi.overlays.default
 
       # Add overlays your own flake exports (from overlays and pkgs dir):
       outputs.overlays.additions
@@ -173,6 +173,12 @@
 
   programs = {
     command-not-found.enable = false;
+    fish = {
+      enable = true;
+      shellAliases = {
+        nano = "micro";
+      };
+    };
     nano.enable = lib.mkDefault false;
     nh = {
       clean = {
@@ -205,12 +211,6 @@
         webp-pixbuf-loader
       ];
     };
-    zsh = {
-      enable = true;
-      shellAliases = {
-        nano = "nvim";
-      };
-    };
   };
 
   services = {
@@ -225,17 +225,17 @@
     # smartd.enable = isInstall; conflicting with earlyoom
   };
 
-  sops = lib.mkIf isInstall {
-    age = {
-      keyFile = "/home/${username}/.config/sops/age/keys.txt";
-      generateKey = false;
-    };
-    defaultSopsFile = ../secrets/secrets.yaml;
-    # sops-nix options: https://dl.thalheim.io/
-    secrets = {
-      test-key = {};
-    };
-  };
+  # sops = lib.mkIf isInstall {
+  #   age = {
+  #     keyFile = "/home/${username}/.config/sops/age/keys.txt";
+  #     generateKey = false;
+  #   };
+  #   defaultSopsFile = ../secrets/secrets.yaml;
+  #   # sops-nix options: https://dl.thalheim.io/
+  #   secrets = {
+  #     test-key = {};
+  #   };
+  # };
 
   # Create symlink to /bin/bash
   # - https://github.com/lima-vm/lima/issues/2110

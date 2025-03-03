@@ -5,7 +5,9 @@
   username,
   ...
 }: let
-  installFor = ["solitudealma"];
+  installFor = [
+    "solitudealma"
+  ];
   inherit (pkgs.stdenv) isLinux;
 in
   lib.mkIf (lib.elem username installFor && isLinux) {

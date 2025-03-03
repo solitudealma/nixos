@@ -1,10 +1,7 @@
 {
-  inputs,
   isInstall,
   isWorkstation,
   lib,
-  pkgs,
-  platform,
   username,
   ...
 }: let

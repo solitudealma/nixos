@@ -1,4 +1,5 @@
 {
+  config,
   hostname,
   inputs,
   lib,
@@ -6,289 +7,10 @@
   username,
   ...
 }: let
+  inherit (config._custom.globals) fonts;
   envs = (import ./envs.nix {}).${hostname};
   monitors = (import ./monitors.nix {inherit username;}).${hostname};
   windowrules = (import ./windowrules.nix {}).${hostname};
-  hyprActivity = pkgs.writeShellApplication {
-    name = "hypr-activity";
-    runtimeInputs = with pkgs; [
-      coreutils-full
-      gnugrep
-      gnused
-      obs-cmd
-      procps
-    ];
-    text = ''
-      set +e  # Disable errexit
-      set +u  # Disable nounset
-      HOSTNAME=$(hostname -s)
-
-      function app_is_running() {
-          local CLASS="$1"
-          if hyprctl clients | grep "$CLASS" &>/dev/null; then
-              return 0
-          fi
-          return 1
-      }
-
-      function wait_for_app() {
-          local COUNT=0
-          local SLEEP=1
-          local LIMIT=5
-          local CLASS="$1"
-          echo " - Waiting for $CLASS..."
-          while ! app_is_running "$CLASS"; do
-              sleep "$SLEEP"
-              ((COUNT++))
-              if [ "$COUNT" -ge "$LIMIT" ]; then
-                  echo " - Failed to find $CLASS"
-                  break
-              fi
-          done
-      }
-
-      function start_app() {
-          local APP="$1"
-          local WORKSPACE="$2"
-          local CLASS="$3"
-          if ! app_is_running "$CLASS"; then
-              echo -n " - Starting $APP on workspace $WORKSPACE: "
-              hyprctl dispatch exec "[workspace $WORKSPACE silent]" "$APP"
-              if [ "$APP" == "audacity" ]; then
-                  sleep 5
-              fi
-              wait_for_app "$CLASS"
-          else
-              echo " - $APP is already running"
-          fi
-          echo -n " - Moving $CLASS to $WORKSPACE: "
-          hyprctl dispatch movetoworkspacesilent "$WORKSPACE,$CLASS"
-          hyprctl dispatch movetoworkspacesilent "$WORKSPACE,$APP" &>/dev/null
-          if [ "$APP" == "gitkraken" ]; then
-              hyprctl dispatch movetoworkspacesilent "$WORKSPACE,GitKraken" &>/dev/null
-          fi
-      }
-
-      function activity_gsd() {
-          start_app brave 1 "class: brave-browser"
-          start_app wavebox 2 "class: wavebox"
-          start_app discord 2 " - Discord"
-          start_app telegram-desktop 3 "initialTitle: Telegram"
-          start_app fractal 3 "class: org.gnome.Fractal"
-          start_app halloy 3 "class: org.squidowl.halloy"
-          start_app code 4 "initialTitle: Visual Studio Code"
-          start_app "gitkraken --no-show-splash-screen" 4 "title: GitKraken Desktop"
-          start_app kitty 5 "class: kitty"
-          #start_app boxbuddy-rs 6 "class: io.github.dvlv.boxbuddyrs"
-          #start_app pods 6 "class: com.github.marhkb.Pods"
-          if [ "$HOSTNAME" == "phasma" ] || [ "$HOSTNAME" == "vader" ]; then
-              start_app "obs --disable-shutdown-check --collection 'VirtualCam' --profile 'VirtualCam' --scene 'VirtualCam-DetSys' --startvirtualcam" 7 "class: com.obsproject.Studio"
-          fi
-          start_app cider 8 "class: Cider"
-          firefox -CreateProfile meet-detsys
-          start_app "firefox \
-            -P meet-detsys \
-            -no-remote \
-            --new-window https://meet.google.com" 9 "title: Google Meet - Mozilla Firefox"
-          start_app heynote  9 "class: Heynote"
-          hyprctl dispatch forcerendererreload
-      }
-
-      function activity_linuxmatters() {
-          start_app audacity 9 "class: audacity"
-          firefox -CreateProfile linuxmatters-stage
-          start_app "firefox -P linuxmatters-stage -no-remote --new-window https://github.com/restfulmedia/linuxmatters_backstage" 9 "title: restfulmedia/linuxmatters_backstage"
-          if [ "$HOSTNAME" == "phasma" ] || [ "$HOSTNAME" == "vader" ]; then
-              start_app "obs --disable-shutdown-check --collection VirtualCam --profile VirtualCam --scene VirtualCam-LinuxMatters --startvirtualcam" 9 "class: com.obsproject.Studio"
-          fi
-          hyprctl dispatch workspace 9 &>/dev/null
-          firefox -CreateProfile linuxmatters-studio
-          start_app "firefox \
-              -P linuxmatters-studio \
-              -no-remote \
-              --new-window https://talky.io/linux-matters-studio" 7 "title: Talky — Mozilla Firefox"
-          start_app telegram-desktop 7 "initialTitle: Telegram"
-          start_app "nautilus -w $HOME/Audio" 7 "title: Audio"
-          hyprctl dispatch workspace 7 &>/dev/null
-          hyprctl dispatch forcerendererreload
-      }
-
-      function activity_wimpysworld() {
-          firefox -CreateProfile wimpysworld-studio
-          start_app "firefox \
-              -P wimpysworld-studio \
-              -no-remote \
-              --new-window https://dashboard.twitch.tv/u/wimpysworld/stream-manager \
-              --new-tab https://streamelements.com \
-              --new-tab https://botrix.live" 9 "title: Twitch — Mozilla Firefox"
-          start_app "obs --disable-shutdown-check --collection 'Wimpys World' --profile Dev-Local --scene Collage" 7 "class: com.obsproject.Studio"
-          start_app chatterino 7 "chatterino"
-          start_app discord 9 " - Discord"
-          start_app code 10 "initialTitle: Visual Studio Code"
-          start_app gitkraken 10 "title: GitKraken Desktop"
-          start_app kitty 10 "class: kitty"
-          firefox -CreateProfile wimpysworld-stage
-          start_app "firefox \
-              -P wimpysworld-stage \
-              -no-remote \
-              --new-window https://wimpysworld.com
-              --new-tab https://github.com/wimpysworld" 10 "title: Wimpy's World — Mozilla Firefox"
-          hyprctl dispatch forcerendererreload
-      }
-
-      function activity_8bitversus() {
-          firefox -CreateProfile 8bitversus-studio
-          start_app "firefox \
-            -P 8bitversus-studio \
-            -no-remote \
-            --new-window https://dashboard.twitch.tv/u/8bitversus/stream-manager" 9 "title: Twitch — Mozilla Firefox"
-          start_app "obs --disable-shutdown-check --collection 8-bit-VS --profile 8-bit-VS-Local --scene Hosts" 7 "class: com.obsproject.Studio"
-          start_app chatterino 7 "chatterino"
-          start_app discord 9 " - Discord"
-          hyprctl dispatch forcerendererreload
-      }
-
-      function activity_clear() {
-          if pidof -q obs; then
-              obs-cmd virtual-camera stop
-          fi
-          sleep 0.25
-          hyprctl clients -j | jq -r ".[].address" | xargs -I {} hyprctl dispatch closewindow address:{}
-          sleep 0.75
-          hyprctl dispatch workspace 1 &>/dev/null
-      }
-
-      OPT="help"
-      if [ -n "$1" ]; then
-          OPT="$1"
-      fi
-
-      case "$OPT" in
-          8bitversus) activity_8bitversus;;
-          clear) activity_clear;;
-          gsd) activity_gsd;;
-          linuxmatters) activity_linuxmatters;;
-          wimpysworld) activity_wimpysworld;;
-          *) echo "Usage: $(basename "$0") {clear|gsd|8bitversus|linuxmatters|wimpysworld}";
-            exit 1;;
-      esac
-    '';
-  };
-  hyprActivityMenu = pkgs.writeShellApplication {
-    name = "hypr-activity-menu";
-    runtimeInputs = with pkgs; [
-      fuzzel
-      notify-desktop
-    ];
-    text = ''
-      appname="hypr-sessionmenu"
-      gsd="💩 Get Shit Done"
-      record_linuxmatters="️🎙️ Record Linux Matters"
-      stream_wimpysworld="📹 Stream Wimpys's World"
-      stream_8bitversus="️🕹️ Stream 8-bit VS"
-      clear="🛑 Close Everything"
-      selected=$(
-        echo -e "$gsd\n$record_linuxmatters\n$stream_wimpysworld\n$stream_8bitversus\n$clear" |
-        fuzzel --dmenu --prompt "󱑞 " --lines 5)
-      case $selected in
-        "$clear")
-          notify-desktop "$clear" "Whelp! Here comes the desktop Thanos snap!" --app-name="$appname"
-          hypr-activity clear
-          ;;
-        "$gsd")
-          notify-desktop "$gsd" "Time to knuckle down. Here's comes the default session." --app-name="$appname"
-          hypr-activity gsd
-          notify-desktop "💩 Session is ready" "The desktop session is all set and ready to go." --app-name="$appname"
-          ;;
-        "$record_linuxmatters")
-          notify-desktop "$record_linuxmatters" "Get some Yerba Mate and clear your throat. Time to chat with Alan and Mark." --app-name="$appname"
-          hypr-activity linuxmatters
-          notify-desktop "🎙️ Session is ready" "Podcast studio session is initialised." --app-name="$appname"
-          ;;
-        "$stream_wimpysworld")
-          notify-desktop "$stream_wimpysworld" "Lights. Camera. Action. Setting up the session to stream to Wimpy's World." --app-name="$appname"
-          hypr-activity wimpysworld
-          notify-desktop "📹 Session is ready" "Streaming session is engaged and ready to go live." --app-name="$appname"
-          ;;
-        "$stream_8bitversus")
-          notify-desktop "$stream_8bitversus" "Two grown men reignite the ultimate playground fight of their pasts: which is better, the Commodore 64 or ZX Spectrum?" --app-name="$appname"
-          hypr-activity 8bitversus
-          notify-desktop "🕹️ Session is ready" "Dust of your cassette tapes, retro-gaming streaming is ready." --app-name="$appname"
-          ;;
-      esac
-    '';
-  };
-  hyprSession = pkgs.writeShellApplication {
-    name = "hypr-session";
-    runtimeInputs = with pkgs; [
-      bluez
-      coreutils-full
-      gnused
-      playerctl
-      procps
-    ];
-    text = ''
-      set +e  # Disable errexit
-      set +u  # Disable nounset
-      HOSTNAME=$(hostname -s)
-
-      function bluetooth_devices() {
-          case "$1" in
-              connect|disconnect)
-                  if [ "$HOSTNAME" == "phasma" ]; then
-                      bluetoothctl "$1" E4:50:EB:7D:86:22
-                  fi
-                  ;;
-          esac
-      }
-
-      function session_start() {
-          # Restart the desktop portal services in the correct order
-          for ACTION in stop start; do
-            for PORTAL in xdg-desktop-portal-hyprland xdg-desktop-portal-gtk xdg-desktop-portal; do
-                systemctl --user "$ACTION" "$PORTAL"
-            done;
-          done
-
-          bluetooth_devices connect
-          sleep 3.0
-          systemctl --user restart maestral-gui
-          # if ! pidof -q waybar; then
-          #   systemctl --user restart waybar
-          # fi
-      }
-
-      function session_stop() {
-          playerctl --all-players pause
-          hypr-activity clear
-          pkill trayscale
-      }
-
-      OPT="help"
-      if [ -n "$1" ]; then
-          OPT="$1"
-      fi
-
-      case "$OPT" in
-          start) session_start;;
-          lock)
-            pkill wlogout
-            sleep 0.5
-            hyprlock --immediate;;
-          logout)
-            session_stop
-            hyprctl dispatch exit;;
-          reboot)
-            session_stop
-            systemctl reboot;;
-          shutdown)
-            session_stop
-            systemctl poweroff;;
-          *) echo "Usage: $(basename "$0") {start|lock|logout|reboot|shutdown}";
-            exit 1;;
-      esac
-    '';
-  };
 in {
   home = {
     file = {
@@ -300,34 +22,37 @@ in {
 
     packages =
       (with pkgs; [
-        hyprActivity
-        hyprActivityMenu
-        hyprSession
-      ])
+        ])
       ++ (with inputs.hyprland-contrib.packages.${pkgs.system}; [
         hdrop
         hyprprop
         scratchpad
       ]);
   };
+
   # Hyprland is a Wayland compositor and dynamic tiling window manager
   # Additional applications are required to create a full desktop shell
   imports = [
-    # inputs.hyprland.homeManagerModules.default
     ./ags
     ./grim # screenshot grabber and annotator
     ./hyprlock
     ./hyprpicker
-    ./rofi # app launcher, emoji picker and clipboard manager
-    # ./swaync        # notification center
+    ./musicplayer
     ./swww # wallpaper
-    # ./waylandidle   # idle
     ./wlogout # session menu
   ];
   services = {
+    cliphist = {
+      allowImages = true;
+      enable = true;
+      systemdTargets = ["hyprland-session.target"];
+    };
     flameshot = {
       enable = true;
-      package = pkgs.unstable.flameshot.override {enableWlrSupport = true;};
+      package = pkgs.flameshot.overrideAttrs (old: {
+        src = inputs.flameshot-git;
+        cmakeFlags = ["-DUSE_WAYLAND_GRIM=true"];
+      });
       settings.General = {
         disabledTrayIcon = true;
         showStartupLaunchMessage = false;
@@ -352,11 +77,20 @@ in {
 
   wayland.windowManager.hyprland = {
     enable = true;
+    package = pkgs.hyprland;
     # importantPrefixes = [];
-    # package = pkgs.hyprland;
-    plugins = with inputs.hyprland-plugins.packages.${pkgs.system}; [
-      #   csgo-vulkan-fix
-      hyprtrails
+    plugins = [
+      inputs.hyprland-plugins.packages.${pkgs.system}.csgo-vulkan-fix
+      inputs.hyprland-plugins.packages.${pkgs.system}.hyprtrails
+
+      (pkgs.hyprlandPlugins.hyprscroller.overrideAttrs (old: {
+        src = pkgs.fetchFromGitHub {
+          owner = "dawsers";
+          repo = "hyprscroller";
+          rev = "8d78856cddd1a16610c6e41243daf486e1087a07";
+          hash = "sha256-awsw2yVsR5VCmiGkjrBID9G7rksHXLYXjE2p3C6SJoY=";
+        };
+      }))
     ];
     settings = {
       inherit (envs) env;
@@ -465,17 +199,18 @@ in {
         special_scale_factor = 0.8; # (0.0 - 1.0) 指定特殊工作区上窗口的缩放
       };
       exec = [
-        "ags"
+        "ags run"
         # "hyprshade auto"
       ];
       exec-once = [
-        "hypr-session start"
         "echo \"Xft.dpi: 100\" | xrdb -merge"
-        "dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP"
+        "dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP" # for XDPH
+        "dbus-update-activation-environment --systemd --all" # for XDPH
+        "systemctl --user import-environment WAYLAND_DISPLAY XDG_CURRENT_DESKTOP" # for XDPH
         "swww query || swww-daemon --format xrgb"
-        "fcitx5 --replace -d"
+        "wl-clip-persist --clipboard both"
         "$AOTU_SWITCH_WALLPAPER"
-        "mpd && mpc random on"
+        "mpc update && mpc random on"
         "xrdb ~/.Xresource"
       ];
       general = {
@@ -541,7 +276,7 @@ in {
         groupbar = {
           enabled = true; # 启用groupbar
           scrolling = true; # 在组拦中滚动是否更改活动窗口
-          font_family = "Maple Mono NF CN";
+          font_family = "${fonts.mono}";
           font_size = 12; # 标题字体大小(8)
           gradients = false; # 组窗口标题栏是否绘制渐变(true)
           render_titles = false; # 窗口组标题显示 (true)
@@ -676,22 +411,29 @@ in {
         middle_click_paste = true; # 鼠标中键单击粘贴(也称为主要选择)
       };
       plugin = {
-        # csgo-vulkan-fix = {
-        #   res_w = 1680;
-        #   res_h = 1050;
+        csgo-vulkan-fix = {
+          res_w = 1680;
+          res_h = 1050;
 
-        #   # NOT a regex! This is a string and has to exactly match initial_class
-        #   class = "cs2";
+          # NOT a regex! This is a string and has to exactly match initial_class
+          class = "cs2";
 
-        #   # Whether to fix the mouse position. A select few apps might be wonky with this.
-        #   fix_mouse = true;
-        # };
+          # Whether to fix the mouse position. A select few apps might be wonky with this.
+          fix_mouse = true;
+        };
         hyprtrails = {
           color = "rgba(a6e3a1aa)";
           bezier_step = 0.025; #0.025
           points_per_step = 2; #2
           history_points = 12; #20
           history_step = 2; #2
+        };
+        scroller = {
+          column_default_width = "fivesixths";
+          focus_wrap = true;
+          center_row_if_space_available = true;
+          # ultra-wide monitor
+          column_widths = "onefourth onethird onehalf onesixth";
         };
       };
       source = [

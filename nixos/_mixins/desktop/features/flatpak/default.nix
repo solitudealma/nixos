@@ -46,7 +46,9 @@ in
       flatpak = lib.mkIf isInstall {
         enable = true;
         packages = [
-          "com.tencent.WeChat"
+          # { flatpakref = "<uri>"; sha256="<hash>"; }
+          # { appId = "com.brave.Browser"; origin = "flathub";  }
+          # "com.tencent.WeChat"
         ];
         # By default nix-flatpak will add the flathub remote;
         # Therefore Appcenter is only added when the desktop is Pantheon

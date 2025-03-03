@@ -41,43 +41,43 @@
         in
           prev.lib.concatStringsSep ":" (extraGITypeLibPaths ++ [(mkTypeLibPath prev.pango.out)]);
       });
-    custom-caddy = import ./custom-caddy.nix {pkgs = prev;};
+    # custom-caddy = import ./custom-caddy.nix {pkgs = prev;};
     gitkraken = prev.gitkraken.overrideAttrs (old: rec {
-      version = "10.6.2";
+      version = "10.7.0";
+
       src =
         {
           x86_64-linux = prev.fetchzip {
             url = "https://release.axocdn.com/linux/GitKraken-v${version}.tar.gz";
-            hash = "sha256-E/9BR4PE5QF075+NgJZTtgDoShHEqeRcoICnMLt3RuY=";
+            hash = "sha256-fNx3mZnoMkEd1RlvcEmnncX0cLJhRjbf2t4CfB5eRl4=";
           };
 
           x86_64-darwin = prev.fetchzip {
             url = "https://release.axocdn.com/darwin/GitKraken-v${version}.zip";
-            hash = "sha256-gCiZN+ivXEF5KLas7eZn9iWfXcDGwf1gXK1ejY2C4xs=";
+            hash = "sha256-FLNzB1MvW943DDBs5EmxOWx31CMm2KWXrXp6EjfkPeQ=";
           };
 
           aarch64-darwin = prev.fetchzip {
             url = "https://release.axocdn.com/darwin-arm64/GitKraken-v${version}.zip";
-            hash = "sha256-1zd57Kqi5iKHw/dNqLQ7jVAkNFvkFeqQbZPN32kF9IU=";
+            hash = "sha256-+uEpm9A9zkTMWL2XccWFTkuhFdZMJUZHSD3FinNsRyA=";
           };
         }
         .${prev.stdenv.hostPlatform.system}
         or (throw "Unsupported system: ${prev.stdenv.hostPlatform.system}");
     });
-    # hyprland = inputs.hyprland.packages.${prev.system}.default.overrideAttrs (_old: {
-    hyprland = prev.hyprland.overrideAttrs (_old: {
-      postPatch =
-        _old.postPatch
-        + ''
-          sed -i 's|Exec=Hyprland|Exec=hypr-launch|' example/hyprland.desktop
-        '';
-    });
-    wavebox = prev.wavebox.overrideAttrs (_old: rec {
-      pname = "wavebox";
-      version = "10.131.15-2";
-      src = prev.fetchurl {
-        url = "https://download.wavebox.app/stable/linux/deb/amd64/wavebox_${version}_amd64.deb";
-        sha256 = "sha256-rGMkXs5w/NrIYOKPArCLBMUDoMnvQqggo91viyJUfj4=";
+    ncmpcpp = prev.ncmpcpp.override {
+      clockSupport = true;
+      outputsSupport = true;
+      taglibSupport = true;
+      visualizerSupport = true;
+    };
+    nu_scripts = prev.nu_scripts.overrideAttrs (old: rec {
+      pname = "nu_scripts";
+      src = prev.fetchFromGitHub {
+        owner = "nushell";
+        repo = pname;
+        rev = "9270f34d6b82a682780bcbf3df06f9ffe5e316b0";
+        hash = "sha256-1QC9TKnaa9KsYwyJFV/p9zpYQh8N+Xck+Ae3fBpBfPc=";
       };
     });
     pyprland = prev.pyprland.overrideAttrs (old: rec {
@@ -89,40 +89,27 @@
         hash = "sha256-0vI8f5XXYi7LG6wMH2Uw05pDbozO2eBzLCuaCHBY7BQ=";
       };
     });
-    qq = let
-      LITELOADERQQNT_PROFILE = "$HOME/.config/llqqnt";
-      llSrc = builtins.fetchGit {
-        url = "https://github.com/LiteLoaderQQNT/LiteLoaderQQNT";
-        rev = "5a1a08aed69d128ec4b711aaaba8f3d255a1916c";
-        submodules = true;
+    qq = prev.qq.overrideAttrs (oldAttrs: {
+      pname = "qq";
+      src = prev.fetchurl {
+        url = "https://dldir1.qq.com/qqfile/qq/QQNT/Linux/QQ_3.2.15_250110_amd64_01.deb";
+        hash = "sha256-hDfaxxXchdZons8Tb5I7bsd7xEjiKpQrJjxyFnz3Y94=";
       };
-    in
-      prev.qq.overrideAttrs (oldAttrs: {
-        pname = "llqqnt";
-        src = prev.fetchurl {
-          url = "https://dldir1.qq.com/qqfile/qq/QQNT/Linux/QQ_3.2.15_250110_amd64_01.deb";
-          hash = "sha256-hDfaxxXchdZons8Tb5I7bsd7xEjiKpQrJjxyFnz3Y94=";
-        };
-        postInstall =
-          ''
-            echo "require('"${llSrc.outPath}"');" > "$out/opt/QQ/resources/app/app_launcher/llqqnt.js"
-            sed -i 's#\./application.asar/app_launcher/index\.js#./app_launcher/llqqnt.js#g' "$out/opt/QQ/resources/app/package.json"
-          ''
-          + prev.lib.optionalString (LITELOADERQQNT_PROFILE != "") ''sed -i '$i\export LITELOADERQQNT_PROFILE=${LITELOADERQQNT_PROFILE}' "$out/bin/qq"'';
-      });
+    });
     resources = prev.resources.overrideAttrs (_old: rec {
       pname = "resources";
-      version = "1.7.0";
+      version = "1.7.1";
       src = prev.fetchFromGitHub {
         owner = "nokyan";
         repo = "resources";
         rev = "refs/tags/v${version}";
-        hash = "sha256-mnOpWVJTNGNdGd6fMIZl3AOF4NbtMm1XS8QFqfAF/18=";
+        hash = "sha256-SHawaH09+mDovFiznZ+ZkUgUbv5tQGcXBgUGrdetOcA=";
       };
+
       cargoDeps = prev.rustPlatform.fetchCargoTarball {
         inherit src;
         name = "resources-${version}";
-        hash = "sha256-vIqtKJxKQ/mHFcB6IxfX27Lk2ID/W+M4hQnPB/aExa4=";
+        hash = "sha256-tUD+gx9nQiGWKKRPcR7OHbPvU2j1dQjYck7FF9vYqSQ=";
       };
     });
     zen-browser = prev.wrapFirefox prev.zen-browser-unwrapped {

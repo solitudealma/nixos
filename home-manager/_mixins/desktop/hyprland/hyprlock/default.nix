@@ -1,9 +1,11 @@
 {
+  config,
   hostname,
   lib,
   pkgs,
   ...
 }: let
+  inherit (config._custom.globals) fonts;
   passwordPrompt =
     if hostname == "tanis"
     then "󰈷"
@@ -63,7 +65,7 @@ in {
             text = ''cmd[update:18000000] echo "<b> "$(date +'%A, %-d %B %Y')" </b>"'';
 
             font_size = 24;
-            font_family = "Maple Mono NF CN 10";
+            font_family = "${fonts.mono} 10";
 
             position = "0, -120";
             halign = "center";

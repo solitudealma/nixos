@@ -5,12 +5,13 @@
     runtimeInputs = with pkgs; [
       bc
       coreutils-full
+      swww
     ];
     text = builtins.readFile ./${name}.sh;
   };
 in {
   home.packages = with pkgs; [
-    shellApplication
     swww
+    shellApplication
   ];
 }

@@ -34,8 +34,10 @@
 
     installPhase = ''
       runHook preInstall
+
       mkdir -p $out/share
       cp -a build $out/share/open-webui
+
       runHook postInstall
     '';
   };
@@ -83,7 +85,6 @@ in
       docx2txt
       duckduckgo-search
       einops
-      emoji # This dependency is missing in upstream's pyproject.toml
       extract-msg
       fake-useragent
       fastapi
@@ -119,7 +120,6 @@ in
       pgvector
       psutil
       psycopg2-binary
-      pydantic
       pydub
       pyjwt
       pymdown-extensions
@@ -128,6 +128,7 @@ in
       pymysql
       pypandoc
       pypdf
+      python-dotenv
       python-jose
       python-multipart
       python-pptx
@@ -140,7 +141,6 @@ in
       redis
       requests
       sentence-transformers
-      sentencepiece
       soundfile
       tiktoken
       unstructured

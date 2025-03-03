@@ -52,27 +52,30 @@ in {
     [
       ./audio-production
       ./fastfetch
-      ./fcitx5
       ./firefox
-      ./game-dev
-      ./gitkraken
-      ./heynote
+      ./fish
+      # ./game-dev
+      # ./gitkraken
+      ./graphics-production
+      # ./heynote
       ./imv
       ./internet-chat
-      ./jan
+      # ./jan
       ./meld
       ./mpd
       ./mpv
       ./music
       ./neovim
       ./obs-studio
+      ./rofi
       ./st
+      ./stylix
       ./vaults
       ./vscode
       ./yazi
       ./zathura
       ./zed-editor
-      ./zsh
+      # ./zsh
     ]
     ++ lib.optional (desktop == "river") ./waybar;
 
@@ -163,7 +166,6 @@ in {
               "mp1"
               "mp2"
               "mp3"
-              "mp4"
               "mpegurl"
               "mpg"
               "ogg"
@@ -416,6 +418,7 @@ in {
               ]
               ++ [
                 "ideo/dv"
+                "audio/mp4"
               ];
           };
         in
@@ -496,16 +499,17 @@ in {
         in
           listToAttrs (flatten (mapAttrsToList (key: types:
             map (type: nameValuePair type (applications."${key}")) types)
-          mimeMap));
-        # {
-
-        #   "x-scheme-handler/vscode" = ["code-url-handler.desktop"]; # open `vscode://` url with `code-url-handler.desktop`
-        #   "x-scheme-handler/vscode-xsiders" = ["code-insiders-url-handler.desktop"]; # open `vscode-insiders://` url with `code-insiders-url-handler.desktop`
-        #   # "x-scheme-handler/unknown" = editor;
-        #   "x-scheme-handler/element" = ["element-desktop.desktop"];
-        #   "x-scheme-handler/discord" = ["discord.desktop"];
-        #   "x-scheme-handler/tg" = ["org.telegram.desktop.desktop"];
-        # };
+          mimeMap))
+          // {
+            "x-scheme-handler/vscode" = ["code-url-handler.desktop"]; # open `vscode://` url with `code-url-handler.desktop`
+            "x-scheme-handler/vscode-xsiders" = ["code-insiders-url-handler.desktop"]; # open `vscode-insiders://` url with `code-insiders-url-handler.desktop`
+            # "x-scheme-handler/unknown" = editor;
+            "x-scheme-handler/element" = ["element-desktop.desktop"];
+            "x-scheme-handler/discord" = ["discord.desktop"];
+            "x-scheme-handler/tg" = ["org.telegram.desktop.desktop"];
+            "x-scheme-handler/mpv" = ["mpv-handler.desktop"];
+            "x-scheme-handler/mpv-debug" = ["mpv-handler-debug.desktop"];
+          };
       };
       stateHome = "/home/${username}/.local/state";
     };

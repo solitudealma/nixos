@@ -8,7 +8,7 @@
   ...
 }: let
   scanningApp =
-    if (desktop == "plasma")
+    if (desktop == "kde")
     then pkgs.kdePackages.skanpage
     else pkgs.simple-scan;
 in

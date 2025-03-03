@@ -1,10 +1,5 @@
-{
-  inputs,
-  pkgs,
-  ...
-}: {
+{pkgs, ...}: {
   imports = [
-    ./dmenu
     ./dunst
     ./picom
   ];
@@ -18,18 +13,15 @@
     };
     packages = with pkgs; [
       acpi
+      brightnessctl
       dex
-      dunst
       feh
       flameshot
       i3lock-color
       libnotify
       lm_sensors
-      luastatus
-      inputs.picom.packages.${pkgs.system}.picom
-      rofi
+      redshift
       slstatus
-      upower
       xclip
       xfce.xfce4-power-manager
       xorg.xdpyinfo

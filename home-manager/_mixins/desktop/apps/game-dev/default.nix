@@ -16,11 +16,9 @@ in
         })
         godot_4-mono # Free and Open Source 2D and 3D game engine with c#
         krita
-        luajit
         love
         # pico8
         pixelorama
-        zip
       ];
     };
   }

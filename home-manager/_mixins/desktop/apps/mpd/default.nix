@@ -1,12 +1,20 @@
-{pkgs, ...}: {
+{
+  config,
+  pkgs,
+  ...
+}: let
+  inherit (config._custom.globals) configDirectory;
+  mpdPath = "${configDirectory}/home-manager/_mixins/configs/mpd";
+in {
   home.packages = with pkgs; [
     mpc-cli
   ];
-  xdg.configFile."mpd" = {
-    source = ../../../configs/mpd;
-    recursive = true; # 递归整个文件夹
+  services = {
+    mpd = {
+      enable = true;
+      package = pkgs.mpd;
+    };
+    mpd-mpris.enable = true;
   };
-  services.mpd = {
-    enable = true;
-  };
+  xdg.configFile."mpd".source = config.lib.file.mkOutOfStoreSymlink mpdPath;
 }

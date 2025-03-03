@@ -92,8 +92,9 @@ _: {
       #                            Float 浮动窗口
       # ===================================================================
       "float, title:(Maestral Settings|MainPicker|overskride|Pipewire Volume Control|Trayscale)"
-      "float, class:(St),  title:^(st_alsamixer|st_clock|float_st|st_cava)$" # St
+      "float, class:(St|St_FN),  title:^(st_alsamixer|st_clock|float_st|st_cava|st_ncmpcpp)$" # St
       "float, class:(thunar), title:^(File Operation Progress)$" # Thunar 文件进度条
+      "float, class:(xdg-desktop-portal-gtk), title:^(Enter name of file to save to...)$" # file picker
       "float, class:(QQ),     title:^(图片查看器|视频播放器|(.*聊天记录))$" # QQ 图片预览
       "float, class:(org.telegram.desktop), title:^(Media viewer)$"
       "float, class:(pot),    title:(Recognize|Config|Translator|Translate|OCR|PopClip|Screenshot Translate)" # Translation window floating
@@ -114,7 +115,8 @@ _: {
       "size 1300 800, class:(thunar), title:^(Open File)(.*)$"
       "size 1300 800, class:(xdg-desktop-portal-gtk), title:^(Save As|Open Files)$"
       "size 1300 800, class:(St), title:^(float_st)$"
-      "size 418 234,  class:(St), title:^(st_clock|st_cava)$"
+      "size 800 500, class:(St_FN), title:^(st_ncmpcpp)$"
+      "size 418 234,  class:(St|St_FN), title:^(st_clock|st_cava)$"
       "size 185 675,  class:(St), title:^(st_alsamixer)$"
 
       # ===================================================================
@@ -122,6 +124,8 @@ _: {
       # ===================================================================
 
       "move cursor 0 0, class:(pot), title:(Translator|PopClip|Screenshot Translate|Translate)" # Translation window follows the mouse position.
+      "move 100%-418 5%, class:(St_FN), title:^(st_cava)"
+      "move 100%-1218 5%, class:(St_FN), title:^(st_ncmpcpp)"
 
       # ===================================================================
       #                             Opacitys 不透明

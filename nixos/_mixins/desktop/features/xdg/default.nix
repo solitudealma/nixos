@@ -7,10 +7,10 @@
 }: {
   xdg = {
     portal = {
-      configPackages =
+      configPackages = with pkgs;
         []
         ++ lib.optionals (desktop == "hyprland") [
-          config.wayland.windowManager.hyprland.package
+          hyprland
         ];
       extraPortals = with pkgs;
         [
@@ -19,15 +19,19 @@
         ++ lib.optionals (desktop == "dwm") [
           xdg-desktop-portal-gtk
         ]
+        ++ lib.optionals (desktop == "dwl") [
+          xdg-desktop-portal-gtk
+          xdg-desktop-portal-gnome
+        ]
         ++ lib.optionals (desktop == "hyprland") [
           xdg-desktop-portal
           xdg-desktop-portal-gtk
-          xdg-desktop-portal-hyprland
+          xdg-desktop-portal-hyprland #nixos/_mixins/desktop/hyprland/default.nix
         ]
         ++ lib.optionals (desktop == "niri") [
+          xdg-desktop-portal-wlr
           xdg-desktop-portal-gtk
-          # xdg-desktop-portal-gnome niri-flake provide
-          xdg-desktop-portal-hyprland
+          xdg-desktop-portal-gnome
         ]
         ++ lib.optionals (desktop == "river") [
           xdg-desktop-portal-wlr
@@ -44,6 +48,10 @@
           default = ["gnome" "gtk"];
           "org.freedesktop.impl.portal.Secret" = ["gnome-keyring"];
         };
+        dwl = lib.mkIf (desktop == "dwl") {
+          default = ["gnome" "gtk"];
+          "org.freedesktop.impl.portal.Secret" = ["gnome-keyring"];
+        };
         gnome = lib.mkIf (desktop == "gnome") {
           default = ["gnome" "gtk"];
           "org.freedesktop.impl.portal.Secret" = ["gnome-keyring"];
@@ -54,7 +62,7 @@
         };
         niri = lib.mkIf (desktop == "niri") {
           default = ["gnome" "gtk"];
-          "org.freedesktop.impl.portal.Secret" = ["gnome-keyring"];
+          # "org.freedesktop.impl.portal.Secret" = ["gnome-keyring"];
         };
         river = lib.mkIf (desktop == "river") {
           default = ["gnome" "gtk"];

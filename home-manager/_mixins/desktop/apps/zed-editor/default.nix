@@ -1,27 +1,23 @@
 {
+  config,
   lib,
   pkgs,
   username,
   ...
 }: let
-  installFor = ["solitudealma"];
   inherit (pkgs.stdenv) isLinux;
   inherit (lib) mkDefault;
+  inherit (config._custom.globals) fonts;
+  installFor = ["solitudealma"];
 in
   lib.mkIf (lib.elem username installFor && isLinux) {
-    home = {
-      packages = with pkgs; [unstable.zed-editor];
-    };
-
     programs.zed-editor = {
       enable = true;
-      package = pkgs.unstable.zed-editor;
-
       userSettings = {
         auto_update = mkDefault false;
 
         buffer_font_size = mkDefault 20;
-        buffer_font_family = mkDefault "Maple Mono NF CN";
+        buffer_font_family = mkDefault "${fonts.mono}";
 
         confirm_quit = mkDefault false;
         file_scan_exclusions = [
@@ -86,7 +82,7 @@ in
           Nix = {
             formatter = {
               external = {
-                command = "${pkgs.alejandra}/bin/alejandra";
+                command = "${lib.getExe pkgs.alejandra}";
               };
             };
             language_servers = ["nixd" "!nil"];
@@ -178,7 +174,7 @@ in
           env = {
             TERM = "xterm-256color";
           };
-          font_family = mkDefault "Maple Mono NF CN";
+          font_family = mkDefault "${fonts.mono}";
           font_size = mkDefault 18;
         };
         theme = {
@@ -188,12 +184,12 @@ in
         };
 
         ui_font_size = mkDefault 22;
-        ui_font_family = mkDefault "Maple Mono NF CN";
+        ui_font_family = mkDefault "${fonts.mono}";
 
         vim_mode = mkDefault false;
       };
 
-      extensions = ["base16" "nix" "lua" "toml"];
+      extensions = ["base16" "fish" "nix" "lua" "toml"];
 
       # unstable options
       #extraPackages = with pkgs; [
@@ -208,7 +204,7 @@ in
             f11 = "zed::ToggleFullScreen";
             ctrl-alt-n = "task::Spawn";
             ctrl-alt-r = "task::Rerun";
-            ctrl-alt-o = "zed::OpenLocalTasks";
+            # ctrl-alt-o = "zed::OpenLocalTasks";
             "ctrl-\\" = "workspace::NewCenterTerminal";
             ctrl-t = "terminal_panel::ToggleFocus";
           };

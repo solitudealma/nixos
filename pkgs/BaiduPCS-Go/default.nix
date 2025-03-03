@@ -10,8 +10,8 @@ buildGoModule rec {
   src = fetchFromGitHub {
     owner = "qjfoidnh";
     repo = "BaiduPCS-Go";
-    rev = "3bda04c82d6225347491dbfde0ca0270af61333b";
-    hash = "sha256-PJTPBYm9C0wtw+o1Y8eh6oIyWZQWLEptIyqViK8nWYE=";
+    rev = "345147bc2ae58c6499920fc1d205c4d5aee736df";
+    hash = "sha256-KqRzxx3Cj5F+mK3npKGauV+JwJikDT37cDPm4KFP/Go=";
   };
 
   vendorHash = "sha256-hW+IrzS5+DublQUIIcecL08xoauTjba9qnAtpzNeDXw=";

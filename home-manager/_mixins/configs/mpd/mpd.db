@@ -1,0 +1,3147 @@
+info_begin
+format: 2
+mpd_version: 0.23.16
+fs_charset: UTF-8
+tag: Artist
+tag: ArtistSort
+tag: Album
+tag: AlbumSort
+tag: AlbumArtist
+tag: AlbumArtistSort
+tag: Title
+tag: Track
+tag: Name
+tag: Genre
+tag: Date
+tag: OriginalDate
+tag: Composer
+tag: ComposerSort
+tag: Performer
+tag: Conductor
+tag: Work
+tag: Movement
+tag: MovementNumber
+tag: Ensemble
+tag: Location
+tag: Grouping
+tag: Disc
+tag: Label
+tag: MUSICBRAINZ_ARTISTID
+tag: MUSICBRAINZ_ALBUMID
+tag: MUSICBRAINZ_ALBUMARTISTID
+tag: MUSICBRAINZ_TRACKID
+tag: MUSICBRAINZ_RELEASETRACKID
+tag: MUSICBRAINZ_WORKID
+info_end
+directory: Aimer
+mtime: 1738484959
+begin: Aimer
+directory: 1.1 - Aimer - Sleepless Nights
+mtime: 1738217922
+begin: Aimer/1.1 - Aimer - Sleepless Nights
+song_begin: 01. TWINKLE TWINKLE LITTLE STAR　-prologue-.flac
+Time: 88.384000
+Artist: Aimer
+Title: TWINKLE TWINKLE LITTLE STAR　-prologue-
+Album: Sleepless Nights
+Genre:  
+Composer: フランス民謡(PD)
+Performer:  
+AlbumArtist: Aimer
+Track: 1
+Format: 96000:24:2
+mtime: 1738051254
+song_end
+song_begin: 02. 夜行列車～nothing to lose～.flac
+Time: 303.283000
+Artist: Aimer
+Title: 夜行列車～nothing to lose～
+Album: Sleepless Nights
+Genre:  
+Composer: 飛内将大
+Performer:  
+AlbumArtist: Aimer
+Track: 2
+Format: 96000:24:2
+mtime: 1738175728
+song_end
+song_begin: 03. あなたに出会わなければ～夏雪冬花～.flac
+Time: 360.490000
+Artist: Aimer
+Title: あなたに出会わなければ～夏雪冬花～
+Album: Sleepless Nights
+Genre:  
+Composer: 百田留衣
+Performer:  
+AlbumArtist: Aimer
+Track: 3
+Format: 96000:24:2
+mtime: 1738212452
+song_end
+song_begin: 04. 笑顔.flac
+Time: 362.535000
+Artist: Aimer
+Title: 笑顔
+Album: Sleepless Nights
+Genre:  
+Composer: 矢田亨
+Performer:  
+AlbumArtist: Aimer
+Track: 4
+Format: 96000:24:2
+mtime: 1738215122
+song_end
+song_begin: 05. Re：pray.flac
+Time: 307.161000
+Artist: Aimer
+Title: Re:pray
+Album: Sleepless Nights
+Genre:  
+Composer: 矢田亨
+Performer:  
+AlbumArtist: Aimer
+Track: 5
+Format: 96000:24:2
+mtime: 1738178080
+song_end
+song_begin: 06. 悲しみはオーロラに（Restarred by Takagi Masakatsu）.flac
+Time: 270.089000
+Artist: Aimer
+Title: 悲しみはオーロラに（Restarred by Takagi Masakatsu）
+Album: Sleepless Nights
+Genre:  
+Composer: 飛内将大
+Performer:  
+AlbumArtist: Aimer
+Track: 6
+Format: 96000:24:2
+mtime: 1738153047
+song_end
+song_begin: 07. 寂しくて眠れない夜は.flac
+Time: 324.621000
+Artist: Aimer
+Title: 寂しくて眠れない夜は
+Album: Sleepless Nights
+Genre:  
+Composer: 飛内将大
+Performer:  
+AlbumArtist: Aimer
+Track: 7
+Format: 96000:24:2
+mtime: 1738192081
+song_end
+song_begin: 08. AM02：00.flac
+Time: 330.466000
+Artist: Aimer
+Title: AM02:00
+Album: Sleepless Nights
+Genre:  
+Composer: 宮川暢彦
+Performer:  
+AlbumArtist: Aimer
+Track: 8
+Format: 96000:24:2
+mtime: 1738196910
+song_end
+song_begin: 09. 星屑ビーナス.flac
+Time: 252.221000
+Artist: Aimer
+Title: 星屑ビーナス
+Album: Sleepless Nights
+Genre:  
+Composer: 飛内将大
+Performer:  
+AlbumArtist: Aimer
+Track: 9
+Format: 96000:24:2
+mtime: 1738139290
+song_end
+song_begin: 10. 雪の降る街.flac
+Time: 244.924000
+Artist: Aimer
+Title: 雪の降る街
+Album: Sleepless Nights
+Genre:  
+Composer: 黒田晃太郎
+Performer:  
+AlbumArtist: Aimer
+Track: 10
+Format: 96000:24:2
+mtime: 1738137265
+song_end
+song_begin: 11. 冬のダイヤモンド（Re-echoed by Genki Rockets）.flac
+Time: 372.356000
+Artist: Aimer
+Title: 冬のダイヤモンド（Re-echoed by Genki Rockets）
+Album: Sleepless Nights
+Genre:  
+Composer: 飛内将大
+Performer:  
+AlbumArtist: Aimer
+Track: 11
+Format: 96000:24:2
+mtime: 1738217922
+song_end
+song_begin: 12. 六等星の夜.flac
+Time: 338.181000
+Artist: Aimer
+Title: 六等星の夜
+Album: Sleepless Nights
+Genre:  
+Composer: 飛内将大
+Performer:  
+AlbumArtist: Aimer
+Track: 12
+Format: 96000:24:2
+mtime: 1738199377
+song_end
+song_begin: 13. TWINKLE TWINKLE LITTLE STAR.flac
+Time: 125.157000
+Artist: Aimer
+Title: TWINKLE TWINKLE LITTLE STAR
+Album: Sleepless Nights
+Genre:  
+Composer: フランス民謡(PD)
+Performer:  
+AlbumArtist: Aimer
+Track: 13
+Format: 96000:24:2
+mtime: 1738054798
+song_end
+end: Aimer/1.1 - Aimer - Sleepless Nights
+directory: 1.2 - Aimer - Midnight Sun
+mtime: 1738209726
+begin: Aimer/1.2 - Aimer - Midnight Sun
+song_begin: 01. WHEN YOU WISH UPON A STAR -prologue-.flac
+Time: 73.636000
+AlbumArtistSort: Aimerエメ
+Album: Midnight Sun
+Date: 2014
+Track: 1
+Title: WHEN YOU WISH UPON A STAR -prologue-
+ArtistSort: Aimerエメ
+Genre: J-Pop
+Disc: 1
+Artist: Aimer
+AlbumSort: Ｍｉｄｎｉｇｈｔ　Ｓｕｎ
+Format: 96000:24:2
+mtime: 1738045386
+song_end
+song_begin: 02. 眠りの森.flac
+Time: 273.356000
+AlbumArtistSort: Aimerエメ
+ComposerSort: トビナイマサヒロ
+Album: Midnight Sun
+Date: 2014
+Track: 2
+Title: 眠りの森
+ArtistSort: Aimerエメ
+Genre: J-Pop
+Disc: 1
+Artist: Aimer
+AlbumSort: Ｍｉｄｎｉｇｈｔ　Ｓｕｎ
+Format: 96000:24:2
+mtime: 1738157058
+song_end
+song_begin: 03. 7月の翼.flac
+Time: 284.121000
+AlbumArtistSort: Aimerエメ
+ComposerSort: モモタドメゴロモ
+Album: Midnight Sun
+Date: 2014
+Track: 3
+Title: 7月の翼
+ArtistSort: Aimerエメ
+Genre: J-Pop
+Disc: 1
+Artist: Aimer
+AlbumSort: Ｍｉｄｎｉｇｈｔ　Ｓｕｎ
+Format: 96000:24:2
+mtime: 1738159183
+song_end
+song_begin: 04. words.flac
+Time: 356.658000
+AlbumArtistSort: Aimerエメ
+ComposerSort: アベマオ
+Album: Midnight Sun
+Date: 2014
+Track: 4
+Title: words
+ArtistSort: Aimerエメ
+Genre: J-Pop
+Disc: 1
+Artist: Aimer
+AlbumSort: Ｍｉｄｎｉｇｈｔ　Ｓｕｎ
+Format: 96000:24:2
+mtime: 1738207118
+song_end
+song_begin: 05. Cold Sun.flac
+Time: 309.100000
+AlbumArtistSort: Aimerエメ
+ComposerSort: ヨコヤマヒロアキ
+Album: Midnight Sun
+Date: 2014
+Track: 5
+Title: Cold Sun
+ArtistSort: Aimerエメ
+Genre: J-Pop
+Disc: 1
+Artist: Aimer
+AlbumSort: Ｍｉｄｎｉｇｈｔ　Ｓｕｎ
+Format: 96000:24:2
+mtime: 1738180328
+song_end
+song_begin: 06. AM03：00.flac
+Time: 358.655000
+AlbumArtistSort: Aimerエメ
+Album: Midnight Sun
+Date: 2014
+Track: 6
+Title: AM03:00
+ArtistSort: Aimerエメ
+Genre: J-Pop
+Disc: 1
+Artist: Aimer
+AlbumSort: Ｍｉｄｎｉｇｈｔ　Ｓｕｎ
+Format: 96000:24:2
+mtime: 1738209726
+song_end
+song_begin: 07. 小さな星のメロディー.flac
+Time: 311.466000
+AlbumArtistSort: Aimerエメ
+ComposerSort: イジリキキ
+Album: Midnight Sun
+Date: 2014
+Track: 7
+Title: 小さな星のメロディー
+ArtistSort: Aimerエメ
+Genre: J-Pop
+Disc: 1
+Artist: Aimer
+AlbumSort: Ｍｉｄｎｉｇｈｔ　Ｓｕｎ
+Format: 96000:24:2
+mtime: 1738184899
+song_end
+song_begin: 08. VOICE.flac
+Time: 286.606000
+AlbumArtistSort: Aimerエメ
+ComposerSort: トビナイマサヒロ
+Album: Midnight Sun
+Date: 2014
+Track: 8
+Title: VOICE
+ArtistSort: Aimerエメ
+Genre: J-Pop
+Disc: 1
+Artist: Aimer
+AlbumSort: Ｍｉｄｎｉｇｈｔ　Ｓｕｎ
+Format: 96000:24:2
+mtime: 1738161593
+song_end
+song_begin: 09. RE：I AM.flac
+Time: 345.133000
+AlbumArtistSort: Aimerエメ
+ComposerSort: サワノヒロユキ
+Album: Midnight Sun
+Date: 2014
+Track: 9
+Title: RE:I AM
+ArtistSort: Aimerエメ
+Genre: J-Pop
+Disc: 1
+Artist: Aimer
+AlbumSort: Ｍｉｄｎｉｇｈｔ　Ｓｕｎ
+Format: 96000:24:2
+mtime: 1738201918
+song_end
+song_begin: 10. StarRingChild.flac
+Time: 328.031000
+AlbumArtistSort: Aimerエメ
+ComposerSort: サワノヒロユキ
+Album: Midnight Sun
+Date: 2014
+Track: 10
+Title: StarRingChild
+ArtistSort: Aimerエメ
+Genre: J-Pop
+Disc: 1
+Artist: Aimer
+AlbumSort: Ｍｉｄｎｉｇｈｔ　Ｓｕｎ
+Format: 96000:24:2
+mtime: 1738194501
+song_end
+song_begin: 11. 星の消えた夜に (Re-echoed by Genki Rockets × give me wallets).flac
+Time: 350.146000
+AlbumArtistSort: Aimerエメ
+ComposerSort: トビナイマサヒロ
+Album: Midnight Sun
+Date: 2014
+Track: 11
+Title: 星の消えた夜に (Re-echoed by Genki Rockets × give me wallets)
+ArtistSort: Aimerエメ
+Genre: J-Pop
+Disc: 1
+Artist: Aimer
+AlbumSort: Ｍｉｄｎｉｇｈｔ　Ｓｕｎ
+Format: 96000:24:2
+mtime: 1738204512
+song_end
+song_begin: 12. Iris.flac
+Time: 301.327000
+AlbumArtistSort: Aimerエメ
+ComposerSort: トビナイマサヒロ
+Album: Midnight Sun
+Date: 2014
+Track: 12
+Title: Iris
+ArtistSort: Aimerエメ
+Genre: J-Pop
+Disc: 1
+Artist: Aimer
+AlbumSort: Ｍｉｄｎｉｇｈｔ　Ｓｕｎ
+Format: 96000:24:2
+mtime: 1738173531
+song_end
+song_begin: 13. WHEN YOU WISH UPON A STAR.flac
+Time: 142.550000
+AlbumArtistSort: Aimerエメ
+Album: Midnight Sun
+Date: 2014
+Track: 13
+Title: WHEN YOU WISH UPON A STAR
+ArtistSort: Aimerエメ
+Genre: J-Pop
+Disc: 1
+Artist: Aimer
+AlbumSort: Ｍｉｄｎｉｇｈｔ　Ｓｕｎ
+Format: 96000:24:2
+mtime: 1738057807
+song_end
+end: Aimer/1.2 - Aimer - Midnight Sun
+directory: 1.3 - Aimer - DAWN
+mtime: 1738189584
+begin: Aimer/1.3 - Aimer - DAWN
+song_begin: 01. MOON RIVER -prologue-.flac
+Time: 119.651000
+Artist: Aimer
+Title: MOON RIVER -prologue-
+Album: DAWN
+Genre:  
+Composer: HENRY MANCINI/JOHNNY MERCER
+Performer:  
+AlbumArtist: Aimer
+Track: 1
+Disc: 1
+Format: 96000:24:2
+mtime: 1738053863
+song_end
+song_begin: 02. Believe Be：leave.flac
+Time: 322.564000
+Artist: Aimer
+Title: Believe Be:leave
+Album: DAWN
+Genre:  
+Composer: 飛内将大
+Performer:  
+AlbumArtist: Aimer
+Track: 2
+Disc: 1
+Format: 96000:24:2
+mtime: 1738189583
+song_end
+song_begin: 03. 君を待つ.flac
+Time: 266.748000
+Artist: Aimer
+Title: 君を待つ
+Album: DAWN
+Genre:  
+Composer: 古川貴浩
+Performer:  
+AlbumArtist: Aimer
+Track: 3
+Disc: 1
+Format: 96000:24:2
+mtime: 1738151046
+song_end
+song_begin: 04. broKen NIGHT.flac
+Time: 295.314000
+Artist: Aimer
+Title: broKen NIGHT
+Album: DAWN
+Genre:  
+Composer: 浅見武男
+Performer:  
+AlbumArtist: Aimer
+Track: 4
+Disc: 1
+Format: 96000:24:2
+mtime: 1738169037
+song_end
+song_begin: 05. Noir! Noir!.flac
+Time: 243.097000
+Artist: Aimer
+Title: Noir! Noir!
+Album: DAWN
+Genre:  
+Composer: DAIKI/玉井健二
+Performer:  
+AlbumArtist: Aimer
+Track: 5
+Disc: 1
+Format: 96000:24:2
+mtime: 1738135446
+song_end
+song_begin: 06. Re：far.flac
+Time: 253.401000
+Artist: Aimer
+Title: Re:far
+Album: DAWN
+Genre:  
+Composer: 飛内将大
+Performer:  
+AlbumArtist: Aimer
+Track: 6
+Disc: 1
+Format: 96000:24:2
+mtime: 1738147145
+song_end
+song_begin: 07. AM04：00.flac
+Time: 272.623000
+Artist: Aimer
+Title: AM04:00
+Album: DAWN
+Genre:  
+Composer: give me wallets
+Performer:  
+AlbumArtist: Aimer
+Track: 7
+Disc: 1
+Format: 96000:24:2
+mtime: 1738155049
+song_end
+song_begin: 08. 誰か、海を。.flac
+Time: 294.153000
+Artist: Aimer
+Title: 誰か、海を。
+Album: DAWN
+Genre:  
+Composer: 菅野よう子
+Performer:  
+AlbumArtist: Aimer
+Track: 8
+Disc: 1
+Format: 96000:24:2
+mtime: 1738166604
+song_end
+song_begin: 09. LAST STARDUST.flac
+Time: 318.662000
+Artist: Aimer
+Title: LAST STARDUST
+Album: DAWN
+Genre:  
+Composer: 飛内将大
+Performer:  
+AlbumArtist: Aimer
+Track: 9
+Disc: 1
+Format: 96000:24:2
+mtime: 1738187218
+song_end
+song_begin: 10. Brave Shine.flac
+Time: 233.490000
+Artist: Aimer
+Title: Brave Shine
+Album: DAWN
+Genre:  
+Composer: 小山寿
+Performer:  
+AlbumArtist: Aimer
+Track: 10
+Disc: 1
+Format: 96000:24:2
+mtime: 1738130167
+song_end
+song_begin: 11. キズナ.flac
+Time: 296.331000
+Artist: Aimer
+Title: キズナ
+Album: DAWN
+Genre:  
+Composer: 飛内将大
+Performer:  
+AlbumArtist: Aimer
+Track: 11
+Disc: 1
+Format: 96000:24:2
+mtime: 1738171306
+song_end
+song_begin: 12. DAWN.flac
+Time: 309.982000
+Artist: Aimer
+Title: DAWN
+Album: DAWN
+Genre:  
+Composer: 秋田博之/玉井健二
+Performer:  
+AlbumArtist: Aimer
+Track: 12
+Disc: 1
+Format: 96000:24:2
+mtime: 1738182607
+song_end
+song_begin: 13. MOON RIVER.flac
+Time: 119.012000
+Artist: Aimer
+Title: MOON RIVER
+Album: DAWN
+Genre:  
+Composer: HENRY MANCINI/JOHNNY MERCER
+Performer:  
+AlbumArtist: Aimer
+Track: 13
+Disc: 1
+Format: 96000:24:2
+mtime: 1738052958
+song_end
+end: Aimer/1.3 - Aimer - DAWN
+directory: 1.4 - Aimer - Daydream
+mtime: 1738044318
+begin: Aimer/1.4 - Aimer - Daydream
+song_begin: 01. insane dream.flac
+Time: 253.120000
+Artist: Aimer
+Title: insane dream
+Album: daydream
+Date: 2016
+Genre: J-Pop
+Composer: Taka
+AlbumArtist: Aimer
+Track: 1
+Disc: 1
+Format: 44100:16:2
+mtime: 1738031561
+song_end
+song_begin: 02. ninelie.flac
+Time: 261.773000
+Artist: Aimer
+Title: ninelie
+Album: daydream
+Date: 2016
+Genre: J-Pop
+Composer: 澤野弘之
+AlbumArtist: Aimer
+Track: 2
+Disc: 1
+Format: 44100:16:2
+mtime: 1738036638
+song_end
+song_begin: 03. twoface.flac
+Time: 185.080000
+Artist: Aimer
+Title: twoface
+Album: daydream
+Date: 2016
+Genre: J-Pop
+Composer: 内澤崇仁
+AlbumArtist: Aimer
+Track: 3
+Disc: 1
+Format: 44100:16:2
+mtime: 1737988909
+song_end
+song_begin: 04. Higher Ground.flac
+Time: 314.186000
+Artist: Aimer
+Title: Higher Ground
+Album: daydream
+Date: 2016
+Genre: J-Pop
+Composer: Taka
+AlbumArtist: Aimer
+Track: 4
+Disc: 1
+Format: 44100:16:2
+mtime: 1738044317
+song_end
+song_begin: 05. for ロンリー with 阿部真央.flac
+Time: 291.573000
+Artist: Aimer
+Title: for ロンリー with 阿部真央
+Album: daydream
+Date: 2016
+Genre: J-Pop
+Composer: 阿部真央
+AlbumArtist: Aimer
+Track: 5
+Disc: 1
+Format: 44100:16:2
+mtime: 1738040585
+song_end
+song_begin: 06. 蝶々結び.flac
+Time: 305.333000
+Artist: Aimer
+Title: 蝶々結び
+Album: daydream
+Date: 2016
+Genre: J-Pop
+Composer: 野田洋次郎
+AlbumArtist: Aimer
+Track: 6
+Disc: 1
+Format: 44100:16:2
+mtime: 1737994322
+song_end
+song_begin: 07. カタオモイ.flac
+Time: 207.360000
+Artist: Aimer
+Title: カタオモイ
+Album: daydream
+Date: 2016
+Genre: J-Pop
+Composer: 内澤崇仁
+AlbumArtist: Aimer
+Track: 7
+Disc: 1
+Format: 44100:16:2
+mtime: 1737984249
+song_end
+song_begin: 08. Hz(ヘルツ).flac
+Time: 289.026000
+Artist: Aimer
+Title: Hz(ヘルツ)
+Album: daydream
+Date: 2016
+Genre: J-Pop
+Composer: 大橋卓弥 & 常田真太郎
+AlbumArtist: Aimer
+Track: 8
+Disc: 1
+Format: 44100:16:2
+mtime: 1738039517
+song_end
+song_begin: 09. 声色.flac
+Time: 297.453000
+Artist: Aimer
+Title: 声色
+Album: daydream
+Date: 2016
+Genre: J-Pop
+Composer: TK
+AlbumArtist: Aimer
+Track: 9
+Disc: 1
+Format: 44100:16:2
+mtime: 1738037513
+song_end
+song_begin: 10. closer.flac
+Time: 212.680000
+Artist: Aimer
+Title: closer
+Album: daydream
+Date: 2016
+Genre: J-Pop
+Composer: Taka
+AlbumArtist: Aimer
+Track: 10
+Disc: 1
+Format: 44100:16:2
+mtime: 1737992657
+song_end
+song_begin: 11. Falling Alone.flac
+Time: 253.306000
+Artist: Aimer
+Title: Falling Alone
+Album: daydream
+Date: 2016
+Genre: J-Pop
+Composer: Taka
+AlbumArtist: Aimer
+Track: 11
+Disc: 1
+Format: 44100:16:2
+mtime: 1737994739
+song_end
+song_begin: 12. us.flac
+Time: 274.826000
+Artist: Aimer
+Title: us
+Album: daydream
+Date: 2016
+Genre: J-Pop
+Composer: TK
+AlbumArtist: Aimer
+Track: 12
+Disc: 1
+Format: 44100:16:2
+mtime: 1738034926
+song_end
+song_begin: 13. Stars in the rain.flac
+Time: 302.266000
+Artist: Aimer
+Title: Stars in the rain
+Album: daydream
+Date: 2016
+Genre: J-Pop
+Composer: Taka
+AlbumArtist: Aimer
+Track: 13
+Disc: 1
+Format: 44100:16:2
+mtime: 1738043781
+song_end
+end: Aimer/1.4 - Aimer - Daydream
+directory: 1.5 - Aimer - Sun Dance
+mtime: 1738049386
+begin: Aimer/1.5 - Aimer - Sun Dance
+song_begin: 01. soleil.flac
+Time: 119.893000
+Title: soleil
+Composer: 百田留衣
+Artist: Aimer
+Album: Sun Dance
+Disc: 1
+Date: 2019
+Track: 1
+Format: 44100:16:2
+mtime: 1737979599
+song_end
+song_begin: 02. ONE.flac
+Time: 328.493000
+Title: ONE
+Composer: 百田留衣
+Artist: Aimer
+Album: Sun Dance
+Disc: 1
+Date: 2019
+Track: 2
+Format: 44100:16:2
+mtime: 1738049386
+song_end
+song_begin: 03. We Two.flac
+Time: 247.853000
+Title: We Two
+Composer: 飛内将大
+Artist: Aimer
+Album: Sun Dance
+Disc: 1
+Date: 2019
+Track: 3
+Format: 44100:16:2
+mtime: 1738032919
+song_end
+song_begin: 04. 3min.flac
+Time: 183.826000
+Title: 3min
+Composer: 飛内将大
+Artist: Aimer
+Album: Sun Dance
+Disc: 1
+Date: 2019
+Track: 4
+Format: 44100:16:2
+mtime: 1737984873
+song_end
+song_begin: 05. コイワズライ.flac
+Time: 235.160000
+Title: コイワズライ
+Artist: Aimer
+Album: Sun Dance
+Composer: 飛内将大
+Disc: 1
+Date: 2019
+Track: 5
+Format: 44100:16:2
+mtime: 1737992241
+song_end
+song_begin: 06. 花びらたちのマーチ.flac
+Time: 193.400000
+Title: 花びらたちのマーチ
+Artist: Aimer
+Album: Sun Dance
+Composer: 飛内将大
+Disc: 1
+Date: 2019
+Track: 6
+Format: 44100:16:2
+mtime: 1737982999
+song_end
+song_begin: 07. 思い出は奇麗で.flac
+Time: 209.813000
+Title: 思い出は奇麗で
+Artist: Aimer
+Album: Sun Dance
+Composer: 飛内将大
+Disc: 1
+Date: 2019
+Track: 7
+Format: 44100:16:2
+mtime: 1737986981
+song_end
+song_begin: 08. Monochrome Syndrome.flac
+Time: 292.786000
+Title: Monochrome Syndrome
+Artist: Aimer
+Album: Sun Dance
+Composer: 飛内将大
+Disc: 1
+Date: 2019
+Track: 8
+Format: 44100:16:2
+mtime: 1738043250
+song_end
+song_begin: 09. SUN DANCE.flac
+Time: 328.600000
+Title: SUN DANCE
+Artist: Aimer
+Album: Sun Dance
+Composer: 百田留衣
+Disc: 1
+Date: 2019
+Track: 9
+Format: 44100:16:2
+mtime: 1738045955
+song_end
+song_begin: 10. ONE -epilogue-.flac
+Time: 243.360000
+Title: ONE -epilogue-
+Artist: Aimer
+Album: Sun Dance
+Composer: 百田留衣
+Disc: 1
+Date: 2019
+Track: 10
+Format: 44100:16:2
+mtime: 1737991059
+song_end
+end: Aimer/1.5 - Aimer - Sun Dance
+directory: 1.6 - Aimer - Penny Rain
+mtime: 1738050608
+begin: Aimer/1.6 - Aimer - Penny Rain
+song_begin: 01. pluie.flac
+Time: 119.826000
+Title: pluie
+Artist: Aimer
+Album: Penny Rain
+Composer: 梶浦由記
+Disc: 1
+Date: 2019
+Track: 1
+Format: 44100:16:2
+mtime: 1737980187
+song_end
+song_begin: 02. I beg you.flac
+Time: 267.213000
+Title: I beg you
+Artist: Aimer
+Album: Penny Rain
+Composer: 梶浦由記
+Disc: 1
+Date: 2019
+Track: 2
+Format: 44100:16:2
+mtime: 1738035406
+song_end
+song_begin: 03. Black Bird.flac
+Time: 227.200000
+Title: Black Bird
+Artist: Aimer
+Album: Penny Rain
+Composer: 飛内将大
+Disc: 1
+Date: 2019
+Track: 3
+Format: 44100:16:2
+mtime: 1737993910
+song_end
+song_begin: 04. Sailing.flac
+Time: 335.973000
+Title: Sailing
+Artist: Aimer
+Album: Penny Rain
+Composer: 飛内将大
+Disc: 1
+Date: 2019
+Track: 4
+Format: 44100:16:2
+mtime: 1738048171
+song_end
+song_begin: 05. 眩いばかり.flac
+Time: 251.373000
+Title: 眩いばかり
+Artist: Aimer
+Album: Penny Rain
+Composer: Cocco
+Disc: 1
+Date: 2019
+Track: 5
+Format: 44100:16:2
+mtime: 1738032008
+song_end
+song_begin: 06. Stand By You.flac
+Time: 254.640000
+Title: Stand By You
+Artist: Aimer
+Album: Penny Rain
+Composer: TK
+Disc: 1
+Date: 2019
+Track: 6
+Format: 44100:16:2
+mtime: 1738033370
+song_end
+song_begin: 07. Ref：rain.flac
+Time: 289.986000
+Title: Ref:rain
+Artist: Aimer
+Album: Penny Rain
+Composer: 飛内将大
+Disc: 1
+Date: 2019
+Track: 7
+Format: 44100:16:2
+mtime: 1738038493
+song_end
+song_begin: 08. i-mage ＜in／AR＞.flac
+Time: 349.520000
+Title: i-mage＜in/AR＞
+Artist: Aimer
+Album: Penny Rain
+Composer: 澤野弘之
+Disc: 1
+Date: 2019
+Track: 8
+Format: 44100:16:2
+mtime: 1738049993
+song_end
+song_begin: 09. 花の唄.flac
+Time: 371.426000
+Title: 花の唄
+Artist: Aimer
+Album: Penny Rain
+Composer: 梶浦由記
+Disc: 1
+Date: 2019
+Track: 9
+Format: 44100:16:2
+mtime: 1738050607
+song_end
+song_begin: 10. April Showers.flac
+Time: 343.973000
+Title: April Showers
+Artist: Aimer
+Album: Penny Rain
+Composer: AlbatoLuce
+Disc: 1
+Date: 2019
+Track: 10
+Format: 44100:16:2
+mtime: 1738042170
+song_end
+end: Aimer/1.6 - Aimer - Penny Rain
+directory: 1.7 - Aimer - Walpurgis
+mtime: 1738048771
+begin: Aimer/1.7 - Aimer - Walpurgis
+song_begin: 01. Walpurgis -prologue-.flac
+Time: 143.940000
+Artist: Aimer
+Date: 2021
+Title: Walpurgis -prologue-
+Track: 1
+Album: Walpurgis
+Genre: JPop
+Format: 44100:16:2
+mtime: 1737979889
+song_end
+song_begin: 02. STAND-ALONE.flac
+Time: 285.814000
+Artist: Aimer
+Date: 2021
+Title: STAND-ALONE
+Track: 2
+Album: Walpurgis
+Genre: JPop
+Format: 44100:16:2
+mtime: 1738029351
+song_end
+song_begin: 03. cold rain.flac
+Time: 230.202000
+Artist: Aimer
+Date: 2021
+Title: cold rain
+Track: 3
+Album: Walpurgis
+Genre: JPop
+Format: 44100:16:2
+mtime: 1737986254
+song_end
+song_begin: 04. トリル.flac
+Time: 320.597000
+Artist: Aimer
+Date: 2021
+Title: トリル
+Track: 4
+Album: Walpurgis
+Genre: JPop
+Format: 44100:16:2
+mtime: 1738038000
+song_end
+song_begin: 05. 地球儀.flac
+Time: 232.780000
+Artist: Aimer with Vaundy
+Date: 2021
+Title: 地球儀
+Track: 5
+Album: Walpurgis
+Genre: JPop
+Format: 44100:16:2
+mtime: 1737985544
+song_end
+song_begin: 06. SPARK-AGAIN.flac
+Time: 242.718000
+Artist: Aimer
+Date: 2021
+Title: SPARK-AGAIN
+Track: 6
+Album: Walpurgis
+Genre: JPop
+Format: 44100:16:2
+mtime: 1737995182
+song_end
+song_begin: 07. wonderland.flac
+Time: 303.786000
+Artist: Aimer
+Date: 2021
+Title: wonderland
+Track: 7
+Album: Walpurgis
+Genre: JPop
+Format: 44100:16:2
+mtime: 1738034000
+song_end
+song_begin: 08. Torches.flac
+Time: 294.754000
+Artist: Aimer
+Date: 2021
+Title: Torches
+Track: 8
+Album: Walpurgis
+Genre: JPop
+Format: 44100:16:2
+mtime: 1738029788
+song_end
+song_begin: 09. marie.flac
+Time: 306.224000
+Artist: Aimer
+Date: 2021
+Title: marie
+Track: 9
+Album: Walpurgis
+Genre: JPop
+Format: 44100:16:2
+mtime: 1738028881
+song_end
+song_begin: 10. ever after.flac
+Time: 236.286000
+Artist: Aimer
+Date: 2021
+Title: ever after
+Track: 10
+Album: Walpurgis
+Genre: JPop
+Format: 44100:16:2
+mtime: 1737989546
+song_end
+song_begin: 11. hollow-mas.flac
+Time: 172.849000
+Artist: Aimer
+Date: 2021
+Title: hollow-mas
+Track: 11
+Album: Walpurgis
+Genre: JPop
+Format: 44100:16:2
+mtime: 1737980593
+song_end
+song_begin: 12. 季路.flac
+Time: 352.595000
+Artist: Aimer
+Date: 2021
+Title: 季路
+Track: 12
+Album: Walpurgis
+Genre: JPop
+Format: 44100:16:2
+mtime: 1738048770
+song_end
+song_begin: 13. 春はゆく.flac
+Time: 305.388000
+Artist: Aimer
+Date: 2021
+Title: 春はゆく
+Track: 13
+Album: Walpurgis
+Genre: JPop
+Format: 44100:16:2
+mtime: 1738028011
+song_end
+song_begin: 14. Walpurgis.flac
+Time: 242.718000
+Artist: Aimer
+Date: 2021
+Title: Walpurgis
+Track: 14
+Album: Walpurgis
+Genre: JPop
+Format: 44100:16:2
+mtime: 1737981751
+song_end
+end: Aimer/1.7 - Aimer - Walpurgis
+directory: 1.8 - Aimer - Open α Door
+mtime: 1738122353
+begin: Aimer/1.8 - Aimer - Open α Door
+song_begin: 01. Open α Door.flac
+Time: 76.641000
+Album: Open α Door
+AlbumArtist: Aimer
+Artist: Aimer
+Composer: 永澤和真
+Date: 2023
+Disc: 1
+Genre: J-POP
+Performer:  
+Title: Open α Door
+Track: 1
+Format: 96000:24:2
+mtime: 1737983628
+song_end
+song_begin: 02. 残響散歌.flac
+Time: 184.898000
+Album: Open α Door
+AlbumArtist: Aimer
+Artist: Aimer
+Composer: 飛内将大
+Date: 2023
+Disc: 1
+Genre: J-POP 
+Performer:  
+Title: 残響散歌
+Track: 2
+Format: 96000:24:2
+mtime: 1738056767
+song_end
+song_begin: 03. Resonantia.flac
+Time: 229.500000
+Album: Open α Door
+AlbumArtist: Aimer
+Artist: Aimer
+Composer: 百田留衣
+Date: 2023
+Disc: 1
+Genre: J-POP 
+Performer:  
+Title: Resonantia
+Track: 3
+Format: 96000:24:2
+mtime: 1738064448
+song_end
+song_begin: 04. Deep down.flac
+Time: 226.153000
+Album: Open α Door
+AlbumArtist: Aimer
+Artist: Aimer
+Composer: 永澤和真
+Date: 2023
+Disc: 1
+Genre: J-POP 
+Performer:  
+Title: Deep down
+Track: 4
+Format: 96000:24:2
+mtime: 1738062157
+song_end
+song_begin: 05. 朝が来る.flac
+Time: 293.430000
+Album: Open α Door
+AlbumArtist: Aimer
+Artist: Aimer
+Composer: 梶浦 由記
+Date: 2023
+Disc: 1
+Genre: J-POP 
+Performer:  
+Title: 朝が来る
+Track: 5
+Format: 96000:24:2
+mtime: 1738122352
+song_end
+song_begin: 06. オアイコ.flac
+Time: 236.874000
+Album: Open α Door
+AlbumArtist: Aimer
+Artist: Aimer
+Composer: 永澤和真
+Date: 2023
+Disc: 1
+Genre: J-POP
+Performer:  
+Title: オアイコ
+Track: 6
+Format: 96000:24:2
+mtime: 1738063296
+song_end
+song_begin: 07. 群青色の空.flac
+Time: 163.512000
+Album: Open α Door
+AlbumArtist: Aimer
+Artist: Aimer
+Composer: 竹次幸司
+Date: 2023
+Disc: 1
+Genre: J-POP 
+Performer:  
+Title: 群青色の空
+Track: 7
+Format: 96000:24:2
+mtime: 1738052054
+song_end
+song_begin: 08. I know U know.flac
+Time: 259.704000
+Album: Open α Door
+AlbumArtist: Aimer
+Artist: Aimer
+Composer: 大濱健吾
+Date: 2023
+Disc: 1
+Genre: J-POP 
+Performer:  
+Title: I know U know
+Track: 8
+Format: 96000:24:2
+mtime: 1738080391
+song_end
+song_begin: 09. escalate.flac
+Time: 245.174000
+Album: Open α Door
+AlbumArtist: Aimer
+Artist: Aimer
+Composer: 春尾ヨシダ
+Date: 2023
+Disc: 1
+Genre: J-POP 
+Performer:  
+Title: escalate
+Track: 9
+Format: 96000:24:2
+mtime: 1738078768
+song_end
+song_begin: 10. spiral dance.flac
+Time: 236.147000
+Album: Open α Door
+AlbumArtist: Aimer
+Artist: Aimer
+Composer: Misty mint
+Date: 2023
+Disc: 1
+Genre: J-POP 
+Performer:  
+Title: spiral dance
+Track: 10
+Format: 96000:24:2
+mtime: 1738066868
+song_end
+song_begin: 11. あてもなく.flac
+Time: 234.096000
+Album: Open α Door
+AlbumArtist: Aimer
+Artist: Aimer
+Composer: 飛内将大
+Date: 2023
+Disc: 1
+Genre: J-POP 
+Performer:  
+Title: あてもなく
+Track: 11
+Format: 96000:24:2
+mtime: 1738065662
+song_end
+song_begin: 12. SKYLIGHT.flac
+Time: 213.404000
+Album: Open α Door
+AlbumArtist: Aimer
+Artist: Aimer
+Composer: 飛内将大
+Date: 2023
+Disc: 1
+Genre: J-POP 
+Performer:  
+Title: SKYLIGHT
+Track: 12
+Format: 96000:24:2
+mtime: 1738058871
+song_end
+end: Aimer/1.8 - Aimer - Open α Door
+directory: 2.1 - Aimer - BEST SELECTION “blanc”
+mtime: 1738047615
+begin: Aimer/2.1 - Aimer - BEST SELECTION “blanc”
+song_begin: 01. 六等星の夜.flac
+Time: 337.920000
+Title: 六等星の夜
+Album: BEST SELECTION “blanc”
+Artist: Aimer
+Genre: JPop
+Date: 2017
+Track: 1
+Format: 44100:16:2
+mtime: 1738041123
+song_end
+song_begin: 02. 蝶々結び.flac
+Time: 305.653000
+Title: 蝶々結び
+Album: BEST SELECTION “blanc”
+Artist: Aimer
+Genre: JPop
+Date: 2017
+Track: 2
+Format: 44100:16:2
+mtime: 1737990288
+song_end
+song_begin: 03. あなたに出会わなければ～夏雪冬花～.flac
+Time: 362.386000
+Title: あなたに出会わなければ～夏雪冬花～
+Album: BEST SELECTION “blanc”
+Artist: Aimer
+Genre: JPop
+Date: 2017
+Track: 3
+Format: 44100:16:2
+mtime: 1738046509
+song_end
+song_begin: 04. ポラリス.flac
+Time: 367.453000
+Title: ポラリス
+Album: BEST SELECTION “blanc”
+Artist: Aimer
+Genre: JPop
+Date: 2017
+Track: 4
+Format: 44100:16:2
+mtime: 1738047615
+song_end
+song_begin: 05. Re：pray.flac
+Time: 307.120000
+Title: Re:pray
+Album: BEST SELECTION “blanc”
+Artist: Aimer
+Genre: JPop
+Date: 2017
+Track: 5
+Format: 44100:16:2
+mtime: 1738037021
+song_end
+song_begin: 06. 星屑ビーナス.flac
+Time: 254.693000
+Title: 星屑ビーナス
+Album: BEST SELECTION “blanc”
+Artist: Aimer
+Genre: JPop
+Date: 2017
+Track: 6
+Format: 44100:16:2
+mtime: 1737990675
+song_end
+song_begin: 07. broKen NIGHT.flac
+Time: 296.306000
+Title: broKen NIGHT
+Album: BEST SELECTION “blanc”
+Artist: Aimer
+Genre: JPop
+Date: 2017
+Track: 7
+Format: 44100:16:2
+mtime: 1738034468
+song_end
+song_begin: 08. カタオモイ.flac
+Time: 207.866000
+Title: カタオモイ
+Album: BEST SELECTION “blanc”
+Artist: Aimer
+Genre: JPop
+Date: 2017
+Track: 8
+Format: 44100:16:2
+mtime: 1737981137
+song_end
+song_begin: 09. 君を待つ.flac
+Time: 267.813000
+Title: 君を待つ
+Album: BEST SELECTION “blanc”
+Artist: Aimer
+Genre: JPop
+Date: 2017
+Track: 9
+Format: 44100:16:2
+mtime: 1738030244
+song_end
+song_begin: 10. 茜さす.flac
+Time: 329.786000
+Title: 茜さす
+Album: BEST SELECTION “blanc”
+Artist: Aimer
+Genre: JPop
+Date: 2017
+Track: 10
+Format: 44100:16:2
+mtime: 1738040054
+song_end
+song_begin: 11. 雪の降る街.flac
+Time: 245.400000
+Title: 雪の降る街
+Album: BEST SELECTION “blanc”
+Artist: Aimer
+Genre: JPop
+Date: 2017
+Track: 11
+Format: 44100:16:2
+mtime: 1737991448
+song_end
+song_begin: 12. everlasting snow.flac
+Time: 337.066000
+Title: everlasting snow
+Album: BEST SELECTION “blanc”
+Artist: Aimer
+Genre: JPop
+Date: 2017
+Track: 12
+Format: 44100:16:2
+mtime: 1738042712
+song_end
+song_begin: 13. March of Time.flac
+Time: 296.600000
+Title: March of Time
+Album: BEST SELECTION “blanc”
+Artist: Aimer
+Genre: JPop
+Date: 2017
+Track: 13
+Format: 44100:16:2
+mtime: 1738031125
+song_end
+song_begin: 14. 歌鳥風月.flac
+Time: 344.626000
+Title: 歌鳥風月
+Album: BEST SELECTION “blanc”
+Artist: Aimer
+Genre: JPop
+Date: 2017
+Track: 14
+Format: 44100:16:2
+mtime: 1738032470
+song_end
+end: Aimer/2.1 - Aimer - BEST SELECTION “blanc”
+directory: 2.2 - Aimer - BEST SELECTION “noir”
+mtime: 1738047058
+begin: Aimer/2.2 - Aimer - BEST SELECTION “noir”
+song_begin: 01. StarRingChild.flac
+Time: 328.786000
+Album: BEST SELECTION “noir”
+Artist: Aimer
+Genre: JPop
+Title: StarRingChild
+Date: 2017
+Track: 1
+Format: 44100:16:2
+mtime: 1738044851
+song_end
+song_begin: 02. Brave Shine.flac
+Time: 231.506000
+Album: BEST SELECTION “noir”
+Artist: Aimer
+Genre: JPop
+Title: Brave Shine
+Date: 2017
+Track: 2
+Format: 44100:16:2
+mtime: 1737991838
+song_end
+song_begin: 03. insane dream.flac
+Time: 252.973000
+Album: BEST SELECTION “noir”
+Artist: Aimer
+Genre: JPop
+Title: insane dream
+Date: 2017
+Track: 3
+Format: 44100:16:2
+mtime: 1737993480
+song_end
+song_begin: 04. Stars in the rain.flac
+Time: 300.586000
+Album: BEST SELECTION “noir”
+Artist: Aimer
+Genre: JPop
+Title: Stars in the rain
+Date: 2017
+Track: 4
+Format: 44100:16:2
+mtime: 1738038990
+song_end
+song_begin: 05. 眠りの森.flac
+Time: 274.493000
+Album: BEST SELECTION “noir”
+Artist: Aimer
+Genre: JPop
+Title: 眠りの森
+Date: 2017
+Track: 5
+Format: 44100:16:2
+mtime: 1738030686
+song_end
+song_begin: 06. LAST STARDUST.flac
+Time: 318.480000
+Album: BEST SELECTION “noir”
+Artist: Aimer
+Genre: JPop
+Title: LAST STARDUST
+Date: 2017
+Track: 6
+Format: 44100:16:2
+mtime: 1738041641
+song_end
+song_begin: 07. 凍えそうな季節から -extended ver.-.flac
+Time: 226.360000
+Album: BEST SELECTION “noir”
+Artist: Aimer
+Genre: JPop
+Title: 凍えそうな季節から -extended ver.-
+Date: 2017
+Track: 7
+Format: 44100:16:2
+mtime: 1737989917
+song_end
+song_begin: 08. 誰か、海を。.flac
+Time: 294.160000
+Album: BEST SELECTION “noir”
+Artist: Aimer
+Genre: JPop
+Title: 誰か、海を。
+Date: 2017
+Track: 8
+Format: 44100:16:2
+mtime: 1737993076
+song_end
+song_begin: 09. ninelie.flac
+Time: 260.773000
+Album: BEST SELECTION “noir”
+Artist: Aimer
+Genre: JPop
+Title: ninelie
+Date: 2017
+Track: 9
+Format: 44100:16:2
+mtime: 1738027587
+song_end
+song_begin: 10. holLow wORLD.flac
+Time: 275.306000
+Album: BEST SELECTION “noir”
+Artist: Aimer
+Genre: JPop
+Title: holLow wORLD
+Date: 2017
+Track: 10
+Format: 44100:16:2
+mtime: 1738035897
+song_end
+song_begin: 11. us.flac
+Time: 274.160000
+Album: BEST SELECTION “noir”
+Artist: Aimer
+Genre: JPop
+Title: us
+Date: 2017
+Track: 11
+Format: 44100:16:2
+mtime: 1738028450
+song_end
+song_begin: 12. s-AVE by SawanoHiroyuki[nZk].flac
+Time: 276.360000
+Album: BEST SELECTION “noir”
+Artist: Aimer
+Genre: JPop
+Title: s-AVE by SawanoHiroyuki[nZk]
+Date: 2017
+Track: 12
+Format: 44100:16:2
+mtime: 1737995618
+song_end
+song_begin: 13. Re：I AM.flac
+Time: 347.173000
+Album: BEST SELECTION “noir”
+Artist: Aimer
+Genre: JPop
+Title: Re:I AM
+Date: 2017
+Track: 13
+Format: 44100:16:2
+mtime: 1738047058
+song_end
+song_begin: 14. zero.flac
+Time: 188.746000
+Album: BEST SELECTION “noir”
+Artist: Aimer
+Genre: JPop
+Title: zero
+Date: 2017
+Track: 14
+Format: 44100:16:2
+mtime: 1737982356
+song_end
+end: Aimer/2.2 - Aimer - BEST SELECTION “noir”
+directory: 2.3 - Aimer - 星の消えた夜に
+mtime: 1737979220
+begin: Aimer/2.3 - Aimer - 星の消えた夜に
+directory: Disc 1
+mtime: 1738163874
+begin: Aimer/2.3 - Aimer - 星の消えた夜に/Disc 1
+song_begin: 01. Run Riot (Remaster for 星の消えた夜に 2022).flac
+Time: 253.194000
+Title: Run Riot (Remaster for 星の消えた夜に 2022)
+Artist: Aimer
+Album: 星の消えた夜に
+Genre: JPop
+Date: 2022
+Track: 1
+Format: 96000:24:2
+mtime: 1738070624
+song_end
+song_begin: 02. Work it out (Remaster for 星の消えた夜に 2022).flac
+Time: 219.159000
+Title: Work it out (Remaster for 星の消えた夜に 2022)
+Artist: Aimer
+Album: 星の消えた夜に
+Genre: JPop
+Date: 2022
+Track: 2
+Format: 96000:24:2
+mtime: 1738059944
+song_end
+song_begin: 03. Mine (Remaster for 星の消えた夜に 2022).flac
+Time: 307.897000
+Title: Mine (Remaster for 星の消えた夜に 2022)
+Artist: Aimer
+Album: 星の消えた夜に
+Genre: JPop
+Date: 2022
+Track: 3
+Format: 96000:24:2
+mtime: 1738083122
+song_end
+song_begin: 04. Ophelia (Remaster for 星の消えた夜に 2022).flac
+Time: 403.876000
+Title: Ophelia (Remaster for 星の消えた夜に 2022)
+Artist: Aimer
+Album: 星の消えた夜に
+Genre: JPop
+Date: 2022
+Track: 4
+Format: 96000:24:2
+mtime: 1738149088
+song_end
+song_begin: 05. スピカ (Remaster for 星の消えた夜に 2022).flac
+Time: 309.578000
+Title: スピカ (Remaster for 星の消えた夜に 2022)
+Artist: Aimer
+Album: 星の消えた夜に
+Genre: JPop
+Date: 2022
+Track: 5
+Format: 96000:24:2
+mtime: 1738125317
+song_end
+song_begin: 06. 夏草に君を想う (Remaster for 星の消えた夜に 2022).flac
+Time: 262.519000
+Title: 夏草に君を想う (Remaster for 星の消えた夜に 2022)
+Artist: Aimer
+Album: 星の消えた夜に
+Genre: JPop
+Date: 2022
+Track: 6
+Format: 96000:24:2
+mtime: 1738069358
+song_end
+song_begin: 07. tone (Remaster for 星の消えた夜に 2022).flac
+Time: 287.186000
+Title: tone (Remaster for 星の消えた夜に 2022)
+Artist: Aimer
+Album: 星の消えた夜に
+Genre: JPop
+Date: 2022
+Track: 7
+Format: 96000:24:2
+mtime: 1738072060
+song_end
+song_begin: 08. 悲しみの向こう側 (Remaster for 星の消えた夜に 2022).flac
+Time: 359.108000
+Title: 悲しみの向こう側 (Remaster for 星の消えた夜に 2022)
+Artist: Aimer
+Album: 星の消えた夜に
+Genre: JPop
+Date: 2022
+Track: 8
+Format: 96000:24:2
+mtime: 1738128475
+song_end
+song_begin: 09. Blind to you (Remaster for 星の消えた夜に 2022).flac
+Time: 281.558000
+Title: Blind to you (Remaster for 星の消えた夜に 2022)
+Artist: Aimer
+Album: 星の消えた夜に
+Genre: JPop
+Date: 2022
+Track: 9
+Format: 96000:24:2
+mtime: 1738079068
+song_end
+song_begin: 10. my sweetest one (Remaster for 星の消えた夜に 2022).flac
+Time: 279.130000
+Title: my sweetest one (Remaster for 星の消えた夜に 2022)
+Artist: Aimer
+Album: 星の消えた夜に
+Genre: JPop
+Date: 2022
+Track: 10
+Format: 96000:24:2
+mtime: 1738081753
+song_end
+song_begin: 11. 今日から思い出 (Remaster for 星の消えた夜に 2022).flac
+Time: 305.325000
+Title: 今日から思い出 (Remaster for 星の消えた夜に 2022)
+Artist: Aimer
+Album: 星の消えた夜に
+Genre: JPop
+Date: 2022
+Track: 11
+Format: 96000:24:2
+mtime: 1738119433
+song_end
+song_begin: 12. Ash flame (Remaster for 星の消えた夜に 2022).flac
+Time: 227.316000
+Title: Ash flame (Remaster for 星の消えた夜に 2022)
+Artist: Aimer
+Album: 星の消えた夜に
+Genre: JPop
+Date: 2022
+Track: 12
+Format: 96000:24:2
+mtime: 1738061020
+song_end
+song_begin: 13. Daisy (Remaster for 星の消えた夜に 2022).flac
+Time: 260.420000
+Title: Daisy (Remaster for 星の消えた夜に 2022)
+Artist: Aimer
+Album: 星の消えた夜に
+Genre: JPop
+Date: 2022
+Track: 13
+Format: 96000:24:2
+mtime: 1738068114
+song_end
+song_begin: 14. Even Heaven (Remaster for 星の消えた夜に 2022).flac
+Time: 460.590000
+Title: Even Heaven (Remaster for 星の消えた夜に 2022)
+Artist: Aimer
+Album: 星の消えた夜に
+Genre: JPop
+Date: 2022
+Track: 14
+Format: 96000:24:2
+mtime: 1738163874
+song_end
+song_begin: 15. 星の消えた夜に (Remaster for 星の消えた夜に 2022).flac
+Time: 353.128000
+Title: 星の消えた夜に (Remaster for 星の消えた夜に 2022)
+Artist: Aimer
+Album: 星の消えた夜に
+Genre: JPop
+Date: 2022
+Track: 15
+Format: 96000:24:2
+mtime: 1738131915
+song_end
+end: Aimer/2.3 - Aimer - 星の消えた夜に/Disc 1
+directory: Disc 2
+mtime: 1738133689
+begin: Aimer/2.3 - Aimer - 星の消えた夜に/Disc 2
+song_begin: 16. ONE AND LAST.flac
+Time: 287.461000
+Title: ONE AND LAST
+Artist: Aimer
+Album: 星の消えた夜に
+Genre: JPop
+Date: 2022
+Track: 16
+Format: 96000:24:2
+mtime: 1738120898
+song_end
+song_begin: 17. トリル -starless night ver.-.flac
+Time: 330.989000
+Title: トリル -starless night ver.-
+Artist: Aimer
+Album: 星の消えた夜に
+Genre: JPop
+Date: 2022
+Track: 17
+Format: 96000:24:2
+mtime: 1738126812
+song_end
+song_begin: 18. グレースノート.flac
+Time: 301.194000
+Title: グレースノート
+Artist: Aimer
+Album: 星の消えた夜に
+Genre: JPop
+Date: 2022
+Track: 18
+Format: 96000:24:2
+mtime: 1738116422
+song_end
+song_begin: 19. 星の消えた夜に -rit. ver.-.flac
+Time: 362.691000
+Title: 星の消えた夜に -rit. ver.-
+Artist: Aimer
+Album: 星の消えた夜に
+Genre: JPop
+Date: 2022
+Track: 19
+Format: 96000:24:2
+mtime: 1738133688
+song_end
+song_begin: 20. セプテンバーさん.flac
+Time: 303.109000
+Title: セプテンバーさん
+Artist: Aimer
+Album: 星の消えた夜に
+Genre: JPop
+Date: 2022
+Track: 20
+Format: 96000:24:2
+mtime: 1738123836
+song_end
+song_begin: 21. Raining.flac
+Time: 304.549000
+Title: Raining
+Artist: Aimer
+Album: 星の消えた夜に
+Genre: JPop
+Date: 2022
+Track: 21
+Format: 96000:24:2
+mtime: 1738084505
+song_end
+song_begin: 22. 糸.flac
+Time: 224.265000
+Title: 糸
+Artist: Aimer
+Album: 星の消えた夜に
+Genre: JPop
+Date: 2022
+Track: 22
+Format: 96000:24:2
+mtime: 1738055791
+song_end
+song_begin: 23. 花束のかわりにメロディーを.flac
+Time: 299.642000
+Title: 花束のかわりにメロディーを
+Artist: Aimer
+Album: 星の消えた夜に
+Genre: JPop
+Date: 2022
+Track: 23
+Format: 96000:24:2
+mtime: 1738117837
+song_end
+end: Aimer/2.3 - Aimer - 星の消えた夜に/Disc 2
+end: Aimer/2.3 - Aimer - 星の消えた夜に
+directory: Aimer - Deep down
+mtime: 1738484941
+begin: Aimer/Aimer - Deep down
+song_begin: 01. Deep down.m4a
+Time: 227.153000
+Artist: Aimer
+Album: Deep down
+Title: Deep down
+Track: 1
+Genre: J-Pop
+Date: 2022-12-14
+Composer: 永澤和真
+Performer: Aimer
+Disc: 1
+Label: Sony Music Labels Inc.
+AlbumArtist: Aimer
+AlbumArtistSort: Aimer
+AlbumSort: Deep down
+ArtistSort: Aimer
+Format: 96000:32:2
+mtime: 1732435162
+song_end
+song_begin: 02. オアイコ.m4a
+Time: 236.375000
+Artist: Aimer
+Album: Deep down
+Title: オアイコ
+Track: 2
+Genre: J-Pop
+Date: 2022-12-14
+Composer: 永澤和真
+Performer: Aimer
+Disc: 1
+Label: Sony Music Labels Inc.
+AlbumArtist: Aimer
+AlbumArtistSort: Aimer
+AlbumSort: Deep down
+ArtistSort: Aimer
+Format: 96000:32:2
+mtime: 1732435176
+song_end
+song_begin: 03. Ivy Ivy Ivy.m4a
+Time: 292.645000
+Artist: Aimer
+Album: Deep down
+Title: Ivy Ivy Ivy
+Track: 3
+Genre: J-Pop
+Date: 2022-12-14
+Composer: Misty mint
+Performer: Aimer
+Disc: 1
+Label: Sony Music Labels Inc.
+AlbumArtist: Aimer
+AlbumArtistSort: Aimer
+AlbumSort: Deep down
+ArtistSort: Aimer
+Format: 96000:32:2
+mtime: 1732435192
+song_end
+song_begin: 04. wavy flow.m4a
+Time: 208.784000
+Artist: Aimer
+Album: Deep down
+Title: wavy flow
+Track: 4
+Genre: J-Pop
+Date: 2022-12-14
+Composer: 秋浦智裕
+Performer: Aimer
+Disc: 1
+Label: Sony Music Labels Inc.
+AlbumArtist: Aimer
+AlbumArtistSort: Aimer
+AlbumSort: Deep down
+ArtistSort: Aimer
+Format: 96000:32:2
+mtime: 1732435210
+song_end
+song_begin: 05. rubble pile.m4a
+Time: 238.469000
+Artist: Aimer
+Album: Deep down
+Title: rubble pile
+Track: 5
+Genre: J-Pop
+Date: 2022-12-14
+Composer: 百田留衣
+Performer: Aimer
+Disc: 1
+Label: Sony Music Labels Inc.
+AlbumArtist: Aimer
+AlbumArtistSort: Aimer
+AlbumSort: Deep down
+ArtistSort: Aimer
+Format: 96000:32:2
+mtime: 1732435224
+song_end
+song_begin: 06. カタオモイ - From THE FIRST TAKE.m4a
+Time: 222.804000
+Artist: Aimer
+Album: Deep down
+Title: カタオモイ - From THE FIRST TAKE
+Track: 6
+Genre: J-Pop
+Date: 2022-12-14
+Composer: 内澤崇仁
+Performer: Aimer
+Disc: 1
+Label: Sony Music Labels Inc.
+AlbumArtist: Aimer
+AlbumArtistSort: Aimer
+AlbumSort: Deep down
+ArtistSort: Aimer
+Format: 96000:32:2
+mtime: 1732435236
+song_end
+song_begin: 07. 残響散歌 - From THE FIRST TAKE.m4a
+Time: 184.952000
+Artist: Aimer
+Album: Deep down
+Title: 残響散歌 - From THE FIRST TAKE
+Track: 7
+Genre: J-Pop
+Date: 2022-12-14
+Composer: MASAHIRO TOBINAI
+Performer: Aimer
+Disc: 1
+Label: Sony Music Labels Inc.
+AlbumArtist: Aimer
+AlbumArtistSort: Aimer
+AlbumSort: Deep down
+ArtistSort: Aimer
+Format: 96000:32:2
+mtime: 1732435248
+song_end
+end: Aimer/Aimer - Deep down
+directory: Aimer - Open α Door
+mtime: 1738484942
+begin: Aimer/Aimer - Open α Door
+song_begin: 01. Open α Door.m4a
+Time: 76.642000
+Artist: Aimer
+Album: Open α Door
+Title: Open α Door
+Track: 1
+Genre: J-Pop
+Date: 2023-07-26
+Composer: 永澤和真
+Performer: Aimer
+Disc: 1
+Label: Sony Music Labels Inc.
+AlbumArtist: Aimer
+AlbumArtistSort: Aimer
+AlbumSort: Open α Door
+ArtistSort: Aimer
+Format: 96000:32:2
+mtime: 1732429786
+song_end
+song_begin: 02. 残響散歌.m4a
+Time: 184.898000
+Artist: Aimer
+Album: Open α Door
+Title: 残響散歌
+Track: 2
+Genre: J-Pop
+Date: 2023-07-26
+Composer: MASAHIRO TOBINAI
+Performer: Aimer
+Disc: 1
+Label: Sony Music Labels Inc.
+AlbumArtist: Aimer
+AlbumArtistSort: Aimer
+AlbumSort: Open α Door
+ArtistSort: Aimer
+Format: 96000:32:2
+mtime: 1732429800
+song_end
+song_begin: 03. Resonantia.m4a
+Time: 229.501000
+Artist: Aimer
+Album: Open α Door
+Title: Resonantia
+Track: 3
+Genre: J-Pop
+Date: 2023-07-26
+Composer: 百田留衣
+Performer: Aimer
+Disc: 1
+Label: Sony Music Labels Inc.
+AlbumArtist: Aimer
+AlbumArtistSort: Aimer
+AlbumSort: Open α Door
+ArtistSort: Aimer
+Format: 96000:32:2
+mtime: 1732429816
+song_end
+song_begin: 04. Deep down.m4a
+Time: 226.153000
+Artist: Aimer
+Album: Open α Door
+Title: Deep down
+Track: 4
+Genre: J-Pop
+Date: 2023-07-26
+Composer: 永澤和真
+Performer: Aimer
+Disc: 1
+Label: Sony Music Labels Inc.
+AlbumArtist: Aimer
+AlbumArtistSort: Aimer
+AlbumSort: Open α Door
+ArtistSort: Aimer
+Format: 96000:32:2
+mtime: 1732429832
+song_end
+song_begin: 05. 朝が来る.m4a
+Time: 293.430000
+Artist: Aimer
+Album: Open α Door
+Title: 朝が来る
+Track: 5
+Genre: J-Pop
+Date: 2023-07-26
+Composer: 梶浦由记
+Performer: Aimer
+Disc: 1
+Label: Sony Music Labels Inc.
+AlbumArtist: Aimer
+AlbumArtistSort: Aimer
+AlbumSort: Open α Door
+ArtistSort: Aimer
+Format: 96000:32:2
+mtime: 1732429850
+song_end
+song_begin: 06. オアイコ.m4a
+Time: 236.875000
+Artist: Aimer
+Album: Open α Door
+Title: オアイコ
+Track: 6
+Genre: J-Pop
+Date: 2023-07-26
+Composer: 永澤和真
+Performer: Aimer
+Disc: 1
+Label: Sony Music Labels Inc.
+AlbumArtist: Aimer
+AlbumArtistSort: Aimer
+AlbumSort: Open α Door
+ArtistSort: Aimer
+Format: 96000:32:2
+mtime: 1732429864
+song_end
+song_begin: 07. 群青色の空.m4a
+Time: 163.512000
+Artist: Aimer
+Album: Open α Door
+Title: 群青色の空
+Track: 7
+Genre: J-Pop
+Date: 2023-07-26
+Composer: Koji Taketsugu
+Performer: Aimer
+Disc: 1
+Label: Sony Music Labels Inc.
+AlbumArtist: Aimer
+AlbumArtistSort: Aimer
+AlbumSort: Open α Door
+ArtistSort: Aimer
+Format: 96000:32:2
+mtime: 1732429876
+song_end
+song_begin: 08. I know U know.m4a
+Time: 259.704000
+Artist: Aimer
+Album: Open α Door
+Title: I know U know
+Track: 8
+Genre: J-Pop
+Date: 2023-07-26
+Composer: Kengo Oohama
+Performer: Aimer
+Disc: 1
+Label: Sony Music Labels Inc.
+AlbumArtist: Aimer
+AlbumArtistSort: Aimer
+AlbumSort: Open α Door
+ArtistSort: Aimer
+Format: 96000:32:2
+mtime: 1732429892
+song_end
+song_begin: 09. escalate.m4a
+Time: 245.175000
+Artist: Aimer
+Album: Open α Door
+Title: escalate
+Track: 9
+Genre: J-Pop
+Date: 2023-07-26
+Composer: 春尾ヨシダ
+Performer: Aimer
+Disc: 1
+Label: Sony Music Labels Inc.
+AlbumArtist: Aimer
+AlbumArtistSort: Aimer
+AlbumSort: Open α Door
+ArtistSort: Aimer
+Format: 96000:32:2
+mtime: 1732429908
+song_end
+song_begin: 10. spiral dance.m4a
+Time: 236.148000
+Artist: Aimer
+Album: Open α Door
+Title: spiral dance
+Track: 10
+Genre: J-Pop
+Date: 2023-07-26
+Composer: Misty mint
+Performer: Aimer
+Disc: 1
+Label: Sony Music Labels Inc.
+AlbumArtist: Aimer
+AlbumArtistSort: Aimer
+AlbumSort: Open α Door
+ArtistSort: Aimer
+Format: 96000:32:2
+mtime: 1732429924
+song_end
+song_begin: 11. あてもなく.m4a
+Time: 234.097000
+Artist: Aimer
+Album: Open α Door
+Title: あてもなく
+Track: 11
+Genre: J-Pop
+Date: 2023-07-26
+Composer: MASAHIRO TOBINAI
+Performer: Aimer
+Disc: 1
+Label: Sony Music Labels Inc.
+AlbumArtist: Aimer
+AlbumArtistSort: Aimer
+AlbumSort: Open α Door
+ArtistSort: Aimer
+Format: 96000:32:2
+mtime: 1732429938
+song_end
+song_begin: 12. SKYLIGHT.m4a
+Time: 213.404000
+Artist: Aimer
+Album: Open α Door
+Title: SKYLIGHT
+Track: 12
+Genre: J-Pop
+Date: 2023-07-26
+Composer: MASAHIRO TOBINAI
+Performer: Aimer
+Disc: 1
+Label: Sony Music Labels Inc.
+AlbumArtist: Aimer
+AlbumArtistSort: Aimer
+AlbumSort: Open α Door
+ArtistSort: Aimer
+Format: 96000:32:2
+mtime: 1732429952
+song_end
+end: Aimer/Aimer - Open α Door
+directory: Aimer - Penny Rain
+mtime: 1732457298
+begin: Aimer/Aimer - Penny Rain
+song_begin: 01. pluie.m4a
+Time: 119.827000
+Artist: Aimer
+Album: Penny Rain
+Title: pluie
+Track: 1
+Genre: J-Pop
+Date: 2019-04-10
+Composer: 梶浦由记
+Performer: Aimer
+Disc: 1
+Label: Sony Music Labels Inc.
+AlbumArtist: Aimer
+AlbumArtistSort: Aimer
+AlbumSort: Penny Rain
+ArtistSort: Aimer
+Format: 44100:16:2
+mtime: 1732438354
+song_end
+song_begin: 02. I beg you.m4a
+Time: 267.213000
+Artist: Aimer
+Album: Penny Rain
+Title: I beg you
+Track: 2
+Genre: J-Pop
+Date: 2019-04-10
+Composer: 梶浦由记
+Performer: Aimer
+Disc: 1
+Label: Sony Music Labels Inc.
+AlbumArtist: Aimer
+AlbumArtistSort: Aimer
+AlbumSort: Penny Rain
+ArtistSort: Aimer
+Format: 44100:16:2
+mtime: 1732438362
+song_end
+song_begin: 03. Black Bird.m4a
+Time: 227.200000
+Artist: Aimer
+Album: Penny Rain
+Title: Black Bird
+Track: 3
+Genre: J-Pop
+Date: 2019-04-10
+Composer: MASAHIRO TOBINAI
+Performer: Aimer
+Disc: 1
+Label: Sony Music Labels Inc.
+AlbumArtist: Aimer
+AlbumArtistSort: Aimer
+AlbumSort: Penny Rain
+ArtistSort: Aimer
+Format: 44100:16:2
+mtime: 1732438366
+song_end
+song_begin: 04. Sailing.m4a
+Time: 335.973000
+Artist: Aimer
+Album: Penny Rain
+Title: Sailing
+Track: 4
+Genre: J-Pop
+Date: 2019-04-10
+Composer: MASAHIRO TOBINAI
+Performer: Aimer
+Disc: 1
+Label: Sony Music Labels Inc.
+AlbumArtist: Aimer
+AlbumArtistSort: Aimer
+AlbumSort: Penny Rain
+ArtistSort: Aimer
+Format: 44100:16:2
+mtime: 1732438374
+song_end
+song_begin: 05. 眩いばかり.m4a
+Time: 251.373000
+Artist: Aimer
+Album: Penny Rain
+Title: 眩いばかり
+Track: 5
+Genre: J-Pop
+Date: 2019-04-10
+Composer: Cocco
+Performer: Aimer
+Disc: 1
+Label: Sony Music Labels Inc.
+AlbumArtist: Aimer
+AlbumArtistSort: Aimer
+AlbumSort: Penny Rain
+ArtistSort: Aimer
+Format: 44100:16:2
+mtime: 1732438382
+song_end
+song_begin: 06. Stand By You.m4a
+Time: 254.640000
+Artist: Aimer
+Album: Penny Rain
+Title: Stand By You
+Track: 6
+Genre: J-Pop
+Date: 2019-04-10
+Composer: TK
+Performer: Aimer
+Disc: 1
+Label: Sony Music Labels Inc.
+AlbumArtist: Aimer
+AlbumArtistSort: Aimer
+AlbumSort: Penny Rain
+ArtistSort: Aimer
+Format: 44100:16:2
+mtime: 1732438388
+song_end
+song_begin: 07. Ref_rain.m4a
+Time: 289.987000
+Artist: Aimer
+Album: Penny Rain
+Title: Ref:rain
+Track: 7
+Genre: J-Pop
+Date: 2019-04-10
+Composer: MASAHIRO TOBINAI
+Performer: Aimer
+Disc: 1
+Label: Sony Music Labels Inc.
+AlbumArtist: Aimer
+AlbumArtistSort: Aimer
+AlbumSort: Penny Rain
+ArtistSort: Aimer
+Format: 44100:16:2
+mtime: 1732438394
+song_end
+song_begin: 08. i-mage _in_AR_.m4a
+Time: 349.520000
+Artist: Aimer
+Album: Penny Rain
+Title: i-mage <in/AR>
+Track: 8
+Genre: J-Pop
+Date: 2019-04-10
+Composer: 泽野弘之
+Performer: Aimer
+Disc: 1
+Label: Sony Music Labels Inc.
+AlbumArtist: Aimer
+AlbumArtistSort: Aimer
+AlbumSort: Penny Rain
+ArtistSort: Aimer
+Format: 44100:16:2
+mtime: 1732438404
+song_end
+song_begin: 09. 花の唄.m4a
+Time: 371.427000
+Artist: Aimer
+Album: Penny Rain
+Title: 花の唄
+Track: 9
+Genre: J-Pop
+Date: 2019-04-10
+Composer: 梶浦由记
+Performer: Aimer
+Disc: 1
+Label: Sony Music Labels Inc.
+AlbumArtist: Aimer
+AlbumArtistSort: Aimer
+AlbumSort: Penny Rain
+ArtistSort: Aimer
+Format: 44100:16:2
+mtime: 1732438412
+song_end
+song_begin: 10. April Showers.m4a
+Time: 343.973000
+Artist: Aimer
+Album: Penny Rain
+Title: April Showers
+Track: 10
+Genre: J-Pop
+Date: 2019-04-10
+Composer: AlbatoLuce
+Performer: Aimer
+Disc: 1
+Label: Sony Music Labels Inc.
+AlbumArtist: Aimer
+AlbumArtistSort: Aimer
+AlbumSort: Penny Rain
+ArtistSort: Aimer
+Format: 44100:16:2
+mtime: 1732438420
+song_end
+end: Aimer/Aimer - Penny Rain
+directory: Aimer - Penny Rain_1
+mtime: 1738484937
+begin: Aimer/Aimer - Penny Rain_1
+song_begin: 01. pluie.m4a
+Time: 119.827000
+Artist: Aimer
+Album: Penny Rain
+Title: pluie
+Track: 1
+Genre: J-Pop
+Date: 2019-04-10
+Composer: 梶浦由记
+Performer: Aimer
+Disc: 1
+Label: Sony Music Labels Inc.
+AlbumArtist: Aimer
+AlbumArtistSort: Aimer
+AlbumSort: Penny Rain
+ArtistSort: Aimer
+Format: 44100:16:2
+mtime: 1732438354
+song_end
+song_begin: 02. I beg you.m4a
+Time: 267.213000
+Artist: Aimer
+Album: Penny Rain
+Title: I beg you
+Track: 2
+Genre: J-Pop
+Date: 2019-04-10
+Composer: 梶浦由记
+Performer: Aimer
+Disc: 1
+Label: Sony Music Labels Inc.
+AlbumArtist: Aimer
+AlbumArtistSort: Aimer
+AlbumSort: Penny Rain
+ArtistSort: Aimer
+Format: 44100:16:2
+mtime: 1732438362
+song_end
+song_begin: 03. Black Bird.m4a
+Time: 227.200000
+Artist: Aimer
+Album: Penny Rain
+Title: Black Bird
+Track: 3
+Genre: J-Pop
+Date: 2019-04-10
+Composer: MASAHIRO TOBINAI
+Performer: Aimer
+Disc: 1
+Label: Sony Music Labels Inc.
+AlbumArtist: Aimer
+AlbumArtistSort: Aimer
+AlbumSort: Penny Rain
+ArtistSort: Aimer
+Format: 44100:16:2
+mtime: 1732438366
+song_end
+song_begin: 04. Sailing.m4a
+Time: 335.973000
+Artist: Aimer
+Album: Penny Rain
+Title: Sailing
+Track: 4
+Genre: J-Pop
+Date: 2019-04-10
+Composer: MASAHIRO TOBINAI
+Performer: Aimer
+Disc: 1
+Label: Sony Music Labels Inc.
+AlbumArtist: Aimer
+AlbumArtistSort: Aimer
+AlbumSort: Penny Rain
+ArtistSort: Aimer
+Format: 44100:16:2
+mtime: 1732438374
+song_end
+song_begin: 05. 眩いばかり.m4a
+Time: 251.373000
+Artist: Aimer
+Album: Penny Rain
+Title: 眩いばかり
+Track: 5
+Genre: J-Pop
+Date: 2019-04-10
+Composer: Cocco
+Performer: Aimer
+Disc: 1
+Label: Sony Music Labels Inc.
+AlbumArtist: Aimer
+AlbumArtistSort: Aimer
+AlbumSort: Penny Rain
+ArtistSort: Aimer
+Format: 44100:16:2
+mtime: 1732438382
+song_end
+song_begin: 06. Stand By You.m4a
+Time: 254.640000
+Artist: Aimer
+Album: Penny Rain
+Title: Stand By You
+Track: 6
+Genre: J-Pop
+Date: 2019-04-10
+Composer: TK
+Performer: Aimer
+Disc: 1
+Label: Sony Music Labels Inc.
+AlbumArtist: Aimer
+AlbumArtistSort: Aimer
+AlbumSort: Penny Rain
+ArtistSort: Aimer
+Format: 44100:16:2
+mtime: 1732438388
+song_end
+song_begin: 07. Ref_rain.m4a
+Time: 289.987000
+Artist: Aimer
+Album: Penny Rain
+Title: Ref:rain
+Track: 7
+Genre: J-Pop
+Date: 2019-04-10
+Composer: MASAHIRO TOBINAI
+Performer: Aimer
+Disc: 1
+Label: Sony Music Labels Inc.
+AlbumArtist: Aimer
+AlbumArtistSort: Aimer
+AlbumSort: Penny Rain
+ArtistSort: Aimer
+Format: 44100:16:2
+mtime: 1732438394
+song_end
+song_begin: 08. i-mage _in_AR_.m4a
+Time: 349.520000
+Artist: Aimer
+Album: Penny Rain
+Title: i-mage <in/AR>
+Track: 8
+Genre: J-Pop
+Date: 2019-04-10
+Composer: 泽野弘之
+Performer: Aimer
+Disc: 1
+Label: Sony Music Labels Inc.
+AlbumArtist: Aimer
+AlbumArtistSort: Aimer
+AlbumSort: Penny Rain
+ArtistSort: Aimer
+Format: 44100:16:2
+mtime: 1732438404
+song_end
+song_begin: 09. 花の唄.m4a
+Time: 371.427000
+Artist: Aimer
+Album: Penny Rain
+Title: 花の唄
+Track: 9
+Genre: J-Pop
+Date: 2019-04-10
+Composer: 梶浦由记
+Performer: Aimer
+Disc: 1
+Label: Sony Music Labels Inc.
+AlbumArtist: Aimer
+AlbumArtistSort: Aimer
+AlbumSort: Penny Rain
+ArtistSort: Aimer
+Format: 44100:16:2
+mtime: 1732438412
+song_end
+song_begin: 10. April Showers.m4a
+Time: 343.973000
+Artist: Aimer
+Album: Penny Rain
+Title: April Showers
+Track: 10
+Genre: J-Pop
+Date: 2019-04-10
+Composer: AlbatoLuce
+Performer: Aimer
+Disc: 1
+Label: Sony Music Labels Inc.
+AlbumArtist: Aimer
+AlbumArtistSort: Aimer
+AlbumSort: Penny Rain
+ArtistSort: Aimer
+Format: 44100:16:2
+mtime: 1732438420
+song_end
+end: Aimer/Aimer - Penny Rain_1
+directory: Aimer - Walpurgis
+mtime: 1738484939
+begin: Aimer/Aimer - Walpurgis
+song_begin: 01. Walpurgis -prologue-.m4a
+Time: 143.947000
+Artist: Aimer
+Album: Walpurgis
+Title: Walpurgis -prologue-
+Track: 1
+Genre: J-Pop
+Date: 2021-04-14
+Composer: 百田留衣
+Performer: Aimer
+Disc: 1
+Label: Sony Music Labels Inc.
+AlbumArtist: Aimer
+AlbumArtistSort: Aimer
+AlbumSort: Walpurgis
+ArtistSort: Aimer
+Format: 44100:16:2
+mtime: 1732437378
+song_end
+song_begin: 02. STAND-ALONE.m4a
+Time: 285.827000
+Artist: Aimer
+Album: Walpurgis
+Title: STAND-ALONE
+Track: 2
+Genre: J-Pop
+Date: 2021-04-14
+Composer: MASAHIRO TOBINAI
+Performer: Aimer
+Disc: 1
+Label: Sony Music Labels Inc.
+AlbumArtist: Aimer
+AlbumArtistSort: Aimer
+AlbumSort: Walpurgis
+ArtistSort: Aimer
+Format: 44100:16:2
+mtime: 1732437386
+song_end
+song_begin: 03. cold rain.m4a
+Time: 230.200000
+Artist: Aimer
+Album: Walpurgis
+Title: cold rain
+Track: 3
+Genre: J-Pop
+Date: 2021-04-14
+Composer: 三橋隆幸
+Performer: Aimer
+Disc: 1
+Label: Sony Music Labels Inc.
+AlbumArtist: Aimer
+AlbumArtistSort: Aimer
+AlbumSort: Walpurgis
+ArtistSort: Aimer
+Format: 44100:16:2
+mtime: 1732437392
+song_end
+song_begin: 04. トリル.m4a
+Time: 320.613000
+Artist: Aimer
+Album: Walpurgis
+Title: トリル
+Track: 4
+Genre: J-Pop
+Date: 2021-04-14
+Composer: MASAHIRO TOBINAI
+Performer: Aimer
+Disc: 1
+Label: Sony Music Labels Inc.
+AlbumArtist: Aimer
+AlbumArtistSort: Aimer
+AlbumSort: Walpurgis
+ArtistSort: Aimer
+Format: 44100:16:2
+mtime: 1732437400
+song_end
+song_begin: 05. 地球儀 (with Vaundy).m4a
+Time: 232.787000
+Artist: Aimer
+Album: Walpurgis
+Title: 地球儀 (with Vaundy)
+Track: 5
+Genre: J-Pop
+Date: 2021-04-14
+Composer: Vaundy
+Performer: Aimer
+Disc: 1
+Label: Sony Music Labels Inc.
+AlbumArtist: Aimer
+AlbumArtistSort: Aimer
+AlbumSort: Walpurgis
+ArtistSort: Aimer
+Format: 44100:16:2
+mtime: 1732437406
+song_end
+song_begin: 06. SPARK-AGAIN.m4a
+Time: 242.733000
+Artist: Aimer
+Album: Walpurgis
+Title: SPARK-AGAIN
+Track: 6
+Genre: J-Pop
+Date: 2021-04-14
+Composer: MASAHIRO TOBINAI
+Performer: Aimer
+Disc: 1
+Label: Sony Music Labels Inc.
+AlbumArtist: Aimer
+AlbumArtistSort: Aimer
+AlbumSort: Walpurgis
+ArtistSort: Aimer
+Format: 44100:16:2
+mtime: 1732437414
+song_end
+song_begin: 07. wonderland.m4a
+Time: 303.787000
+Artist: Aimer
+Album: Walpurgis
+Title: wonderland
+Track: 7
+Genre: J-Pop
+Date: 2021-04-14
+Composer: 梶浦由记
+Performer: Aimer
+Disc: 1
+Label: Sony Music Labels Inc.
+AlbumArtist: Aimer
+AlbumArtistSort: Aimer
+AlbumSort: Walpurgis
+ArtistSort: Aimer
+Format: 44100:16:2
+mtime: 1732437420
+song_end
+song_begin: 08. Torches.m4a
+Time: 294.760000
+Artist: Aimer
+Album: Walpurgis
+Title: Torches
+Track: 8
+Genre: J-Pop
+Date: 2021-04-14
+Composer: MASAHIRO TOBINAI
+Performer: Aimer
+Disc: 1
+Label: Sony Music Labels Inc.
+AlbumArtist: Aimer
+AlbumArtistSort: Aimer
+AlbumSort: Walpurgis
+ArtistSort: Aimer
+Format: 44100:16:2
+mtime: 1732437426
+song_end
+song_begin: 09. marie.m4a
+Time: 306.227000
+Artist: Aimer
+Album: Walpurgis
+Title: marie
+Track: 9
+Genre: J-Pop
+Date: 2021-04-14
+Composer: 横山裕章
+Performer: Aimer
+Disc: 1
+Label: Sony Music Labels Inc.
+AlbumArtist: Aimer
+AlbumArtistSort: Aimer
+AlbumSort: Walpurgis
+ArtistSort: Aimer
+Format: 44100:16:2
+mtime: 1732437434
+song_end
+song_begin: 10. ever after.m4a
+Time: 236.293000
+Artist: Aimer
+Album: Walpurgis
+Title: ever after
+Track: 10
+Genre: J-Pop
+Date: 2021-04-14
+Composer: 百田留衣 & Kenji Tamai
+Performer: Aimer
+Disc: 1
+Label: Sony Music Labels Inc.
+AlbumArtist: Aimer
+AlbumArtistSort: Aimer
+AlbumSort: Walpurgis
+ArtistSort: Aimer
+Format: 44100:16:2
+mtime: 1732437440
+song_end
+song_begin: 11. hollow-mas.m4a
+Time: 172.867000
+Artist: Aimer
+Album: Walpurgis
+Title: hollow-mas
+Track: 11
+Genre: J-Pop
+Date: 2021-04-14
+Composer: Shogo Ohnishi
+Performer: Aimer
+Disc: 1
+Label: Sony Music Labels Inc.
+AlbumArtist: Aimer
+AlbumArtistSort: Aimer
+AlbumSort: Walpurgis
+ArtistSort: Aimer
+Format: 44100:16:2
+mtime: 1732437444
+song_end
+song_begin: 12. 季路.m4a
+Time: 352.600000
+Artist: Aimer
+Album: Walpurgis
+Title: 季路
+Track: 12
+Genre: J-Pop
+Date: 2021-04-14
+Composer: MASAHIRO TOBINAI
+Performer: Aimer
+Disc: 1
+Label: Sony Music Labels Inc.
+AlbumArtist: Aimer
+AlbumArtistSort: Aimer
+AlbumSort: Walpurgis
+ArtistSort: Aimer
+Format: 44100:16:2
+mtime: 1732437454
+song_end
+song_begin: 13. 春はゆく.m4a
+Time: 305.387000
+Artist: Aimer
+Album: Walpurgis
+Title: 春はゆく
+Track: 13
+Genre: J-Pop
+Date: 2021-04-14
+Composer: 梶浦由记
+Performer: Aimer
+Disc: 1
+Label: Sony Music Labels Inc.
+AlbumArtist: Aimer
+AlbumArtistSort: Aimer
+AlbumSort: Walpurgis
+ArtistSort: Aimer
+Format: 44100:16:2
+mtime: 1732437460
+song_end
+song_begin: 14. Walpurgis.m4a
+Time: 242.733000
+Artist: Aimer
+Album: Walpurgis
+Title: Walpurgis
+Track: 14
+Genre: J-Pop
+Date: 2021-04-14
+Composer: 百田留衣
+Performer: Aimer
+Disc: 1
+Label: Sony Music Labels Inc.
+AlbumArtist: Aimer
+AlbumArtistSort: Aimer
+AlbumSort: Walpurgis
+ArtistSort: Aimer
+Format: 44100:16:2
+mtime: 1732437464
+song_end
+end: Aimer/Aimer - Walpurgis
+directory: Aimer - 遥か _ 800 _ End of All _ Ref_rain -3 nuits ver.-
+mtime: 1738484944
+begin: Aimer/Aimer - 遥か _ 800 _ End of All _ Ref_rain -3 nuits ver.-
+song_begin: 01. 遥か.m4a
+Time: 194.380000
+Artist: Aimer
+Album: 遥か / 800 / End of All / Ref:rain -3 nuits ver.-
+Title: 遥か
+Track: 1
+Genre: J-Pop
+Date: 2024-06-05
+Composer: Yusuke Tanaka
+Performer: Aimer
+Disc: 1
+Label: Sony Music Labels Inc.
+AlbumArtist: Aimer
+AlbumArtistSort: Aimer
+AlbumSort: 遥か / 800 / End of All / Ref:rain -3 nuits ver.-
+ArtistSort: Aimer
+Format: 48000:32:2
+mtime: 1732429294
+song_end
+song_begin: 02. 800.m4a
+Time: 236.879000
+Artist: Aimer
+Album: 遥か / 800 / End of All / Ref:rain -3 nuits ver.-
+Title: 800
+Track: 2
+Genre: J-Pop
+Date: 2024-06-05
+Composer: 百田留衣
+Performer: Aimer
+Disc: 1
+Label: Sony Music Labels Inc.
+AlbumArtist: Aimer
+AlbumArtistSort: Aimer
+AlbumSort: 遥か / 800 / End of All / Ref:rain -3 nuits ver.-
+ArtistSort: Aimer
+Format: 48000:32:2
+mtime: 1732429304
+song_end
+song_begin: 03. End of All.m4a
+Time: 219.073000
+Artist: Aimer
+Album: 遥か / 800 / End of All / Ref:rain -3 nuits ver.-
+Title: End of All
+Track: 3
+Genre: J-Pop
+Date: 2024-06-05
+Composer: Ikuko Yoshida
+Performer: Aimer
+Disc: 1
+Label: Sony Music Labels Inc.
+AlbumArtist: Aimer
+AlbumArtistSort: Aimer
+AlbumSort: 遥か / 800 / End of All / Ref:rain -3 nuits ver.-
+ArtistSort: Aimer
+Format: 48000:32:2
+mtime: 1732429312
+song_end
+song_begin: 04. Ref_rain -3 nuits ver.-.m4a
+Time: 293.929000
+Artist: Aimer
+Album: 遥か / 800 / End of All / Ref:rain -3 nuits ver.-
+Title: Ref:rain -3 nuits ver.-
+Track: 4
+Genre: J-Pop
+Date: 2024-06-05
+Composer: MASAHIRO TOBINAI
+Performer: Aimer
+Disc: 1
+Label: Sony Music Labels Inc.
+AlbumArtist: Aimer
+AlbumArtistSort: Aimer
+AlbumSort: 遥か / 800 / End of All / Ref:rain -3 nuits ver.-
+ArtistSort: Aimer
+Format: 48000:32:2
+mtime: 1732429322
+song_end
+song_begin: 05. 遥か (Instrumental).m4a
+Time: 194.380000
+Artist: Aimer
+Album: 遥か / 800 / End of All / Ref:rain -3 nuits ver.-
+Title: 遥か (Instrumental)
+Track: 5
+Genre: J-Pop
+Date: 2024-06-05
+Composer: Yusuke Tanaka
+Performer: Aimer
+Disc: 1
+Label: Sony Music Labels Inc.
+AlbumArtist: Aimer
+AlbumArtistSort: Aimer
+AlbumSort: 遥か / 800 / End of All / Ref:rain -3 nuits ver.-
+ArtistSort: Aimer
+Format: 48000:32:2
+mtime: 1732429330
+song_end
+song_begin: 06. 800 (Instrumental).m4a
+Time: 236.879000
+Artist: Aimer
+Album: 遥か / 800 / End of All / Ref:rain -3 nuits ver.-
+Title: 800 (Instrumental)
+Track: 6
+Genre: J-Pop
+Date: 2024-06-05
+Composer: 百田留衣
+Performer: Aimer
+Disc: 1
+Label: Sony Music Labels Inc.
+AlbumArtist: Aimer
+AlbumArtistSort: Aimer
+AlbumSort: 遥か / 800 / End of All / Ref:rain -3 nuits ver.-
+ArtistSort: Aimer
+Format: 48000:32:2
+mtime: 1732429338
+song_end
+song_begin: 07. End of All (Instrumental).m4a
+Time: 219.073000
+Artist: Aimer
+Album: 遥か / 800 / End of All / Ref:rain -3 nuits ver.-
+Title: End of All (Instrumental)
+Track: 7
+Genre: J-Pop
+Date: 2024-06-05
+Composer: Ikuko Yoshida
+Performer: Aimer
+Disc: 1
+Label: Sony Music Labels Inc.
+AlbumArtist: Aimer
+AlbumArtistSort: Aimer
+AlbumSort: 遥か / 800 / End of All / Ref:rain -3 nuits ver.-
+ArtistSort: Aimer
+Format: 48000:32:2
+mtime: 1732429346
+song_end
+song_begin: 08. Ref_rain -3 nuits ver.- (Instrumental).m4a
+Time: 293.929000
+Artist: Aimer
+Album: 遥か / 800 / End of All / Ref:rain -3 nuits ver.-
+Title: Ref:rain -3 nuits ver.- (Instrumental)
+Track: 8
+Genre: J-Pop
+Date: 2024-06-05
+Composer: MASAHIRO TOBINAI
+Performer: Aimer
+Disc: 1
+Label: Sony Music Labels Inc.
+AlbumArtist: Aimer
+AlbumArtistSort: Aimer
+AlbumSort: 遥か / 800 / End of All / Ref:rain -3 nuits ver.-
+ArtistSort: Aimer
+Format: 48000:32:2
+mtime: 1732429356
+song_end
+end: Aimer/Aimer - 遥か _ 800 _ End of All _ Ref_rain -3 nuits ver.-
+end: Aimer

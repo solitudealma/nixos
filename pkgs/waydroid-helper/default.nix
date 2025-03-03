@@ -1,24 +1,24 @@
-{ lib
-, buildPythonApplication
-, fetchFromGitHub
-, meson
-, ninja
-, fakeroot
-, python3
-, gtk4
-, pkg-config
-, appstream-glib
-, desktop-file-utils
-, unstable
-, setuptools
-, ...
+{
+  lib,
+  buildPythonApplication,
+  fetchFromGitHub,
+  meson,
+  ninja,
+  fakeroot,
+  python3,
+  gtk4,
+  pkg-config,
+  appstream-glib,
+  desktop-file-utils,
+  libadwaita,
+  setuptools,
+  ...
 }:
-
 buildPythonApplication rec {
   pname = "waydroid-helper";
   version = "0.1.1";
   pyproject = false;
-  src = fetchFromGitHub{
+  src = fetchFromGitHub {
     owner = "ayasa520";
     repo = pname;
     rev = "93f98e7455ec4efe2010528619569a53d7c140a6";
@@ -38,16 +38,16 @@ buildPythonApplication rec {
   buildInputs = [
     fakeroot
     gtk4
-    unstable.libadwaita
+    libadwaita
   ];
 
   dependencies = with python3.pkgs; [
-    bidict 
-    httpx 
-    pyyaml 
-    pygobject3 
-    pywayland 
-    pycairo 
+    bidict
+    httpx
+    pyyaml
+    pygobject3
+    pywayland
+    pycairo
     aiofiles
   ];
 

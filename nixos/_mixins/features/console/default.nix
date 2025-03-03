@@ -77,7 +77,7 @@ in {
       fonts = [
         {
           name = fonts.mono;
-          package = pkgs.maple-mono-NF-CN;
+          package = fonts.package;
         }
       ];
       extraConfig = kmsconExtraConfig;

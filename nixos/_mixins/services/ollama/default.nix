@@ -34,7 +34,7 @@ in {
       })
     ];
     systemPackages = lib.mkIf hasAcceleration (with pkgs; [
-      unstable.gollama
+      gollama
     ]);
   };
   services = {
@@ -45,7 +45,7 @@ in {
         if hostname == "revan"
         then "127.0.0.1"
         else "0.0.0.0";
-      package = pkgs.unstable.ollama;
+      package = pkgs.ollama;
       # https://medium.com/timescale/finding-the-best-open-source-embedding-model-for-rag-929d1656d331
       loadModels =
         if hostname == "revan"
@@ -110,7 +110,7 @@ in {
           then "https://${hostname}.${tailNet}/"
           else "http://localhost:${toString config.services.open-webui.port}";
       };
-      environmentFile = config.sops.secrets.open-webui-env.path;
+      # environmentFile = config.sops.secrets.open-webui-env.path;
       host = "127.0.0.1";
       port = 8088;
     };
@@ -123,15 +123,15 @@ in {
     };
     tika.enable = installOpenWebUI;
   };
-  sops = {
-    secrets = {
-      open-webui-env = lib.mkIf installOpenWebUI {
-        group = "root";
-        mode = "0644";
-        owner = "root";
-        path = "/etc/open-webui/secrets.env";
-        sopsFile = ../../../../secrets/open-webui.yaml;
-      };
-    };
-  };
+  # sops = {
+  # secrets = {
+  # open-webui-env = lib.mkIf installOpenWebUI {
+  #   group = "root";
+  #   mode = "0644";
+  #   owner = "root";
+  #   path = "/etc/open-webui/secrets.env";
+  #   sopsFile = ../../../../secrets/open-webui.yaml;
+  # };
+  # };
+  # };
 }

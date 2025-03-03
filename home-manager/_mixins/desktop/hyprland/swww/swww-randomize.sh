@@ -13,12 +13,12 @@
 PID_FILE=/tmp/wallpaper_script_pid # 脚本 PID 文件
 # PAUSED=false                       # 暂停切换状态初始化
 TIMER=0                            # 计时器初始化
-TIMER_MAX=600                       # 计时器上限，图片轮换时间
+TIMER_MAX=10                       # 计时器上限，图片轮换时间
 # ====================================
 # swww 切换参数值
-# OUTPUT=none       # 屏幕输出 默认全部
+# OUTPUT=none       # 屏幕输出
 IMG_RESIZE=crop   # 图像填充 Def: crop [no,crop,fit]
-FULL_COLOR=000000 # 填充颜色 Def: 000000 , Need IMG_RESIZE=fit
+# FULL_COLOR=000000 # 填充颜色 Def: 000000 , Need IMG_RESIZE=fit
 FILTER=Lanczos3   # 缩放图像时使用的滤镜 Def: Lanczos3 [Nearest, bilinear, Catmullrom, Mitchell, Lanczos3]
 TYPE=random       # 切换过渡 Def: simple [none, simple, fade, left, right, top, bottom, wipe, wave, grow, center, any, outer, random]
 STEP=255          # 过渡效果速度 ( TYPE=simple STEP=2 ), Def: 90
@@ -39,9 +39,8 @@ function manual_switch_signal { # 注册手动切换信号的处理函数 signal
     #echo WALLPAPERS_PATH: $WALLPAPERS_PATH
     swww clear "$( generate_random_color )"
     sleep 0.2 #  ）
-    eval swww img "$IMG_PATH" "$( swww_option )"
+    swww img "$IMG_PATH" "$( swww_option )"
 }
-
 trap 'manual_switch_signal' SIGUSR1
 
 function pid_create { # 创建脚本标识
@@ -53,9 +52,10 @@ function pid_create { # 创建脚本标识
 
 function swww_option { # swww options tabel
    local transition_args=(
-      # "--outputs"             "$OUTPUT"
+#     "--outputs"             "$OUTPUT"
+#     "--no-resize"            ""
       "--resize"              "$IMG_RESIZE"
-      "--fill-color"          "$FULL_COLOR"
+#     "--fill-color"          "$FULL_COLOR"
       "--filter"              "$FILTER"
       "--transition-type"     "$TYPE"
       "--transition-step"     "$STEP"
@@ -101,11 +101,11 @@ function generate_random_color { # 生成清屏的纯色背景
 function deamon { # wallpaper switch
   while true; do
       IMG_PATH="$( random_image_path )" # 读取指定目录下的文件
-      
+
       swww clear "$( generate_random_color )" # 清屏
-      
+
       swww img "$IMG_PATH" "$( swww_option )" # 切换壁纸
-      
+
       echo PATH: "$IMG_PATH"
       echo WALLPAPERS_PATH: "$WALLPAPERS_PATH"
       sleep_wait # 等待进入下一轮切换
@@ -124,8 +124,8 @@ case $1 in # Main
 
       WALLPAPERS_PATH=("$2"/*)           # wallpapers path
 
-      if [ -f $PID_FILE ] && [ "$(cat "$PID_FILE")" == $$ ]; then deamon # Function: deamon start
-      elif [ -f $PID_FILE ] && [ -d /proc/"$(cat "$PID_FILE")" ]; then
+      if [ -f $PID_FILE ] && [ "$(cat $PID_FILE)" == $$ ]; then deamon # Function: deamon start
+      elif [ -f $PID_FILE ] && [ -d /proc/"$(cat $PID_FILE)" ]; then
         notify-send "Error: $PID_FILE is exist. $0 is already running. "
         exit 1
       else

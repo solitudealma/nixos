@@ -1,23 +1,27 @@
-{lib,pkgs, ...}: {
-   programs.river = {
+{
+  lib,
+  pkgs,
+  ...
+}: {
+  programs.river = {
     enable = true;
     extraPackages = with pkgs; [
+      xwayland
       swaylock-effects # lockscreen
       pavucontrol
       swayidle
-      xwayland
-	
-      brightnessctl 
-      playerctl 
-      polkit_gnome 
-      foot 
-  
-      waybar 
 
-      blueman 
-      lswt 
-      wlr-randr 
-      
+      brightnessctl
+      playerctl
+      polkit_gnome
+      foot
+
+      waybar
+
+      blueman
+      lswt
+      wlr-randr
+
       wlprop
       wf-recorder
       rofi-wayland
@@ -27,15 +31,13 @@
       dunst # notification daemon
       kanshi # auto-configure display outputs
       wdisplays
-      wl-clipboard
-			cliphist
-			wl-clip-persist
-			wezterm
-			grim
-			slurp
-			swappy
-			satty
-			swww
+      cliphist
+      wezterm
+      grim
+      slurp
+      swappy
+      satty
+      swww
       blueberry
       sway-contrib.grimshot # screenshots
       wtype
@@ -47,22 +49,25 @@
       networkmanagerapplet
       file-roller
       nautilus
-
-      # Somehow xdg.portal services do not really work for me.
-      # Instead I re-start xdg-desktop-portal and xdg-desktop-portal wlr from sway itself
-      xdg-desktop-portal
-      xdg-desktop-portal-wlr
     ];
   };
-  services.greetd = {
-	enable = true;
-		settings = {
-			default_session = {
-				command = "${pkgs.greetd.tuigreet}/bin/tuigreet --time --cmd river";
-				user = "solitudealma";
-			};
-		};
-	};
+  systemd.user.services.river = {
+    description = "River - Wayland window manager";
+    documentation = ["man:river(5)"];
+    bindsTo = ["graphical-session.target"];
+    wants = ["graphical-session-pre.target"];
+    after = ["graphical-session-pre.target"];
+    # We explicitly unset PATH here, as we want it to be set by
+    # systemctl --user import-environment in startriver
+    environment.PATH = lib.mkForce null;
+    serviceConfig = {
+      Type = "simple";
+      ExecStart = "${pkgs.river}/bin/river";
+      Restart = "on-failure";
+      RestartSec = 1;
+      TimeoutStopSec = 10;
+    };
+  };
   # thunar
   services.gvfs.enable = true; # Mount, trash, and other functionalities
   services.tumbler.enable = true; # Thumbnail support for images

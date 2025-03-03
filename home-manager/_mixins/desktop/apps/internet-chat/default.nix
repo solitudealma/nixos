@@ -1,30 +1,28 @@
 {
-  config,
   lib,
   pkgs,
   username,
   ...
-}: let
-  installFor = ["solitudealma"];
-in {
+}: {
   home = {
-    packages = with pkgs;
-      [telegram-desktop_git]
-      ++ lib.optionals (lib.elem username installFor) [
-        (discord.override {withOpenASAR = true;})
-        element-desktop
-        qq
-        wechat-uos
-        # (nur.repos.novel2430.wechat-universal-bwrap.overrideAttrs (old: rec {
-        #     desktopItems =
-        #       let
-        #       newDesktopItem = (builtins.elemAt old.desktopItems 0).override (d: {
-        #         exec = "env WECHAT_IME_WORKAROUND=fcitx WECHAT_CUSTOM_BINDS_CONFIG=/home/${username}/.config/wechat-universal/binds.list ${d.exec}";
-        #       });
-        #     in
-        #       lib.imap1( idx: item: if idx == 1 then newDesktopItem else item) old.desktopItems;
-        # }))
-      ];
+    packages = with pkgs; [
+      telegram-desktop
+      (discord.override {withOpenASAR = true;})
+      element-desktop
+      qq
+      (nur.repos.novel2430.wechat-universal-bwrap.overrideAttrs (old: {
+        desktopItems = let
+          newDesktopItem = (builtins.elemAt old.desktopItems 0).override (d: {
+            exec = "env WECHAT_IME_WORKAROUND=fcitx WECHAT_CUSTOM_BINDS_CONFIG=/home/${username}/.config/wechat-universal/binds.list ${d.exec}";
+          });
+        in
+          lib.imap1 (idx: item:
+            if idx == 1
+            then newDesktopItem
+            else item)
+          old.desktopItems;
+      }))
+    ];
   };
 
   # xdg.desktopEntries = {

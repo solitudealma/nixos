@@ -12,7 +12,7 @@
 
   // Choose the order of the modules
 
-  "modules-left": [ "river/tags", "tray", "river/window"],
+  "modules-left": ["river/tags", "tray", "river/window"],
 
   "modules-right": [
     "network",
@@ -24,7 +24,7 @@
     "custom/separator",
     "group/custom-group",
     "custom/separator",
-    "custom/power"
+    "custom/power",
   ],
 
   "group/custom-group": {
@@ -33,30 +33,30 @@
       "idle_inhibitor",
       "custom/bluetooth",
       "custom/kdeconnect",
-      "custom/wifi"
-    ]
+      "custom/wifi",
+    ],
   },
 
   "river/tags": {
     "num-tags": 9,
-    "tag-labels": [ "", "", "", "", "󰈹", "󰎄", "󰘅", "", ""]
+    "tag-labels": ["", "", "", "", "󰈹", "󰎄", "󰘅", "", ""],
   },
 
   "river/window": {
-	"max-length": 50
+    "max-length": 50,
   },
 
   "tray": {
     "icon-size": 16,
     "spacing": 5,
-    "show-passive-items": true
+    "show-passive-items": true,
   },
 
   "clock": {
     "interval": 60,
     "format": "  {:%a %b %d    %I:%M %p}", // %b %d %Y  --Date formatting
     "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
-    "format-alt": "{:%Y-%m-%d %H:%M:%S  }"
+    "format-alt": "{:%Y-%m-%d %H:%M:%S  }",
   },
 
   "temperature": {
@@ -67,30 +67,30 @@
     "interval": 2,
     "format": " {temperatureC:>2}°C",
     "format-icons": ["", "", ""],
-    "on-click": "hyprctl dispatcher togglespecialworkspace monitor"
+    "on-click": "hyprctl dispatcher togglespecialworkspace monitor",
   },
 
   "cpu": {
     "interval": 2,
     "format": " {usage:>2}%",
     "tooltip": false,
-    "on-click": "hyprctl dispatcher togglespecialworkspace monitor"
+    "on-click": "hyprctl dispatcher togglespecialworkspace monitor",
   },
 
   "memory": {
     "interval": 2,
-    "format": " {:>2}%"
+    "format": " {:>2}%",
   },
 
   "disk": {
     "interval": 15,
-    "format": "󰋊 {percentage_used:>2}%"
+    "format": "󰋊 {percentage_used:>2}%",
   },
 
   "backlight": {
     // "device": "acpi_video1",
     "format": "{icon} {percent:>2}%",
-    "format-icons": ["", "", "", "", "", "", "", "", ""]
+    "format-icons": ["", "", "", "", "", "", "", "", ""],
   },
 
   "network": {
@@ -102,7 +102,7 @@
     "tooltip-format": "{ifname} via {gwaddr} ",
     "format-linked": "{ifname} (No IP) ",
     "format-disconnected": "󰀦 Disconnected", //Disconnected ⚠
-    "format-alt": "{ifname}: {ipaddr}/{cidr}"
+    "format-alt": "{ifname}: {ipaddr}/{cidr}",
   },
 
   "pulseaudio": {
@@ -120,9 +120,9 @@
       "phone": "",
       "portable": "",
       "car": "",
-      "default": ["", "", ""]
+      "default": ["", "", ""],
     },
-    "on-click": "pavucontrol"
+    "on-click": "pavucontrol",
   },
 
   "wireplumber": {
@@ -130,7 +130,7 @@
     "format-muted": "󰖁 {volume:>3}%",
     // "format-bluetooth": "{icon} {volume:>2}% 󰂯", //{format_source}",
     // "format-bluetooth-muted": "󰖁 {icon} 󰂯", //{format_source}",
-    "format-icons": ["", "", ""]
+    "format-icons": ["", "", ""],
   },
 
   // This waybar build doesn't have support for cava.
@@ -154,16 +154,16 @@
     "input_delay": 2,
     "format-icons": ["▁", "▂", "▃", "▄", "▅", "▆", "▇", "█"],
     "actions": {
-      "on-click-right": "mode"
-    }
+      "on-click-right": "mode",
+    },
   },
 
   "idle_inhibitor": {
     "format": "{icon}",
     "format-icons": {
       "activated": "󰈈",
-      "deactivated": "󰈉"
-    }
+      "deactivated": "󰈉",
+    },
   },
 
   "custom/power": {
@@ -171,7 +171,7 @@
     "format-icons": " ", //  
     "exec-on-event": "true",
     "on-click": "$HOME/scripts/rofi-power",
-    "tooltip-format": "Power Menu"
+    "tooltip-format": "Power Menu",
   },
 
   "custom/kdeconnect": {
@@ -179,7 +179,7 @@
     "format-icons": "",
     "exec-on-event": "true",
     "on-click": "kdeconnect-app",
-    "tooltip-format": "KDE Connect"
+    "tooltip-format": "KDE Connect",
   },
 
   "custom/bluetooth": {
@@ -187,7 +187,7 @@
     "format-icons": "",
     "exec-on-event": "true",
     "on-click": "$HOME/scripts/rofi-bluetooth",
-    "tooltip-format": "Bluetooth Menu"
+    "tooltip-format": "Bluetooth Menu",
   },
 
   "custom/wifi": {
@@ -195,13 +195,13 @@
     "format-icons": "",
     "exec-on-event": "true",
     "on-click": "$HOME/scripts/rofi-wifi",
-    "tooltip-format": "Wifi Menu"
+    "tooltip-format": "Wifi Menu",
   },
 
   "custom/separator": {
     "format": "{icon}",
     "format-icons": "|",
-    "tooltip": false
+    "tooltip": false,
   },
 
   "custom/pacman": {
@@ -210,7 +210,7 @@
     "exec": "checkupdates | wc -l", // # of updates
     "exec-if": "exit 0", // always run; consider advanced run conditions
     "on-click": "foot -e 'sudo pacman -Syu'; pkill -SIGRTMIN+8 waybar", // update system
-    "signal": 8
+    "signal": 8,
   },
 
   "custom/notification": {
@@ -224,14 +224,14 @@
       "inhibited-notification": "<span foreground='red'><sup></sup></span>",
       "inhibited-none": "",
       "dnd-inhibited-notification": "<span foreground='red'><sup></sup></span>",
-      "dnd-inhibited-none": ""
+      "dnd-inhibited-none": "",
     },
     "return-type": "json",
     "exec-if": "which swaync-client",
     "exec": "swaync-client -swb",
     "on-click": "swaync-client -t -sw",
     "on-click-right": "swaync-client -d -sw",
-    "escape": true
+    "escape": true,
   },
 
   "keyboard-state": {
@@ -240,8 +240,8 @@
     "format": "{name} {icon}",
     "format-icons": {
       "locked": "",
-      "unlocked": ""
-    }
+      "unlocked": "",
+    },
   },
 
   "wlr/taskbar": {
@@ -250,14 +250,14 @@
     "tooltip-format": "{title}",
     "on-click": "activate",
     "on-click-middle": "close",
-    "ignore-list": ["kitty", "wezterm", "foot", "footclient"]
+    "ignore-list": ["kitty", "wezterm", "foot", "footclient"],
   },
 
   "battery": {
     "states": {
       // "good": 95,
       "warning": 30,
-      "critical": 15
+      "critical": 15,
     },
     "format": "{capacity}% {icon}",
     "format-charging": " {capacity}%",
@@ -265,13 +265,13 @@
     "format-alt": "{icon} {time}",
     // "format-good": "", // An empty format will hide the module
     // "format-full": "",
-    "format-icons": ["", "", "", "", ""]
+    "format-icons": ["", "", "", "", ""],
   },
 
   "backlight/slider": {
     "min": 0,
     "max": 100,
     "orientation": "horizontal",
-    "device": "intel_backlight"
-  }
+    "device": "intel_backlight",
+  },
 }
